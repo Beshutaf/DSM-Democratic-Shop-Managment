@@ -1,6 +1,6 @@
-# project-template
-
-A template repository with wiki for a team project at JCE's software engineering course (replace with the mission of your project).
+# DSM-Democratic-Shop-Managment
+The purpose of the project is to help manage and improve a cooperative "Democratic" shop system Edit
+for more discreption visit : http://www.beshutaf.org/
 
 (See also:rRecommended [checklist](https://github.com/ddbeck/readme-checklist/blob/master/checklist.md) for a README) 
 
