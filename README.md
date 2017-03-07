@@ -30,5 +30,5 @@ This project is developed as part of the requirements for a [software engineerin
 
 ### [Team Page](../../wiki/team)
 
-### [plannig](../../wiki/inception planning)
+### [planning](../../wiki/inception planning)
 
