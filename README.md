@@ -6,8 +6,6 @@ for more description visit : http://www.beshutaf.org/
  ![project logo (this one for is taken from basecamp - a project management service)]
 (http://www.minga.co.il/wp-content/uploads/2015/08/shutaf.png)
 
-click to view initial planning:<br>
- - [initial planning](https://www.dropbox.com/home?preview=DSM.pdf)
  
 ## Tools & Practices
 
