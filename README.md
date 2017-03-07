@@ -6,15 +6,19 @@ for more description visit : http://www.beshutaf.org/
  ![project logo (this one for is taken from basecamp - a project management service)]
 (http://www.minga.co.il/wp-content/uploads/2015/08/shutaf.png)
 
+click to view initial planning:<br>
+ - [initial planning](https://www.dropbox.com/home?preview=DSM.pdf)
+ 
 ## Tools & Practices
 
 |Category|Status|
 |---|---|
+| press the tag for redirection|
 | Version Control System| git & github |
-| Group Chat | [![Join the chat at https://gitter.im/jce-il/project-template](https://badges.gitter.im/jce-il/project-template.svg)](https://gitter.im/jce-il/DSM) |
+| Group Chat| [![Join the chat at https://gitter.im/jce-il/project-template](https://badges.gitter.im/jce-il/project-template.svg)](https://gitter.im/jce-il/DSM) |
 | Github Issues | [![GitHub issues](https://img.shields.io/github/issues/jce-il/project-template.svg?style=flat)](https://github.com/jce-il/project-template/issues) |
-| Project Course Status | ... |
-
+| Project Course Status | in progress |
+ 
 ## Please visit our [live application](https://demo.reactstarterkit.com/)
 - Alright, currently only a landing page...
 
