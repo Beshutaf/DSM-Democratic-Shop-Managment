@@ -28,6 +28,17 @@ Please visit our wiki for furthur project info:
 ### [User Manual](../../wiki/user-manual) (empty for now)
 
 ### [Team Page](../../wiki/team)
+Alaa Daoud - AlaaZme
+mustafa abu dalu - mustafa12332
+ahmad sabbah - ahmadsb
+khalid khaskia
+zohdi khaskia
+
+diversity: The teams memebers are all from diffrent location, diffrent ages , diffrent skills.
+
+client: is a non-profit organization called: "bshutaf- cooprative shop".
+
+communication between memebrs: via gitter.
 
 ### Project Documents
 - [Project Idea](docs/idea.pdf) ([Presentation](docs/idea-slides.pdf))
