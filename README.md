@@ -24,6 +24,7 @@ for more description visit : http://www.beshutaf.org/
 ## Disclaimer
 This project is developed as part of the requirements for a [software engineering course](https://github.com/jce-il/se-class/wiki) at the software engineering department - [Azrieli College of Engineering](http://www.jce.ac.il/), Jerusalem, Israel.
 
+
 ### Please visit our wiki for furthur project info: 
 
 ### [User Manual](../../wiki/user-manual) (empty for now)
@@ -31,4 +32,6 @@ This project is developed as part of the requirements for a [software engineerin
 ### [Team Page](../../wiki/team)
 
 ### [planning](../../wiki/inception planning)
-
+<br><br>
+ click to view initial planning:(out src .pdf)<br>
+ - - [initial planning](https://www.dropbox.com/home?preview=DSM.pdf)
