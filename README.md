@@ -1,7 +1,7 @@
 # DSM-Democratic-Shop-Managment
 The purpose of the project is to help manage and improve a cooperative "Democratic" shop system.
 
-for more discreption visit : http://www.beshutaf.org/
+for more description visit : http://www.beshutaf.org/
 
  ![project logo (this one for is taken from basecamp - a project management service)]
 (http://www.minga.co.il/wp-content/uploads/2015/08/shutaf.png)
