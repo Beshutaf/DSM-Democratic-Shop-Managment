@@ -29,7 +29,11 @@ Please visit our wiki for furthur project info:
 
 ### [Team Page](../../wiki/team)
 Alaa Daoud - AlaaZme
+<a href="https://github.com/AlaaZme">
+<img src="https://avatars1.githubusercontent.com/u/15274602?v=3&s=460" alt="nirbm" width="100" height="100"></a>
 mustafa abu dalu - mustafa12332
+<a href="https://github.com/mustafa12332">
+<img src="https://avatars3.githubusercontent.com/u/12409683?v=3&s=400" alt="nirbm" width="100" height="100"></a>
 ahmad sabbah - ahmadsb
 khalid khaskia
 zohdi khaskia
