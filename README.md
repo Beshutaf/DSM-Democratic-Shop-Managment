@@ -32,6 +32,6 @@ This project is developed as part of the requirements for a [software engineerin
 ### [Team Page](../../wiki/team)
 
 ### [planning](../../wiki/inception planning)
-<br><br>
+<br>
  click to view initial planning:(out src .pdf)<br>
- - - [initial planning](https://www.dropbox.com/home?preview=DSM.pdf)
+ -  [initial planning](https://drive.google.com/open?id=0B_XSkcez-hlYaEhvWFdRX0xUaDA)
