@@ -14,7 +14,7 @@ for more description visit : http://www.beshutaf.org/
 | press the tag for redirection|
 | Version Control System| git & github |
 | Group Chat| [![Join the chat at https://gitter.im/jce-il/project-template](https://badges.gitter.im/jce-il/project-template.svg)](https://gitter.im/jce-il/DSM) |
-| Github Issues | [![GitHub issues](https://img.shields.io/github/issues/jce-il/project-template.svg?style=flat)](https://github.com/jce-il/project-template/issues) |
+| Github Issues | [![GitHub issues](https://img.shields.io/github/issues/jce-il/project-template.svg?style=flat)](https://github.com/AlaaZme/DSM-Democratic-Shop-Managment/issues) |
 | Project Course Status | in progress |
  
 ## Please visit our [live application](https://demo.reactstarterkit.com/)
