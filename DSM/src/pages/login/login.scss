@@ -1,11 +1,18 @@
 page-login {
  
  
- .login{ background-image: url("http://communabuilder.tapuz.co.il/UsersFolders/beshutaf/images/40532_2047252_1.jpg");
+ .login{// background-image: url("http://communabuilder.tapuz.co.il/UsersFolders/beshutaf/images/40532_2047252_1.jpg");
 
 
     	z-index: 0;
 	 background-size: 100% 100%;
+ }
+ ion-card{
+
+   height:40%;
+   width:40%;
+   margin:0 auto;
+     box-shadow:none;
  }
  h3{
     color:white;
@@ -39,8 +46,8 @@ box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,1);
 } */
 
 .ttt{
-  
-	top: calc(20% - 35px);
+  position:absolute;
+	top: calc(10% - 35px);
 	left: calc(50% - 150px);
 	z-index: 2;
     text-shadow: 2px 0px 5px black, 0 5px 15px black, 0 0px 7px blue;
@@ -73,7 +80,7 @@ box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,1);
    
 	font-weight: 400;
 
-	margin-top: 35px;
+	margin-top: 10x;
     opacity: 0.6;
       text-shadow: 2px 0px 5px black, 0 5px 15px white, 0 0px 7px blue;
       }
