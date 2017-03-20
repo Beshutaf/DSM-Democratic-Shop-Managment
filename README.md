@@ -3,8 +3,7 @@ The purpose of the project is to help manage and improve a cooperative "Democrat
 
 for more description visit : http://www.beshutaf.org/
 
- ![project logo (this one for is taken from basecamp - a project management service)]
-(http://www.minga.co.il/wp-content/uploads/2015/08/shutaf.png)
+ ![project logo (this one for is taken from basecamp - a project management service)](http://www.minga.co.il/wp-content/uploads/2015/08/shutaf.png)
 
  
 ## Tools & Practices
@@ -31,7 +30,7 @@ This project is developed as part of the requirements for a [software engineerin
 
 ### [Team Page](../../wiki/team)
 
-### [planning](../../wiki/inception planning)
-<br>
+### [planning](../../wiki/inception-planning)
+ <br>
  click to view initial planning:(out src .pdf)<br>
- -  [initial planning](https://drive.google.com/open?id=0B_XSkcez-hlYaEhvWFdRX0xUaDA)
+ -[initial planning](https://drive.google.com/open?id=0B_XSkcez-hlYaEhvWFdRX0xUaDA)
