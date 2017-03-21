@@ -10,35 +10,38 @@
 </ion-header>
 
 <ion-content padding class="login">
-    <div padding class="ttt">
+    <div  class="ttt">
 
-			<div>קואפרטיב<span>בשותף</span></div><br>
-      <br><br><br>   <br><br><br><br><br>
-  <br><h3> להתחברות למערכת נא להזין</h3>
+			<div>קואפרטיב<span>בשותף</span></div>
+     
+<h3> להתחברות למערכת נא להזין</h3>
 		</div>
 <ion-card>
 
-  <img src="http://forum.beshutaf.org/uploads/default/7/da068b29b3282830.png">
+<!-- > 
+//<img src=url("assets/img/bg.jpg" ); ></img><img src="http://forum.beshutaf.org/uploads/default/7/da068b29b3282830.png">-->
 </ion-card>
-
-      <form (ngSubmit)="login()">
-<ion-list >
-
-  <ion-item class="qwe">
+   <!--  <form formData='ngForm' (ngSubmit)="onSubmit('name.value')"> !-->
+             <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+<ion-list padding>
+ <form [formGroup]="slideOneForm"  >
+  <ion-item  class="qwe">
         <ion-label floating>Username</ion-label>
-    <ion-input  type="text" ></ion-input>
+    <ion-input  type="text"  formControlName="name"></ion-input>
   </ion-item>
-
   <ion-item class="pass">
  <ion-label floating>Password</ion-label>
-    <ion-input  ngControl="password" type="password"></ion-input>
+    <ion-input type="password" formControlName="password"></ion-input>
   </ion-item>
 
-</ion-list>
-<div padding>
+
+<div >
    <ion-item class="lgnbtn">
-  <button ion-button full type="submit" >Login</button>
+  <button ion-button full (click)="save()" >Login</button>
 </ion-item>
 </div>
 </form>
+</ion-list>
+
+
 </ion-content>

@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { HomePage } from '../home/home';
 import { NavController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
-import {FormBuilder,Validators,FormGroup} from '@angular/forms';
+import { FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
+//import {FORM_DIRECTIVES, FormBuilder,  ControlGroup, Validators, AbstractControl} from '@angular/common';
+
 /*
   Generated class for the Login page.
 
@@ -14,29 +16,39 @@ import {FormBuilder,Validators,FormGroup} from '@angular/forms';
   templateUrl: 'login.html'
 })
 export class LoginPage {
-public loginForm:any;
+
+    submitAttempt: boolean = false;
+ 
+  static get parameter(){
+  return [];
+}
+
+
+    slideOneForm: FormGroup;
+
+ // name:string;
+
   // constructor(public  alertCtrl: AlertController) {}
-  constructor(public navCtrl: NavController,public  alertCtrl: AlertController,private formBuilder: FormBuilder,_form:FormBuilder) {
-   //    this.loginForm = this._form.group({
-          // "name":["",Validator.required]
+  constructor(public navCtrl: NavController,public  alertCtrl: AlertController,public formBuilder:FormBuilder) {
 
-
-      // })
-     /* this.todo = this.formBuilder.group({
-      title: ['', Validators.required],
-      description: [''],
-    });*/
+    this.slideOneForm = formBuilder.group({
+        name: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+         password: ['',Validators.required],
+    });
 
   }
-login() {
-  /*  let alert = this.alertCtrl.create({
+
+ save() {
+  let alert = this.alertCtrl.create({
       title: 'Login faild!',
-      subTitle: 'Login Faild , check login info and connection contact admin',
+      subTitle: 'Login Faild,'+this.slideOneForm.value.name
+       +"you pass"+ this.slideOneForm.value.password+
+        ' check login info and connection contact admin',
       buttons: ['OK']
     });
-    alert.present();*/
+    alert.present();
 
-    this.navCtrl.push(HomePage);
+  //  this.navCtrl.push(HomePage);
   }
 
   /*ionViewDidLoad() {
