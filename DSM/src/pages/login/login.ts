@@ -48,7 +48,7 @@ export class LoginPage {
     });
     alert.present();
 
-  //  this.navCtrl.push(HomePage);
+    this.navCtrl.push(HomePage);
   }
 
   /*ionViewDidLoad() {
