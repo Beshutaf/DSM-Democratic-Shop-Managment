@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { HomePage } from '../home/home';
 import { NavController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import {Http,Headers, RequestOptions} from '@angular/http';
+
 import { FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
 //import {FORM_DIRECTIVES, FormBuilder,  ControlGroup, Validators, AbstractControl} from '@angular/common';
-
-/*
+import 'rxjs/Rx';/*
   Generated class for the Login page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
@@ -29,7 +30,12 @@ export class LoginPage {
  // name:string;
 
   // constructor(public  alertCtrl: AlertController) {}
-  constructor(public navCtrl: NavController,public  alertCtrl: AlertController,public formBuilder:FormBuilder) {
+  constructor(public navCtrl: NavController,public http: Http,public  alertCtrl: AlertController,public formBuilder:FormBuilder) {
+
+
+
+
+
 
     this.slideOneForm = formBuilder.group({
         name: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
@@ -37,22 +43,40 @@ export class LoginPage {
     });
 
   }
+ // ionViewDidLoad(){
+save(){
+ 
+      let headers = new Headers();
+       headers.append('content-Type','application/json');
+           let body = {
+      uname : this.slideOneForm.value.name,
+    //  email : "mustafaa@gmail.com",
+      password : this.slideOneForm.value.password
+        
 
- save() {
+    };
+    let options = new RequestOptions({ headers: headers });
+    this.http
+        .post('http://localhost:3000/users/login', body, options)
+        .map(res => res.json())
+       .subscribe(
+            data => {
+              console.log(data);
+                this.navCtrl.push(HomePage);
+            },
+            err => {
   let alert = this.alertCtrl.create({
-      title: 'Login faild!',
-      subTitle: 'Login Faild,'+this.slideOneForm.value.name
-       +"you pass"+ this.slideOneForm.value.password+
+      title: 'Login faild!  '+this.slideOneForm.value.name,
+      subTitle: 
+ 
         ' check login info and connection contact admin',
       buttons: ['OK']
     });
-    alert.present();
+       alert.present();
+              console.log("ERROR!: ", err);
 
-    this.navCtrl.push(HomePage);
-  }
-
-  /*ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
-  }*/
+            }
+        );
+   }
 
 }

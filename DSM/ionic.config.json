@@ -2,5 +2,11 @@
   "name": "DSM",
   "app_id": "",
   "v2": true,
-  "typescript": true
+  "typescript": true,
+  "proxies": [
+    {
+        "path": "/users",
+        "proxyUrl": "http://localhost:3000"
+    }
+]
 }
