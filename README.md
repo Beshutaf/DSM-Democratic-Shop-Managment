@@ -1,3 +1,4 @@
+![](https://raw.githubusercontent.com/AlaaZme/DSM-Democratic-Shop-Managment/master/Docs/imageedit_14_6936051189.gif)
 # DSM-Democratic-Shop-Managment
 The purpose of the project is to help manage and improve a cooperative "Democratic" shop system.
 
