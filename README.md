@@ -6,7 +6,7 @@ for more description visit : http://www.beshutaf.org/
  ![project logo (this one for is taken from basecamp - a project management service)](http://www.minga.co.il/wp-content/uploads/2015/08/shutaf.png)
 
  
-## Tools & Practices
+# Tools & Practices
 
 |Category|Status|
 |---|---|
@@ -20,7 +20,7 @@ for more description visit : http://www.beshutaf.org/
 - Alright, currently only a landing page...
 
 
-## Disclaimer
+# Disclaimer
 This project is developed as part of the requirements for a [software engineering course](https://github.com/jce-il/se-class/wiki) at the software engineering department - [Azrieli College of Engineering](http://www.jce.ac.il/), Jerusalem, Israel.
 
 
@@ -30,7 +30,16 @@ This project is developed as part of the requirements for a [software engineerin
 
 ### [Team Page](../../wiki/team)
 
-### [planning](../../wiki/inception-planning)
- <br>
- click to view initial planning:(out src .pdf)<br>
- -[initial planning](https://drive.google.com/open?id=0B_XSkcez-hlYaEhvWFdRX0xUaDA)
+ # Project Documents
+ 
+ [initial planning](https://drive.google.com/open?id=0B_XSkcez-hlYaEhvWFdRX0xUaDA)
+  
+ - ###  [inception](../../wiki/inception-planning)
+ - ###  [SRS - requirements](../../wiki/SRS)
+  
+  # prototype Docs
+  
+### [first prototype](https://drive.google.com/file/d/0B_XSkcez-hlYeG82cnVidTZqeGs/view)
+  
+ ### [login prototpye (working)](https://drive.google.com/file/d/0B_XSkcez-hlYam9mbTlmLUp3d28/view)
+ 
