@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {Http,Headers, RequestOptions} from '@angular/http';
 import { AlertController } from 'ionic-angular';
 import 'rxjs/Rx';
@@ -47,12 +47,20 @@ saveNewUser(){
         .map(res => res.json())
        .subscribe(
             data => {
+                let alert = this.alertCtrl.create({
+      title: 'User Name:  '+this.slideOneForm.value.name +"   Was Created",
+      subTitle:
+        '',
+      buttons: ['OK']
+    });
+       alert.present();
               console.log(data);
           //      this.navCtrl.push(HomePage);
             },
+            
             err => {
   let alert = this.alertCtrl.create({
-      title: 'Login faild!  '+this.slideOneForm.value.name,
+      title: 'הרשמת משתמש נכשלה!  '+this.slideOneForm.value.name,
       subTitle:
         'המשתמש המבוקש לא נוצר :יכול להיות כבר קיים בדוק את הנתונים',
       buttons: ['OK']
