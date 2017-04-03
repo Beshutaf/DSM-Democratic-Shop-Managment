@@ -16,11 +16,7 @@ margin-bottom:5px;
 -moz-box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,1);
 box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,1);
  }
-.login input[type=passwrod]:focus{
-	outline: none;
-	border: 1px solid black;
-    box-shadow:0px;  
-}
+
 /*.lgnbtn:hover{
 	outline: none;
 	border: 1px solid red;
@@ -28,11 +24,12 @@ box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,1);
 } */
 
 .ttt{
+    font-size:24px;
   position:absolute;
 	top: calc(10% - 35px);
 	left: calc(50% - 150px);
 	z-index: 2;
-    text-shadow: 2px 0px 5px black, 0 5px 15px black, 0 0px 7px blue;
+    text-shadow: 2px 0px 5px black, 0 5px 15px black, 0 0px 7px white;
 }
 
 .ttt div{
@@ -43,7 +40,7 @@ box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,1);
 	font-weight: 200;
 }
 
-.ttt div span{
+.ttt span{
 	color: #5379fa !important;
 }
 
