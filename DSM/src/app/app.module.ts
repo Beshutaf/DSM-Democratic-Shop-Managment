@@ -3,13 +3,24 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
-import { CreateUserPage } from '../pages/create-user/create-user';
+import { CreateUserPage } from '../pages/admin/create-user/create-user';
+
+import { ItemDetailsPage } from '../pages/item-details/item-details';
+import { ListPage } from '../pages/list/list';
+import { AdminPage } from "../pages/admin/admin-panel";
+import { PushPage } from "../pages/admin/push-page/push-page";
+import { HelloIonicPage } from "../pages/hello-ionic/hello-ionic";
 @NgModule({
   declarations: [
     MyApp,
     LoginPage,
     HomePage,
-    CreateUserPage
+    CreateUserPage,
+         HelloIonicPage,
+    ItemDetailsPage,
+    ListPage,
+    AdminPage,
+    PushPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -19,7 +30,12 @@ import { CreateUserPage } from '../pages/create-user/create-user';
     MyApp,
     LoginPage,
     HomePage,
-    CreateUserPage
+    CreateUserPage,
+       HelloIonicPage,
+    ItemDetailsPage,
+    ListPage,
+    AdminPage,
+    PushPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

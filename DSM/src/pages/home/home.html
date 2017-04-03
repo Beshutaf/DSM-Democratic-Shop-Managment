@@ -1,13 +1,44 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-Main Page
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-menu [content]="content">
 
-<ion-content padding>
-<ion-item class="lgnbtn">
-  <button ion-button full (click)="NewUserP()" >יצירת משתמש חדש</button>
-</ion-item>
-</ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Pages</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button padding ion-item  (click)="openHomePage()">
+      <ion-icon name="home"></ion-icon>
+       Home Page
+      </button>
+      
+      <a padding ion-item href="https://docs.google.com/spreadsheets/d/19h5bjsP9h0VVSUo1sEO7C3oYDs0ufGlBMB6nqJt3lk0/edit#gid=0">
+       <ion-icon name="calendar"></ion-icon>
+       View Contacts
+       </a>
+       <a padding ion-item href="https://docs.google.com/spreadsheets/d/19h5bjsP9h0VVSUo1sEO7C3oYDs0ufGlBMB6nqJt3lk0/edit#gid=0">
+       <ion-icon name="calendar"></ion-icon>
+        View Schedule
+       </a>
+
+       <a padding ion-item href="https://docs.google.com/spreadsheets/d/19h5bjsP9h0VVSUo1sEO7C3oYDs0ufGlBMB6nqJt3lk0/edit#gid=0">
+       <ion-icon name="calendar"></ion-icon>
+        Suggest A Product
+       </a>
+
+       <a padding ion-item href="https://docs.google.com/spreadsheets/d/19h5bjsP9h0VVSUo1sEO7C3oYDs0ufGlBMB6nqJt3lk0/edit#gid=0">
+       <ion-icon name="calendar"></ion-icon>
+        View Suggested Products
+       </a>
+        
+    <button padding ion-item  (click)="openAdminPanel()">
+      <ion-icon name="person"></ion-icon>
+         Admin's Panel
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

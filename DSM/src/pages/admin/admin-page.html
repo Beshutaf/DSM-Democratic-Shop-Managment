@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar class="background">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Admin's Panel</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-row>
+    <ion-col width-50>
+        
+    <ion-card class="admin-item" (click)="sendPushPage()">
+         <ion-icon class="icons" name="notifications"></ion-icon>
+         <br>
+        <b>Send PushNotification</b>
+    </ion-card>
+    
+    </ion-col>
+  <ion-col width-50>
+<ion-card  class="admin-item" (click)="newUser()">
+     <ion-icon class="icons" name="person-add"></ion-icon>
+     <br>
+        <b>Create A User</b>
+    </ion-card>
+  </ion-col>
+</ion-row>
+  <ion-row>
+    <ion-col width-50>
+    <ion-card class="admin-item">
+         <ion-icon class="icons" name="trash"></ion-icon>
+         <br>
+     <u>   <b>Delete A User</b></u>
+    </ion-card>
+    
+    </ion-col>
+  <ion-col width-50>
+<ion-card  class="admin-item">
+     <ion-icon class="icons" name="refresh"></ion-icon>
+     <br>
+        <b>Reset A User's Password</b>
+    </ion-card>
+  </ion-col>
+</ion-row>
+    
+</ion-content>
