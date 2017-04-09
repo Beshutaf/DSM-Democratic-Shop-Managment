@@ -3,7 +3,7 @@ import { HomePage } from '../home/home';
 import { NavController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import {Http,Headers, RequestOptions} from '@angular/http';
-import { FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import 'rxjs/Rx';
 @Component({
   selector: 'page-login',
