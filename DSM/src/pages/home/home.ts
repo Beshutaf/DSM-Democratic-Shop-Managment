@@ -7,6 +7,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { HelloIonicPage } from '../hello-ionic/hello-ionic';
 import { ListPage } from '../list/list';
 import { AdminPage } from "../admin/admin-panel";
+import { SuggestPage } from "../suggestProduct/suggest";
 
 
 @Component({
@@ -55,6 +56,11 @@ export class HomePage {
   }
   openUrlPage(){
     this.menu.close();
+
+  }
+  openSuggestedProduct(){
+       this.menu.close();
+    this.nav.setRoot(SuggestPage);
 
   }
 }

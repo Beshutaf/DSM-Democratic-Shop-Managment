@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Suggested Products
+    </ion-title>
+    <ion-buttons end>
+  <div (click)="openForm()" >
+    <ion-icon name="add" id="plus-icon"></ion-icon>
+  </div>
+</ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <app-list *ngFor = "let productDetail of productDetails" [productDetail]="productDetail"></app-list>
+    
+  </ion-list>
+</ion-content>

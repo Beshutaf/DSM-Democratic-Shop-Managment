@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Suggest A Production
+    </ion-title>
+   
+  
+
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-row >
+        <ion-card>
+        <img id="image" src= "http://lorempixel.com/1920/1080">
+        </ion-card>
+    </ion-row>
+    <ion-row>
+        <p id="name">
+        <b>
+            <u>
+        {{name}}
+        </u>
+        </b>
+        </p>
+
+    </ion-row>
+    <br>
+    <br>
+    <ion-row>
+        <ion-card id="description">
+                    {{description}}
+        </ion-card>
+
+    </ion-row>
+<hr>
+    
+        <ion-item *ngFor="let c of comment"><b><u>{{c.name}}:</u></b><p>{{c.comment}}</p><p id="date">fri test test test</p></ion-item>
+        
+        <ion-row>
+      <form #f='ngForm' (ngSubmit)="createComment(f)" id="form" >
+        <ion-item   >
+       <ion-label color="primary" floating>Product Description</ion-label>
+       <ion-input  ngModel name="comment" ></ion-input>
+       </ion-item>
+       <button  ion-button  full type="submit"> Add A Comment</button>
+        </form>
+    </ion-row>
+
+</ion-content>

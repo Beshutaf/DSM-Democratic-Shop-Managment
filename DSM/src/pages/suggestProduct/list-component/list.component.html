@@ -1,0 +1,62 @@
+
+<div  class="ion-card" (click)="productDetails()">
+    <ion-row>
+            <ion-col width-20 id="imagecol"> <img id="image"src="{{productDetail.image}}" ></ion-col>
+            <ion-col width-60>
+                <ion-row class="middleRow" id="middleTitle"  >
+                    <p  id="middle">
+                        <b>
+                            <i>
+                                <u>
+                    {{productDetail.name}}
+                                </u>
+                            </i>
+                        </b>
+                    </p>
+                </ion-row>
+                <ion-row class ="middleRow"id="middleDescription" >
+                    <p id="desc" >
+                        {{productDetail.description}}
+                        </p>
+                </ion-row>
+              
+            </ion-col>
+            <ion-col width-20>
+                <ion-row id="rightIconsTop">
+                    <ion-col>
+                    <ion-row>
+                           <img class="icons" src="./assets/icon/like-icon.png">
+                        
+                    </ion-row>
+                    <ion-row >
+                           <p class="numberOf">{{productDetail.likes}}</p>
+                    </ion-row>
+                </ion-col>
+               
+                <ion-col>
+                  
+                    <ion-row>
+                           <img class="icons"src="./assets/icon/dislike-icon.png">
+                        
+                    </ion-row>
+                    <ion-row >
+                           <p class="numberOf">{{productDetail.likes}}</p>
+                    </ion-row>
+         
+                </ion-col>
+                
+                 </ion-row>
+                 <ion-row id="rightIconsBottom">
+                     <ion-col  class="Icons"><img src="./assets/icon/pending-icon.png"></ion-col>
+                     <ion-col  class="Icons"><img src="./assets/icon/pending-icon.png"></ion-col>
+                     <ion-col  class="Icons"><img src="./assets/icon/comment-icon.png"></ion-col>
+                     
+                 </ion-row>
+            </ion-col>
+            
+        </ion-row>
+
+   
+   
+   
+</div>

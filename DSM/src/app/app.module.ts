@@ -10,6 +10,11 @@ import { ListPage } from '../pages/list/list';
 import { AdminPage } from "../pages/admin/admin-panel";
 import { PushPage } from "../pages/admin/push-page/push-page";
 import { HelloIonicPage } from "../pages/hello-ionic/hello-ionic";
+import { ListDetailsComponent } from "../pages/suggestProduct/list-component/list-details-component/list.details.component";
+import { listComponent } from "../pages/suggestProduct/list-component/list.component";
+import { formPage } from "../pages/suggestProduct/formPage/formPage";
+import { SuggestPage } from "../pages/suggestProduct/suggest";
+import { ListService } from "../pages/suggestProduct/list.service";
 @NgModule({
   declarations: [
     MyApp,
@@ -20,7 +25,11 @@ import { HelloIonicPage } from "../pages/hello-ionic/hello-ionic";
     ItemDetailsPage,
     ListPage,
     AdminPage,
-    PushPage
+    PushPage,
+    ListDetailsComponent,
+     listComponent,
+    formPage,
+    SuggestPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -35,8 +44,13 @@ import { HelloIonicPage } from "../pages/hello-ionic/hello-ionic";
     ItemDetailsPage,
     ListPage,
     AdminPage,
-    PushPage
+    PushPage,
+     formPage,
+     SuggestPage,
+    ListDetailsComponent
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [    ListService,{provide: ErrorHandler,
+    
+     useClass: IonicErrorHandler}]
 })
 export class AppModule {}

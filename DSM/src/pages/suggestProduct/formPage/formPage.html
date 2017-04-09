@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+  
+    <ion-title>Add A Product
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+<ion-content>
+   <form #f='ngForm' (ngSubmit)="createTask(f)">
+     <ion-row>
+      
+       <ion-col width-50>
+         <ion-item>
+            <ion-label color="primary" floating>Product Name</ion-label>
+            <ion-input [(ngModel)]="name" name="name"></ion-input>
+          </ion-item>
+          <ion-item>
+             <ion-label color="primary" floating>Product Price</ion-label>
+             <ion-input   [(ngModel)]="price" name="price" type="number"  ></ion-input>
+           </ion-item>
+       </ion-col>
+        <ion-col width-50>
+         <ion-card id="image" padding margin>
+            <img src="http://lorempixel.com/1920/1280">
+       </ion-card>
+       </ion-col>
+       
+
+    
+     </ion-row>
+     <ion-row>
+       <ion-item margin >
+       <ion-label color="primary" floating>Product Description</ion-label>
+       <ion-textarea class="text"  [(ngModel)]="description" name="description"></ion-textarea>
+       </ion-item>
+     </ion-row>
+     <ion-row width-100>
+        <button full margin  ion-button type="submit">Add Product</button>
+     </ion-row>
+   
+   </form>
+     <ion-row>
+        <button full margin ion-button (click)="cancelButton()">Cancel</button>
+     </ion-row>
+</ion-content>
