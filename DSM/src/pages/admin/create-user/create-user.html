@@ -26,13 +26,53 @@
 <ion-list padding>
  <form [formGroup]="slideOneForm"  >
   <ion-item  class="qwe">
-        <ion-label floating>Username</ion-label>
+        <ion-label floating>שם משתמש</ion-label>
     <ion-input  type="text"  formControlName="name"></ion-input>
   </ion-item>
   <ion-item class="pass">
- <ion-label floating>Password</ion-label>
+ <ion-label floating>סיסמה</ion-label>
     <ion-input type="password" formControlName="password"></ion-input>
   </ion-item>
+  <ion-item class="fName">
+ <ion-label floating>שם</ion-label>
+    <ion-input type="text" formControlName="fName"></ion-input>
+  </ion-item>
+    <ion-item class="lName">
+ <ion-label floating>שם משפחה</ion-label>
+    <ion-input type="text" formControlName="fName"></ion-input>
+  </ion-item>
+
+   <ion-item class="email">
+ <ion-label floating>אימייל</ion-label>
+    <ion-input type="text" formControlName="email"></ion-input>
+  </ion-item>
+   <ion-item class="PhoneNo">
+ <ion-label floating>מספר טלפון</ion-label>
+    <ion-input type="number" formControlName="number"></ion-input>
+  </ion-item>
+
+ <ion-item >
+  <ion-label>מגדר</ion-label>
+
+  <ion-select formControlName="gen">
+
+    <ion-option float="left"  value="m" selected="true">נקבה</ion-option>
+    <ion-option  value="f">זכר</ion-option>
+  </ion-select>
+
+</ion-item > 
+<ion-item class="slec">
+  <ion-label>סוג הרשאה</ion-label>
+
+  <ion-select  formControlName="authen">
+    <ion-option class="OP" value="R" selected="true">רגיל</ion-option>
+    <ion-option class="OP"  value="A">אדמין</ion-option>
+     <ion-option class="OP"  value="M">מנהל משמרת</ion-option>
+      <ion-option class="OP"  value="S">ספק</ion-option>
+  </ion-select>
+
+</ion-item>
+
 
 
 <div >

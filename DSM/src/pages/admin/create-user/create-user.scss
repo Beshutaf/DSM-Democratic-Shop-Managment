@@ -1,5 +1,5 @@
 page-create-user {
-.qwe{ 
+/*.qwe{ 
 	 margin-top:50px;
      background-color:transparent;
 	top: calc(100% - 35px);
@@ -7,16 +7,19 @@ page-create-user {
 -moz-box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,1);
 box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,1);
 margin-bottom:5px;
- }
-  .pass{ 
+ }*/
+  .slec,.qwe,.pass,.lName,.fName,.email,.PhoneNo{ 
 //	  height:50px;
      background-color:transparent;
 	top: calc(100% - 35px);
-      -webkit-box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,1);
--moz-box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,1);
-box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,1);
- }
+	 margin-top:5px;
+	 text-align:right;
 
+ }
+.slec .OP{
+	float:left;
+	color:red;
+}
 /*.lgnbtn:hover{
 	outline: none;
 	border: 1px solid red;
@@ -30,6 +33,7 @@ box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,1);
 	left: calc(50% - 150px);
 	z-index: 2;
     text-shadow: 2px 0px 5px black, 0 5px 15px black, 0 0px 7px white;
+
 }
 
 .ttt div{

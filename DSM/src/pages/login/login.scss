@@ -22,6 +22,8 @@ background-image: url("../assets/img/bg.jpg" );
 
 }
  .qwe{ 
+	 text-align:right;
+	 font-weight: bold;
 	 margin-top:50px;
      background-color:transparent;
 	top: calc(100% - 35px);
@@ -31,7 +33,8 @@ box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,1);
 margin-bottom:5px;
  }
   .pass{ 
-//	  height:50px;
+	  	 font-weight: bold;
+	 text-align:right;
      background-color:transparent;
 	top: calc(100% - 35px);
       -webkit-box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,1);

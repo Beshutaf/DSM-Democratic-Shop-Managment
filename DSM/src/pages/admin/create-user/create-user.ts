@@ -23,7 +23,14 @@ export class CreateUserPage {
                                                    public navParams: NavParams,public formBuilder:FormBuilder) {
     this.slideOneForm = formBuilder.group({
         name: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-         password: ['',Validators.required],
+        fName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+        lName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+         email: ['',Validators.required],
+        password: ['',Validators.required],
+                gen: ['',Validators.required],
+                       authen: ['',Validators.required],
+         number: ['',Validators.required]
+   
     });
 }
 
@@ -35,11 +42,14 @@ saveNewUser(){
  let headers = new Headers();
        headers.append('content-Type','application/json');
            let body = {
-      uname : this.slideOneForm.value.name,
-  //    email : "johnDoe@gmail.com",
-      password : this.slideOneForm.value.password
-        
-
+    uname : this.slideOneForm.value.name,
+    fName : this.slideOneForm.value.fName,
+    lName : this.slideOneForm.value.LName,  
+    password : this.slideOneForm.value.password,
+    email : this.slideOneForm.value.email,
+    PhoneNo:this.slideOneForm.value.number,
+    Gender:this.slideOneForm.value.gen,   
+    authen:this.slideOneForm.value.authen
     };
     let options = new RequestOptions({ headers: headers });
     this.http
@@ -48,10 +58,10 @@ saveNewUser(){
        .subscribe(
             data => {
                 let alert = this.alertCtrl.create({
-      title: 'User Name:  '+this.slideOneForm.value.name +"   Was Created",
+      title: "נרשם בהצלחה",
       subTitle:
-        '',
-      buttons: ['OK']
+        this.slideOneForm.value.name+"  נוצר המשתמש ",
+      buttons: ['חזרה']
     });
        alert.present();
               console.log(data);
@@ -63,7 +73,7 @@ saveNewUser(){
       title: 'הרשמת משתמש נכשלה!  '+this.slideOneForm.value.name,
       subTitle:
         'המשתמש המבוקש לא נוצר :יכול להיות כבר קיים בדוק את הנתונים',
-      buttons: ['OK']
+      buttons: ['חזרה']
     });
        alert.present();
               console.log("ERROR!: ", err);
