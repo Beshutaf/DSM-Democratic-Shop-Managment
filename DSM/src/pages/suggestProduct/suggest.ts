@@ -9,7 +9,7 @@ import { ListService } from "./list.service";
   templateUrl: 'suggest.html'
 })
 export class SuggestPage implements OnInit {
-    ngOnInit(){
+ngOnInit(){
       this.productDetails = this.listService.getProducts();
       
       this.listService.productChanged.subscribe((products:Product[])=>{
@@ -41,3 +41,4 @@ export class SuggestPage implements OnInit {
   }
 
 }
+

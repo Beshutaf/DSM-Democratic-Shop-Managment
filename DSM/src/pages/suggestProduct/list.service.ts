@@ -1,10 +1,12 @@
 import { Product } from "./product.model";
 import { EventEmitter, Injectable } from "@angular/core";
 import { Http } from "@angular/http"
+import * as io from 'socket.io-client';
 import { LoadingController, AlertController } from "ionic-angular";
 @Injectable()
 export class ListService {
-        
+    i=1;
+       private socket;
         alerting(){
              let alert = this.alertCtrl.create({
             title: 'error',
@@ -16,7 +18,31 @@ export class ListService {
 
     //http for http requests loadingController for loading animation
     constructor(private http:Http,public loadingController: LoadingController
-    ,private alertCtrl: AlertController){}
+    ,private alertCtrl: AlertController){
+      
+         this.socket = io("https://obscure-reef-53169.herokuapp.com");
+          this.socket.on('product', (productAdd) => {
+            console.log("entered");
+           const product =JSON.parse(productAdd);
+               const productAddition = new Product(product.name,product.description,product.imageUrl,product.Likes);
+               productAddition._id=product._id;
+               console.log(productAdd._id);
+            this.productDetails.push(productAddition);
+           this.productChanged.emit(this.productDetails.slice())
+        
+         
+    });
+    this.socket.on('like',(Product)=>{
+     
+      for(let p of this.productDetails){
+          if(p._id==Product.id){
+              
+              p.Likes=Product.likes;
+          }
+      }
+        this.productChanged.emit(this.productDetails.slice());
+    })
+    }
 //product changed for emitting the product when they are added
 productChanged=new EventEmitter<Product[]>();
 
@@ -25,6 +51,8 @@ productChanged=new EventEmitter<Product[]>();
 
 //returns all the products from the server and sets the animation
   getProducts(){
+     
+       
         let loader = this.loadingController.create({
               content: "getting items"
         });
@@ -37,9 +65,13 @@ productChanged=new EventEmitter<Product[]>();
            else{
              const temp =[];
        for(let product of response.json()){
-              temp.push(new Product(product.name,product.description,product.imageUrl));       
+           
+                 const productadding=new Product(product.name,product.description,product.imageUrl,product.Likes);
+                 productadding._id=product._id;
+              temp.push(productadding);       
             }
         this.productDetails=temp;
+       
         this.productChanged.emit(this.productDetails.slice())
         loader.dismiss();
            }
@@ -53,19 +85,30 @@ productChanged=new EventEmitter<Product[]>();
       
       
   }
+  likeProduct(Product:Product){
+    Product.Likes++;
+   
+     this.http.post("https://obscure-reef-53169.herokuapp.com/suggest/likeProduct",Product)
+     .subscribe((response)=>{
+          this.socket.emit('like-product', {likes:Product.Likes,id:Product._id});  
+     })
+  }
   //adds products for the list and to the server
   addProduct(Product:Product){
         let loader = this.loadingController.create({
         content: "adding item"
     });  
 
-      this.productDetails.push(Product);
+     
 
-      const obj = {name:Product.name,description:Product.description,imageUrl:'http://lorempixel.com/1920/1080/'}
+      const obj = {name:Product.name,description:Product.description,imageUrl:'http://lorempixel.com/1920/1080/',Likes:0}
        loader.present();
       this.http.post("https://obscure-reef-53169.herokuapp.com/suggest/addProduct",obj)
       .subscribe((response)=>{
-          this.productChanged.emit(this.productDetails.slice())
+           Product._id=response.json().id;
+           console.log(Product._id);
+  this.socket.emit('add-product', JSON.stringify(Product));    
+         
            loader.dismiss();
       }),(err)=>{
           console.log("error");

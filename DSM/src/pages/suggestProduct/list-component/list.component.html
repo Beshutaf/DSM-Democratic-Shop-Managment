@@ -1,8 +1,8 @@
 
 <div  class="ion-card" (click)="productDetails()">
     <ion-row>
-            <ion-col width-25 id="imagecol"> <img id="image"src="{{productDetail.image}}" ></ion-col>
-            <ion-col width-30>
+            <ion-col width-20 id="imagecol"> <img id="image"src="{{productDetail.imageUrl}}" ></ion-col>
+            <ion-col width-60>
                 <ion-row class="middleRow" id="middleTitle"  >
                     <p  id="middle">
                         <b>
@@ -14,22 +14,22 @@
                         </b>
                     </p>
                 </ion-row>
-                <ion-row width-30 class ="middleRow"id="middleDescription" >
+                <ion-row class ="middleRow"id="middleDescription" >
                     <p id="desc" >
                         {{productDetail.description}}
                         </p>
                 </ion-row>
               
             </ion-col>
-            <ion-col width-30>
+            <ion-col width-20>
                 <ion-row id="rightIconsTop">
                     <ion-col>
                     <ion-row>
-                           <img class="icons" src="./assets/icons/like-icon.png">
+                           <img class="icons" (click)="onLike();$event.stopPropagation()" src="./assets/icons/like-icon.png">
                         
                     </ion-row>
                     <ion-row >
-                           <p class="numberOf">{{productDetail.likes}}</p>
+                           <p class="numberOf">{{productDetail.Likes}}</p>
                     </ion-row>
                 </ion-col>
                
@@ -40,7 +40,7 @@
                         
                     </ion-row>
                     <ion-row >
-                           <p class="numberOf">{{productDetail.likes}}</p>
+                           <p class="numberOf">{{productDetail.Likes}}</p>
                     </ion-row>
          
                 </ion-col>
