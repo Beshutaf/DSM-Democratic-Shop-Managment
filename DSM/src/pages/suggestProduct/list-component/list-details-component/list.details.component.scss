@@ -1,12 +1,21 @@
 app-list-details{
+ 
     #image{
         margin: auto;
-        max-height: 300px;
+        height: 300px;
     }
     #description{
         width:90%;
         margin:auto;
-       
+        min-height: 200px;
+        
+    }
+    .comment p{
+       white-space: normal;
+    }
+    #description p{
+        width:90%;
+        margin:3px auto;
     }
     #form{
         width:90%;
@@ -17,8 +26,7 @@ app-list-details{
     }
     #name{
         font-size:2em;
-        width:90%;
-        margin:auto;
+        text-align: center;
 
     }
 }

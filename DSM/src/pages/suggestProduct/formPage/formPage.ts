@@ -8,8 +8,6 @@ import { LoadingController } from 'ionic-angular';
   selector: 'page-form',
   templateUrl: 'formPage.html'
 })
-
-
 export class formPage {
   
  
@@ -18,7 +16,7 @@ export class formPage {
   }
   createTask(form :NgForm){
   
-   this.listService.addProduct(new Product(form.value.name,form.value.description,"http://lorempixel.com/1920/1080/"));
+   this.listService.addProduct(new Product(form.value.name,form.value.description,"http://lorempixel.com/1920/1080/",0));
  
    this.navCtrl.pop();
   }
@@ -26,5 +24,4 @@ export class formPage {
     this.navCtrl.pop();
   }
 
-  
 }

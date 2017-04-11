@@ -1,11 +1,13 @@
 export class Product{
     public description:string;
-    public likes:number=0;
+    public Likes:number;
     public name:string;
-    public image:string;
-    constructor(name,description,image){
+    public imageUrl:string;
+    public _id:string;
+    constructor(name,description,imageUrl,Likes){
         this.description=description;
         this.name=name;
-        this.image=image;
+        this.imageUrl=imageUrl;
+        this.Likes=Likes;
     }
 }
