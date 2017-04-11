@@ -8,6 +8,8 @@ import { LoadingController } from 'ionic-angular';
   selector: 'page-form',
   templateUrl: 'formPage.html'
 })
+
+
 export class formPage {
   
  
@@ -24,4 +26,5 @@ export class formPage {
     this.navCtrl.pop();
   }
 
+  
 }

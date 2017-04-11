@@ -37,15 +37,24 @@ save(){
        .subscribe(
             data => {
               console.log(data);
+                    var retrievedData = localStorage.getItem("UserN");
+    //  retrievedData=retrievedData.replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,"");
+
+this.slideOneForm.value.name = this.slideOneForm.value.name.replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,"");
+
+   localStorage.setItem("UserN", JSON.stringify(this.slideOneForm.value.name));//date
+   localStorage.setItem("authType", JSON.stringify(this.slideOneForm.value.authen));//date
+    
                 this.navCtrl.push(HomePage);
+
             },
             err => {
   let alert = this.alertCtrl.create({
-      title: 'Login faild!  '+this.slideOneForm.value.name,
+      title: this.slideOneForm.value.name+'  הכניסה נכשלה ',
       subTitle: 
  
-        ' check login info and connection contact admin',
-      buttons: ['OK']
+        '     בדוק את הנתונים בשנית, וודא שישנו חיבור לאינטרנט ',
+      buttons: ['חזרה']
     });
        alert.present();
               console.log("ERROR!: ", err);

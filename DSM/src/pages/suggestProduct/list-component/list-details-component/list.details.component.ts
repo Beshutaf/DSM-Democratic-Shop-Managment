@@ -21,7 +21,8 @@ export class ListDetailsComponent implements OnInit {
 
     @Input() productDetail:Product;
     createComment(comment){
-      this.comment.push(new comments( "mustafa", comment.value.comment));
+      var retrievedData = localStorage.getItem("UserN");
+      this.comment.push(new comments(retrievedData.replace(/"/g,""), comment.value.comment));
     }
     constructor(private navCtrl:NavController,private navParams:NavParams){}
        
