@@ -41,10 +41,12 @@ margin-bottom:15px;
 -moz-box-shadow: inset 0px 0px 9px -1px #5379fa;
 box-shadow: inset 0px 0px 9px -1px#5379fa;
  }
-.login input[type=passwrod]:focus{
+.login input[type=passwrod]:focus,input[type=text]:focus{
 	outline: none;
-	border: 1px solid black;
+	border: 0px solid black;
     box-shadow:0px;  
+	 color:black;
+	
 }
 /*.lgnbtn:hover{
 	outline: none;
@@ -98,6 +100,7 @@ background-color: #5379fa;
       }
 .lgnbtn button{
 //   background-color:transparent;
+border:0px solid #5379fa;
 background-color:transparent;
 }
 .lgnbtn:hover{
