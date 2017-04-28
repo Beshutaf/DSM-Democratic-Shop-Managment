@@ -9,6 +9,7 @@ import { ListService } from "../list.service";
 })
 export class listComponent{
     @Input() productDetail:Product;
+    Liked:Boolean=false;
     constructor(private navCtrl:NavController,private listService:ListService){}
     productDetails(){
         this.navCtrl.push(ListDetailsComponent,{
@@ -18,6 +19,14 @@ export class listComponent{
         });
     }
     onLike(){
+       
+       if (this.Liked ==true)
+       {
+
+       }
+       else{
         this.listService.likeProduct(this.productDetail);
+    }
+    this.Liked=!this.Liked;
     }
 }
