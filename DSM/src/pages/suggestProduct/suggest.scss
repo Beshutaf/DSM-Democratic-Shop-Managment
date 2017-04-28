@@ -1,4 +1,8 @@
 page-suggest {
+    .feed-content
+	{
+		background-color: color($colors, background, base);
+    }
 #plus-icon{
     font-size:52px;
     color:black;

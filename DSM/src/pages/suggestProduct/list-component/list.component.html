@@ -1,61 +1,36 @@
 
-<div  class="ion-card" (click)="productDetails()">
-    <ion-row>
-            <ion-col width-20 id="imagecol"> <img id="image"src="{{productDetail.imageUrl}}" ></ion-col>
-            <ion-col width-60>
-                <ion-row class="middleRow" id="middleTitle"  >
-                    <p  id="middle">
-                        <b>
-                            <i>
-                                <u>
-                    {{productDetail.name}}
-                                </u>
-                            </i>
-                        </b>
-                    </p>
-                </ion-row>
-                <ion-row class ="middleRow"id="middleDescription" >
-                    <p id="desc" >
-                        {{productDetail.description}}
-                        </p>
-                </ion-row>
-              
-            </ion-col>
-            <ion-col width-20>
-                <ion-row id="rightIconsTop">
-                    <ion-col>
-                    <ion-row>
-                           <img class="icons" (click)="onLike();$event.stopPropagation()" src="./assets/icons/like-icon.png">
-                        
-                    </ion-row>
-                    <ion-row >
-                           <p class="numberOf">{{productDetail.Likes}}</p>
-                    </ion-row>
-                </ion-col>
-               
-                <ion-col>
-                  
-                    <ion-row>
-                           <img class="icons"src="./assets/icons/dislike-icon.png">
-                        
-                    </ion-row>
-                    <ion-row>
-                           <p class="numberOf">{{productDetail.Likes}}</p>
-                    </ion-row>
-         
-                </ion-col>
-                
-                 </ion-row>
-                 <ion-row id="rightIconsBottom">
-                     <ion-col  class="Icons"><img src="./assets/icons/pending-icon.png"></ion-col>
-                     <ion-col  class="Icons"><img src="./assets/icons/pending-icon.png"></ion-col>
-                     <ion-col  class="Icons"><img src="./assets/icons/comment-icon.png"></ion-col>
-                     
-                 </ion-row>
-            </ion-col>
-            
-        </ion-row>
-
+<div  class="feed-item" (click)="productDetails()">
+        <ion-card>
+      <img src="http://lorempixel.com/1920/1080">
+      <ion-card-content>
+        <ion-card-title class="item-title">
+          {{productDetail.name}}
+        </ion-card-title>
+        <p class="item-text">
+          {{productDetail.description}}
+        </p>
+      </ion-card-content>
+      <ion-row no-padding class="actions-row">
+        <ion-col no-padding width-30 text-left>
+          <button class="action-button" ion-button clear small icon-left>
+            <ion-icon isActive="false" name='heart'></ion-icon>
+            {{productDetail.Likes}} Likes
+          </button>
+        </ion-col>
+        <ion-col no-padding width-45 text-center>
+          <button (click)="openCommentBox()"class="action-button" ion-button clear small icon-left>
+            <ion-icon name='chatbubbles'></ion-icon>
+            3 Comments
+          </button>
+        </ion-col>
+        <ion-col no-padding width-25 text-right>
+          <button class="action-button" ion-button clear small (click)="sharePost(post)" icon-left>
+            <ion-icon name='share-alt'></ion-icon>
+            Share
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
    
    
    

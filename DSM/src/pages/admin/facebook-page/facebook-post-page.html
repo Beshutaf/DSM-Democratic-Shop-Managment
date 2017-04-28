@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar class="background">
+  
+    <ion-title>Facebook Posts Page</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <form #f='ngForm' (ngSubmit)="createTask(f)">
+
+        <ion-item margin >
+            <ion-label color="primary" floating>First Facebook Link</ion-label>
+            <ion-input class="text" ngModel name="firstFacebook"></ion-input>
+        </ion-item>
+        <ion-item margin >
+            <ion-label color="primary" floating>Second Facebook Link</ion-label>
+            <ion-input class="text"  ngModel name="secondFacebook"></ion-input>
+        </ion-item>
+         <ion-item margin >
+            <ion-label color="primary" floating>Third Facebook Link</ion-label>
+            <ion-input class="text"  ngModel name="thirdFacebook"></ion-input>
+        </ion-item>
+  
+    
+    
+     <ion-row width-100>
+        <button full margin  ion-button type="submit">Add Posts</button>
+     </ion-row>
+   
+   </form>
+   <ion-row width-100>
+           <button full margin ion-button (click)="closePage()">Cancel</button>
+   </ion-row>
+</ion-content>

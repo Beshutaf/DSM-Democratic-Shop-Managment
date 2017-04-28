@@ -15,6 +15,8 @@ import { listComponent } from "../pages/suggestProduct/list-component/list.compo
 import { formPage } from "../pages/suggestProduct/formPage/formPage";
 import { SuggestPage } from "../pages/suggestProduct/suggest";
 import { ListService } from "../pages/suggestProduct/list.service";
+import { FacebookPostPage } from "../pages/admin/facebook-page/facebook-post-page";
+import { FacebookListComponent } from "../pages/admin/facebook-page/facebook-list-component/facebook-list.component";
 @NgModule({
   declarations: [
     MyApp,
@@ -29,7 +31,9 @@ import { ListService } from "../pages/suggestProduct/list.service";
     ListDetailsComponent,
      listComponent,
     formPage,
-    SuggestPage
+    SuggestPage,
+    FacebookPostPage,
+    FacebookListComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -47,7 +51,8 @@ import { ListService } from "../pages/suggestProduct/list.service";
     PushPage,
      formPage,
      SuggestPage,
-    ListDetailsComponent
+    ListDetailsComponent,
+    FacebookPostPage
   ],
   providers: [    ListService,{provide: ErrorHandler,
     
