@@ -4,7 +4,7 @@ import { NavController,LoadingController  } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import {Http,Headers, RequestOptions} from '@angular/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {DataService} from '../../providers/data-service/data-service';
+
 import 'rxjs/Rx';
 @Component({
   selector: 'page-login',
@@ -46,7 +46,7 @@ save(){
        .subscribe(
             data => {
               console.log(data);
-                    var retrievedData = localStorage.getItem("UserN");
+                  
     //  retrievedData=retrievedData.replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,"");
 
 this.slideOneForm.value.name = this.slideOneForm.value.name.replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,"");

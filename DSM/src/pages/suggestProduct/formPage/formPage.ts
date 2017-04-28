@@ -3,7 +3,6 @@ import { NavController } from 'ionic-angular';
 import { NgForm } from "@angular/forms";
 import { Product } from "../product.model";
 import { ListService } from "../list.service";
-import { LoadingController } from 'ionic-angular';
 @Component({
   selector: 'page-form',
   templateUrl: 'formPage.html'

@@ -1,7 +1,6 @@
 
 import { Injectable, EventEmitter } from "@angular/core";
 import { Http } from "@angular/http";
-import { Product } from "../../product.model";
 import { comments } from "./comments.model";
 import * as io from 'socket.io-client';
 @Injectable()

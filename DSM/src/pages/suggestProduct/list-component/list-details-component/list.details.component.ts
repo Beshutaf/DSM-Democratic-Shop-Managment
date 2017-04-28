@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from "@angular/core"
 import { Product } from "../../product.model";
-import { NavController, NavParams, Scroll, Content } from "ionic-angular";
+import { NavController, NavParams, Content } from "ionic-angular";
 import { comments } from "./comments.model";
 import { CommentsService } from "./comment.service";
 @Component({
