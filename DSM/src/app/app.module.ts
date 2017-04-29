@@ -18,6 +18,7 @@ import { ListService } from "../pages/suggestProduct/list.service";
 import { FacebookPostPage } from "../pages/admin/facebook-page/facebook-post-page";
 import { FacebookListComponent } from "../pages/admin/facebook-page/facebook-list-component/facebook-list.component";
 import { ModalcommentPage } from "../pages/suggestProduct/list-component/modalcomment/modalcomment";
+import { ParallaxHeader } from "../components/parallax-header/parallax-header";
 @NgModule({
   declarations: [
     MyApp,
@@ -35,7 +36,8 @@ import { ModalcommentPage } from "../pages/suggestProduct/list-component/modalco
     SuggestPage,
     FacebookPostPage,
     FacebookListComponent,
-    ModalcommentPage
+    ModalcommentPage,
+    ParallaxHeader
   ],
   imports: [
     IonicModule.forRoot(MyApp),
