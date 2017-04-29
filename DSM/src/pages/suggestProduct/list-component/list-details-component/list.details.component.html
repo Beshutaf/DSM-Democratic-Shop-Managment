@@ -37,16 +37,6 @@
     </ion-row>
 <hr>
     
-        <ion-item class="comment"  *ngFor="let c of comment.slice().reverse()"><b><u>{{c.name}}:</u></b><p >{{c.comment}}</p><p id="date">fri test test test</p></ion-item>
-        
-        <ion-row>
-      <form #f='ngForm' (ngSubmit)="createComment(f)" id="form" >
-        <ion-item   >
-       <ion-label color="primary" floating>Product Description</ion-label>
-       <ion-input  ngModel name="comment" ></ion-input>
-       </ion-item>
-       <button  ion-button  full type="submit" > Add A Comment</button>
-        </form>
-    </ion-row>
+       
 
 </ion-content>

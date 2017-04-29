@@ -13,7 +13,7 @@ import 'rxjs/Rx';
 export class LoginPage {
 
     submitAttempt: boolean = false;
-
+    viewState='login';
   static get parameter(){
   return [];
 }
