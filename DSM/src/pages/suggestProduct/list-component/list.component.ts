@@ -18,7 +18,8 @@ export class listComponent{
         this.navCtrl.push(ListDetailsComponent,{
             name:this.productDetail.name,
             description:this.productDetail.description,
-            id:this.productDetail._id
+            id:this.productDetail._id,
+            imageUrl:this.productDetail.imageUrl
         });
     }
     onLike(){

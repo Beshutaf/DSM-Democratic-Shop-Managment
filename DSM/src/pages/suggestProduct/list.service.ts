@@ -106,7 +106,7 @@ productChanged=new EventEmitter<Product[]>();
 
      
 
-      const obj = {name:Product.name,description:Product.description,imageUrl:'http://lorempixel.com/1920/1080/',Likes:0}
+      const obj = {name:Product.name,description:Product.description,imageUrl:Product.imageUrl,Likes:0}
        loader.present();
       this.http.post("https://obscure-reef-53169.herokuapp.com/suggest/addProduct",obj)
       .subscribe((response)=>{

@@ -21,8 +21,9 @@
            </ion-item>
        </ion-col>
         <ion-col width-50>
-         <ion-card id="image" padding margin>
-            <img src="http://lorempixel.com/1920/1280">
+         <ion-card (click)="takePicture()" id="image" padding margin>
+           <img src="./assets/images/addImage.png" id="imageWidth" *ngIf="!base64Image">
+           <img id="afterUploadImage"[src]="base64Image" *ngIf="base64Image" />
        </ion-card>
        </ion-col>
        

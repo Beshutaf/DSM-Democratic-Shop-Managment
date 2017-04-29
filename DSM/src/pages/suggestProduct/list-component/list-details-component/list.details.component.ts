@@ -11,12 +11,13 @@ export class ListDetailsComponent implements OnInit {
     name:string;
     description:string;
     _id:string;
+    imageUrl:string;
 
         ngOnInit(){
             
            this.name=this.navParams.get("name");
            this.description=this.navParams.get("description");
-           
+           this.imageUrl=this.navParams.get("imageUrl");
            
        
         }
