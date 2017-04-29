@@ -11,12 +11,14 @@ import 'rxjs/Rx';
   templateUrl: 'login.html'
 })
 export class LoginPage {
-
+ login: FormGroup;
     submitAttempt: boolean = false;
     viewState='login';
   static get parameter(){
   return [];
 }
+
+
     slideOneForm: FormGroup;
   constructor(public navCtrl: NavController,public http: Http,public loadingCtrl: LoadingController,public  alertCtrl: AlertController,public formBuilder:FormBuilder) {
     this.slideOneForm = formBuilder.group({
@@ -26,11 +28,10 @@ export class LoginPage {
   }
 save(){
  
-    this.loadingCtrl.create({
-      content: 'Please wait...',
-      duration: 3000,
-      dismissOnPageChange: true
-    }).present();
+    let loader = this.loadingCtrl.create({
+              content: "Please wait ..."
+        });
+       loader.present();
  
       let headers = new Headers();
        headers.append('content-Type','application/json');
@@ -46,7 +47,7 @@ save(){
        .subscribe(
             data => {
               console.log(data);
-                  
+                 
     //  retrievedData=retrievedData.replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,"");
 
 this.slideOneForm.value.name = this.slideOneForm.value.name.replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,"");
@@ -55,9 +56,10 @@ this.slideOneForm.value.name = this.slideOneForm.value.name.replace(/[@.,\/#!$%\
    localStorage.setItem("authType", JSON.stringify(this.slideOneForm.value.authen));//date
     
                 this.navCtrl.push(HomePage);
-
+  loader.dismiss();
             },
             err => {
+                loader.dismiss();
   let alert = this.alertCtrl.create({
       title: this.slideOneForm.value.name+'  הכניסה נכשלה ',
       subTitle: 

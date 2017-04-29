@@ -1,111 +1,163 @@
 page-login {
  
  //background-image: "img/bg.jpg";
- .login{//
+//  .login{//
   
-background-image: url("../assets/img/bg.jpg" );
+// background-image: url("../assets/img/bg.jpg" );
 
- //<img src="img/card-saopaolo.png"/>
-    	z-index: 0;
-	 background-size: 100% 100%;
- }
- /*ion-card{
+//  //<img src="img/card-saopaolo.png"/>
+//     	z-index: 0;
+// 	 background-size: 100% 100%;
+//  }
+//  /*ion-card{
 
-   height:25%;
-   width:25%;
-   margin:0 auto;
-     box-shadow:none;
- }*/
- h3{
-    color:white;
-	text-shadow: 2px 0px 5px black, 0 5px 15px black, 0 0px 7px white;
+//    height:25%;
+//    width:25%;
+//    margin:0 auto;
+//      box-shadow:none;
+//  }*/
+//  h3{
+//     color:white;
+// 	text-shadow: 2px 0px 5px black, 0 5px 15px black, 0 0px 7px white;
 
-}
- .qwe{ 
-	 text-align:right;
-	 font-weight: bold;
-	 margin-top:20px;
-     background-color:transparent;
-	top: calc(100% - 35px);
-      -webkit-box-shadow: inset 0px 0px 9px -1px #5379fa;
--moz-box-shadow: inset 0px 0px 9px -1px #5379fa;
-box-shadow: inset 0px 0px 9px -1px #5379fa;
-margin-bottom:15px;
- }
-  .pass{ 
-	  	 font-weight: bold;
-	 text-align:right;
-     background-color:transparent;
-	top: calc(100% - 35px);
-      -webkit-box-shadow: inset 0px 0px 9px -1px #5379fa;
--moz-box-shadow: inset 0px 0px 9px -1px #5379fa;
-box-shadow: inset 0px 0px 9px -1px#5379fa;
- }
-.login input[type=passwrod]:focus,input[type=text]:focus{
-	outline: none;
-	border: 0px solid black;
-    box-shadow:0px;  
-	 color:black;
+// }
+//  .qwe{ 
+// 	 text-align:right;
+// 	 font-weight: bold;
+// 	 margin-top:20px;
+//      background-color:transparent;
+// 	top: calc(100% - 35px);
+//       -webkit-box-shadow: inset 0px 0px 9px -1px #5379fa;
+// -moz-box-shadow: inset 0px 0px 9px -1px #5379fa;
+// box-shadow: inset 0px 0px 9px -1px #5379fa;
+// margin-bottom:15px;
+//  }
+//   .pass{ 
+// 	  	 font-weight: bold;
+// 	 text-align:right;
+//      background-color:transparent;
+// 	top: calc(100% - 35px);
+//       -webkit-box-shadow: inset 0px 0px 9px -1px #5379fa;
+// -moz-box-shadow: inset 0px 0px 9px -1px #5379fa;
+// box-shadow: inset 0px 0px 9px -1px#5379fa;
+//  }
+// .login input[type=passwrod]:focus,input[type=text]:focus{
+// 	outline: none;
+// 	border: 0px solid black;
+//     box-shadow:0px;  
+// 	 color:black;
 	
-}
-/*.lgnbtn:hover{
-	outline: none;
-	border: 1px solid red;
-    box-shadow:0px;
-} */
+// }
+// /*.lgnbtn:hover{
+// 	outline: none;
+// 	border: 1px solid red;
+//     box-shadow:0px;
+// } */
 
-.ttt{
+// .ttt{
 	
-	float:right;
-	margin-right:25px;
-  //position:absolute;
-//	top: calc(10% - 35px);
-	//left: calc(50% - 150px);
-	//right: clac(10%- 35px);
-	z-index: 2;
-    text-shadow: 2px 0px 5px black, 0 5px 15px black, 0 0px 7px blue;
-}
+// 	float:right;
+// 	margin-right:25px;
+//   //position:absolute;
+// //	top: calc(10% - 35px);
+// 	//left: calc(50% - 150px);
+// 	//right: clac(10%- 35px);
+// 	z-index: 2;
+//     text-shadow: 2px 0px 5px black, 0 5px 15px black, 0 0px 7px blue;
+// }
 
-.ttt div{
-//	float: left;
-	color: white;
-	font-family: 'Exo', sans-serif;
-	font-size: 30px;
-	font-weight: 200;
-}
+// .ttt div{
+// //	float: left;
+// 	color: white;
+// 	font-family: 'Exo', sans-serif;
+// 	font-size: 30px;
+// 	font-weight: 200;
+// }
 
-.ttt div span{
-	color: #5379fa !important;
-}
+// .ttt div span{
+// 	color: #5379fa !important;
+// }
 
 
-.lgnbtn{	
-      -webkit-box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,1);
--moz-box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,1);
-box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,1);
-margin-top:30px;
-//	background: transparent;
+// .lgnbtn{	
+//       -webkit-box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,1);
+// -moz-box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,1);
+// box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,1);
+// margin-top:30px;
+// //	background: transparent;
 
-	cursor: pointer;
-	//border-radius: 2px;
-	font-family: 'Exo', sans-serif;
-	font-size: 16px;
-	font-weight: 400;
-height:35px;
-background-color: #5379fa;
+// 	cursor: pointer;
+// 	//border-radius: 2px;
+// 	font-family: 'Exo', sans-serif;
+// 	font-size: 16px;
+// 	font-weight: 400;
+// height:35px;
+// background-color: #5379fa;
 
-   // opacity: 0.5;
-	 border-radius: 10px;
-    //  text-shadow: 2px 0px 5px black, 0 5px 15px white, 0 0px 7px blue;
-      }
-.lgnbtn button{
-//   background-color:transparent;
-border:0px solid #5379fa;
-background-color:transparent;
-}
-.lgnbtn:hover{
-  // border: 2px solid black;
-   opacity: 0.7;
-   background: #5379fa;
-}
+//    // opacity: 0.5;
+// 	 border-radius: 10px;
+//     //  text-shadow: 2px 0px 5px black, 0 5px 15px white, 0 0px 7px blue;
+//       }
+// .lgnbtn button{
+// //   background-color:transparent;
+// border:0px solid #5379fa;
+// background-color:transparent;
+// }
+// .lgnbtn:hover{
+//   // border: 2px solid black;
+//    opacity: 0.7;
+//    background: #5379fa;
+// }
+  background: color($colors, light);
+    background-size: cover;
+    img {
+        margin-top: 50px;
+    }
+    ion-input {
+        background: transparent;
+        color: #ddd;
+        font-size: 14px;
+        text-align: center;
+        
+        &::-webkit-input-placeholder {
+            color: #ddd;
+            text-align: center;
+            font-size: 14px;
+        }
+        input{
+            margin-right: 0px;
+            text-align: center;
+                padding-right: 0px !important;
+            }
+    }
+    .first-input {
+        input {
+            font-size: 24px;
+            &::-webkit-input-placeholder {
+                font-size: 24px;
+            }
+        }
+    }
+    ion-list {
+        margin-top: 30px;
+    }
+    ion-item {
+        padding-left: 0px;
+        background-color: transparent;
+        color: #ddd;
+        padding-bottom: 10px !important;
+        margin-bottom: 10px;
+        &:first-child{
+                    border-top: 0px !important;
+                }
+
+                .item-inner{
+                    padding-right: 0px !important;
+                }
+    }
+	#login-button{
+		width:250px;
+		font-weight: bold;
+	}
+
 }
