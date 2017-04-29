@@ -11,6 +11,7 @@ import { SuggestPage } from "../suggestProduct/suggest";
 
 
 @Component({
+  selector:"page-home",
   templateUrl: 'home.html'
 })
 export class HomePage {

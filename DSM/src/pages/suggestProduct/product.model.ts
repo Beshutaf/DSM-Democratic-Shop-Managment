@@ -3,6 +3,7 @@ export class Product{
     public Likes:number;
     public name:string;
     public imageUrl:string;
+    public commentsNumber:number;
     public _id:string;
     constructor(name,description,imageUrl,Likes){
         this.description=description;

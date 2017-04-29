@@ -17,6 +17,7 @@ import { SuggestPage } from "../pages/suggestProduct/suggest";
 import { ListService } from "../pages/suggestProduct/list.service";
 import { FacebookPostPage } from "../pages/admin/facebook-page/facebook-post-page";
 import { FacebookListComponent } from "../pages/admin/facebook-page/facebook-list-component/facebook-list.component";
+import { ModalcommentPage } from "../pages/suggestProduct/list-component/modalcomment/modalcomment";
 @NgModule({
   declarations: [
     MyApp,
@@ -33,7 +34,8 @@ import { FacebookListComponent } from "../pages/admin/facebook-page/facebook-lis
     formPage,
     SuggestPage,
     FacebookPostPage,
-    FacebookListComponent
+    FacebookListComponent,
+    ModalcommentPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -52,7 +54,8 @@ import { FacebookListComponent } from "../pages/admin/facebook-page/facebook-lis
      formPage,
      SuggestPage,
     ListDetailsComponent,
-    FacebookPostPage
+    FacebookPostPage,
+    ModalcommentPage
   ],
   providers: [    ListService,{provide: ErrorHandler,
     

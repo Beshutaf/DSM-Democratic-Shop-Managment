@@ -68,6 +68,8 @@ productChanged=new EventEmitter<Product[]>();
            
                  const productadding=new Product(product.name,product.description,product.imageUrl,product.Likes);
                  productadding._id=product._id;
+                 productadding.commentsNumber=product.comments.length;
+                
               temp.push(productadding);       
             }
         this.productDetails=temp;
@@ -84,6 +86,9 @@ productChanged=new EventEmitter<Product[]>();
   initializeArray(){
       
       
+  }
+  DisLikeProduct(Product:Product){
+    Product.Likes--;
   }
   likeProduct(Product:Product){
     Product.Likes++;

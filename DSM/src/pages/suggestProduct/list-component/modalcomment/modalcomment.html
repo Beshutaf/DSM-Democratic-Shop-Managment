@@ -1,0 +1,39 @@
+
+  <ion-header>
+    <ion-row>
+    <ion-col width-85><h3 id="titleh3">{{commentsNumber}} Comments</h3></ion-col>
+    <ion-col width-15>
+        <ion-icon (click)="return()" class ="closeIcon"name="close">
+          
+        </ion-icon>
+    </ion-col>
+  </ion-row>
+</ion-header>
+
+<ion-content #desc padding class="getstart">
+
+
+ 
+   <ion-item  class="comment"  *ngFor="let c of comment.slice().reverse()">
+     <b>{{c.name}}</b>
+     <p id="textComment" >{{c.comment}}</p><p id="date">fri test test test</p></ion-item>
+</ion-content>
+<ion-footer id="ionfooter">
+ <form #f='ngForm' (ngSubmit)="createComment(f)" id="form" >
+   <ion-row id="commentForm">
+      
+    <ion-col width-90 id="input">
+      
+ <ion-item>
+    <ion-input required ngModel name="comment" placeholder="Clear Input" clearInput></ion-input>
+  </ion-item>
+    </ion-col>
+    <ion-col width-10 id="send">
+<button  id="sendIcon"  ion-button clear small  icon-left>
+        <ion-icon name="send"></ion-icon>
+        </button>
+    </ion-col>
+      
+  </ion-row>
+</form>
+</ion-footer>
