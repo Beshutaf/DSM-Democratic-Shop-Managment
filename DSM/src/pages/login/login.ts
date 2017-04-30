@@ -55,7 +55,7 @@ this.slideOneForm.value.name = this.slideOneForm.value.name.replace(/[@.,\/#!$%\
    localStorage.setItem("UserN", JSON.stringify(this.slideOneForm.value.name));//date
    localStorage.setItem("authType", JSON.stringify(this.slideOneForm.value.authen));//date
     
-                this.navCtrl.push(HomePage);
+                this.navCtrl.setRoot(HomePage);
   loader.dismiss();
             },
             err => {
