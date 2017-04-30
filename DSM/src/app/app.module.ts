@@ -19,6 +19,7 @@ import { FacebookPostPage } from "../pages/admin/facebook-page/facebook-post-pag
 import { FacebookListComponent } from "../pages/admin/facebook-page/facebook-list-component/facebook-list.component";
 import { ModalcommentPage } from "../pages/suggestProduct/list-component/modalcomment/modalcomment";
 import { ParallaxHeader } from "../components/parallax-header/parallax-header";
+import { FacebookService } from "../pages/admin/facebook-page/facebook.service";
 @NgModule({
   declarations: [
     MyApp,
@@ -59,7 +60,7 @@ import { ParallaxHeader } from "../components/parallax-header/parallax-header";
     FacebookPostPage,
     ModalcommentPage
   ],
-  providers: [    ListService,{provide: ErrorHandler,
+  providers: [ FacebookService,   ListService,{provide: ErrorHandler,
     
      useClass: IonicErrorHandler}]
 })

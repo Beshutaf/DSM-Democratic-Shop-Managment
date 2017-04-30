@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FacebookService } from "../admin/facebook-page/facebook.service";
 
 
 @Component({
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: 'hello-ionic.html'
 })
 export class HelloIonicPage {
-  constructor() {
-
+  constructor(private facebookService:FacebookService) {
+    
   }
 }
