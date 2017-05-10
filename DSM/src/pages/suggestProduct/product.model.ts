@@ -5,10 +5,12 @@ export class Product{
     public imageUrl:string;
     public commentsNumber:number;
     public _id:string;
-    constructor(name,description,imageUrl,Likes){
+    public liked:boolean;
+    constructor(name,description,imageUrl,Likes,liked){
         this.description=description;
         this.name=name;
         this.imageUrl=imageUrl;
         this.Likes=Likes;
+        this.liked=liked;
     }
 }

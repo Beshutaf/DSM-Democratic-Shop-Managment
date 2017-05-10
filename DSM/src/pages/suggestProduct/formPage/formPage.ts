@@ -69,7 +69,7 @@ export class formPage {
   }
   createTask(form :NgForm){
   
-   this.listService.addProduct(new Product(form.value.name,form.value.description,this.base64Image,0));
+   this.listService.addProduct(new Product(form.value.name,form.value.description,this.base64Image,0,false));
  
    this.navCtrl.pop();
   }

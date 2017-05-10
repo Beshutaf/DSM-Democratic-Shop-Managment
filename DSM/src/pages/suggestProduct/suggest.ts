@@ -14,7 +14,9 @@ ngOnInit(){
       
       this.listService.productChanged.subscribe((products:Product[])=>{
         this.productDetails=products;
-
+        for(let product of this.productDetails){
+          console.log(product.liked);
+        }
       })
     }
 

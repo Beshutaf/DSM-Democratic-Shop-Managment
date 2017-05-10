@@ -24,14 +24,14 @@ export class listComponent{
     }
     onLike(){
        
-       if (this.Liked ==true)
+       if (this.productDetail.liked ==true)
        {
         this.listService.DisLikeProduct(this.productDetail);
        }
        else{
         this.listService.likeProduct(this.productDetail);
     }
-    this.Liked=!this.Liked;
+    this.productDetail.liked=!this.productDetail.liked;
 }
 openCommentBox(){
   let modal = this.modalCtrl.create(ModalcommentPage,{id:this.productDetail._id});

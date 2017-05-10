@@ -24,7 +24,7 @@ export class ListService {
           this.socket.on('product', (productAdd) => {
             console.log("entered");
            const product =JSON.parse(productAdd);
-               const productAddition = new Product(product.name,product.description,product.imageUrl,product.Likes);
+               const productAddition = new Product(product.name,product.description,product.imageUrl,product.Likes,false);
                productAddition._id=product._id;
                console.log(productAdd._id);
             this.productDetails.push(productAddition);
@@ -33,6 +33,16 @@ export class ListService {
          
     });
     this.socket.on('like',(Product)=>{
+     
+      for(let p of this.productDetails){
+          if(p._id==Product.id){
+              
+              p.Likes=Product.likes;
+          }
+      }
+        this.productChanged.emit(this.productDetails.slice());
+    })
+        this.socket.on('dislike',(Product)=>{
      
       for(let p of this.productDetails){
           if(p._id==Product.id){
@@ -65,8 +75,13 @@ productChanged=new EventEmitter<Product[]>();
            else{
              const temp =[];
        for(let product of response.json()){
-           
-                 const productadding=new Product(product.name,product.description,product.imageUrl,product.Likes);
+           let liked:boolean;
+                if(product.likedUsers.indexOf(localStorage.getItem("UserN").replace(/"/g,""))>-1){
+                    liked=true;
+                }
+                else
+                    liked=false
+                 const productadding=new Product(product.name,product.description,product.imageUrl,product.Likes,liked);
                  productadding._id=product._id;
                  productadding.commentsNumber=product.comments.length;
                 
@@ -89,11 +104,15 @@ productChanged=new EventEmitter<Product[]>();
   }
   DisLikeProduct(Product:Product){
     Product.Likes--;
+     this.http.post("https://obscure-reef-53169.herokuapp.com/suggest/dislikeProduct",{_id:Product._id,user:localStorage.getItem("UserN").replace(/"/g,"")})
+     .subscribe((response)=>{
+          this.socket.emit('dislike-product', {likes:Product.Likes,id:Product._id});  
+     })
   }
   likeProduct(Product:Product){
     Product.Likes++;
    
-     this.http.post("https://obscure-reef-53169.herokuapp.com/suggest/likeProduct",Product)
+     this.http.post("https://obscure-reef-53169.herokuapp.com/suggest/likeProduct",{_id:Product._id,user:localStorage.getItem("UserN").replace(/"/g,"")})
      .subscribe((response)=>{
           this.socket.emit('like-product', {likes:Product.Likes,id:Product._id});  
      })
