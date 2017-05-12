@@ -27,8 +27,8 @@ export class CreateUserPage {
         lName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
          email: ['',Validators.required],
         password: ['',Validators.required],
-                gen: ['',Validators.required],
-                       authen: ['',Validators.required],
+        gen: ['',Validators.required],
+         authen: ['',Validators.required],
          number: ['',Validators.required]
    
     });

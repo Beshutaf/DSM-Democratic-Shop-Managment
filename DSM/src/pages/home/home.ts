@@ -8,7 +8,7 @@ import { HelloIonicPage } from '../hello-ionic/hello-ionic';
 import { ListPage } from '../list/list';
 import { AdminPage } from "../admin/admin-panel";
 import { SuggestPage } from "../suggestProduct/suggest";
-
+import { ViewusersPage} from "../viewusers/viewusers";
 
 @Component({
   selector:"page-home",
@@ -32,7 +32,8 @@ export class HomePage {
     this.pages = [
       { title: 'Hello Ionic', component: HelloIonicPage },
       { title: 'My First List', component: ListPage },
-      {title: 'Admin',component:AdminPage}
+      {title: 'Admin',component:AdminPage},
+       { title: 'Contacts', component: ViewusersPage }
     ];
   }
 
@@ -63,6 +64,11 @@ export class HomePage {
   openSuggestedProduct(){
        this.menu.close();
     this.nav.setRoot(SuggestPage);
+
+  }
+    openEditPage(){
+       this.menu.close();
+    this.nav.push(ViewusersPage);
 
   }
 }

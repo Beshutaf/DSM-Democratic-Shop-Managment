@@ -4,7 +4,7 @@ import { Nav } from "ionic-angular";
 import { PushPage } from "./push-page/push-page";
 import { CreateUserPage } from "./create-user/create-user";
 import { FacebookPostPage } from "./facebook-page/facebook-post-page";
-
+import { EditPage } from "./edit/edit";
 
 @Component({
   selector: 'page-admin',
@@ -24,5 +24,10 @@ export class AdminPage {
   facebookPostPage(){
     
     this.nav.push(FacebookPostPage);
+
+  }
+    editPostPage(){
+    
+ this.nav.push(EditPage);
   }
 }
