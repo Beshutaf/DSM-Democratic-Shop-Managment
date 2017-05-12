@@ -139,4 +139,11 @@ productChanged=new EventEmitter<Product[]>();
       }
    
   }
+  deleteProduct(id:String){
+      
+      this.http.post("https://obscure-reef-53169.herokuapp.com/suggest/deleteProduct",{id:id}).subscribe(()=>{
+          console.log("deleted")
+      })
+
+  }
 }
