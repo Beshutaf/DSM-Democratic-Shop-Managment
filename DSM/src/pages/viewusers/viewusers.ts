@@ -27,8 +27,8 @@ export class ViewusersPage {
         }
 
   save(){
-        let loader = this.loadingController.create({
-              content: "getting Contacts"
+     let loader = this.loadingController.create({
+              content: "fetching users..."
         });
        loader.present();
 this.http.get('https://obscure-reef-53169.herokuapp.com/users').map(res =>{
