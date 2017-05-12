@@ -7,14 +7,16 @@
   </ion-navbar>
 </ion-header>
 <ion-content>
-
+  <form #f="ngForm" (submit)="submit(f)">
   <ion-item id="textarea">
    <ion-label floating>Press Here To Send A Message</ion-label>
-   <ion-textarea padding [(ngModel)]="msg"></ion-textarea>
+   <ion-textarea padding [(ngModel)]="msg" name="msg"></ion-textarea>
 
  </ion-item>
+  
  
-    <button ion-button full margin-top>Send A Message   .   <ion-icon name="send"></ion-icon></button>   
+    <button type="submit" ion-button full margin-top>Send A Message   .   <ion-icon name="send"></ion-icon></button>  
+    </form> 
     <hr>
      <button ion-button full margin-top>Cancel</button>  
 </ion-content>

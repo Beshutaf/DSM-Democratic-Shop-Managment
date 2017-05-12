@@ -43,6 +43,6 @@ openCommentBox(){
 
 }
 deleteItem(){
-    console.log("deleted");
+    this.listService.deleteProduct(this.productDetail._id);
 }
 }
