@@ -6,6 +6,7 @@ export class Product{
     public commentsNumber:number;
     public _id:string;
     public liked:boolean;
+    
 
     
     constructor(name,description,imageUrl,Likes,liked){
