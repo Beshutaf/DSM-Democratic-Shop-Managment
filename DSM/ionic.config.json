@@ -1,12 +1,11 @@
 {
   "name": "DSM",
   "app_id": "",
-  "v2": true,
-  "typescript": true,
   "proxies": [
     {
-        "path": "/users",
-        "proxyUrl": "http://localhost:3000"
+      "path": "/users",
+      "proxyUrl": "http://localhost:3000"
     }
-]
+  ],
+  "type": "ionic-angular"
 }
