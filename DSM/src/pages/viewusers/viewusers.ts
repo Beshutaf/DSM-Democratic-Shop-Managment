@@ -9,7 +9,7 @@ import { User } from "../user.model";
   templateUrl: 'viewusers.html'
 })
 export class ViewusersPage {
-  //public usersL: any[];
+  shownGroup = null;
   usersL : User[] = [];
   nuser :User;
   constructor(public navCtrl: NavController,public http: Http, public navParams: NavParams,public loadingController :LoadingController,public alertCtrl: AlertController) {}
@@ -50,5 +50,14 @@ err => {
  loader.dismiss();
 
   }
-   
+    toggleGroup(group) {
+    if (this.isGroupShown(group)) {
+        this.shownGroup = null;
+    } else {
+        this.shownGroup = group;
+    }
+};
+isGroupShown(group) {
+    return this.shownGroup === group;
+};  
 }

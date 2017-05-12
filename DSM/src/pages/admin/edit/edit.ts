@@ -61,4 +61,59 @@ err => {
 isGroupShown(group) {
     return this.shownGroup === group;
 };
+presentPrompt(group) {
+  let alert = this.alertCtrl.create({
+    title: 'Requested User Edit',
+    inputs: [
+      {
+        name: 'username',
+        placeholder: this.usersL[group].uname
+      },
+        {
+        name: 'fname',
+        placeholder: this.usersL[group].fname
+      },
+        {
+        name: 'email',
+        placeholder: this.usersL[group].email
+      },
+        {
+        name: 'gender',
+        placeholder: this.usersL[group].gender
+      },
+        {
+        name: 'authen',
+        placeholder: this.usersL[group].auth
+      },
+      {
+    
+         name: 'PhoneN',   
+        placeholder: '555555',
+        value :   this.usersL[group].auth
+      }
+      
+    ],
+    buttons: [
+      {
+        text: 'Return',
+        role: 'cancel',
+        handler: data => {
+          console.log('Cancel clicked');
+        }
+      },
+      {
+        text: 'Edit',
+        handler: data => {
+       /* if (User.isValid(data.username, data.password)) {
+            // logged in!
+          } else {
+            // invalid login
+            return false;
+          }*/
+        }
+      }
+    ]
+  });
+  alert.present();
+}
 }

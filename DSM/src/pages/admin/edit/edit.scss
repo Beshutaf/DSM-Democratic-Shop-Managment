@@ -3,9 +3,7 @@ page-edit {
 		width:250px;
 		font-weight: bold;
 	}
-	.p{
-		
-	}
+
 	.woot{
         margin-left:0px;
 		color:	#8A2BE2;
@@ -21,59 +19,17 @@ page-edit {
 input[type="checkbox"] {
   display: none;
 }
-/*label {
-  cursor: pointer;
-}
-input[type="checkbox"] + label:before {
-  border: 1px solid #333;
-  content: "\00a0";
-  display: inline-block;
-  font: 16px/1em sans-serif;
-  height: 16px;
-  margin: 0 .25em 0 0;
-  padding: 0;
-  vertical-align: top;
-  width: 16px;
-}
-input[type="checkbox"]:checked + label:before {
-  background: #fff;
-  color: #333;
-  content: "\2713";
-  text-align: center;
-}
-input[type="checkbox"]:checked + label:after {
-  font-weight: bold;
-}
 
-.roundedOne {
-float:right;
-
-}
- /*
-.regular-checkbox  {
- content: "\2713";
-  text-shadow: 12px 2px 2px black;
-  font-size: 15px;
-  color: #8A2BE2;
-  text-align: center;
-    line-height: 15px;
-	height:20px;
-		width:20px;
-		float:right;
-}
-*/
-
-/* ROUNDED ONE */
 .roundedOne {
 	width: 28px;
 	height: 28px;
 	background: #fcfff4;
 
-	background: -webkit-linear-gradient(to top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
-	background: -moz-linear-gradient(to top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
-	background: -o-linear-gradient(to top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
-	background: -ms-linear-gradient(to top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
-	background: linear-gradient(to top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: -moz-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: -o-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: -ms-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 );
 	margin: 20px auto;
 
@@ -97,17 +53,17 @@ float:right;
 	-moz-border-radius: 50px;
 	border-radius: 50px;
 	left: 4px;
-	 top: 4px;
+	top: 4px;
 
 	-webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
 	-moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
 	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
 
-	background: -webkit-linear-gradient(to top, #222 0%, #45484d 100%);
-	background: -moz-linear-gradient(to top, #222 0%, #45484d 100%);
-	background: -o-linear-gradient(to top, #222 0%, #45484d 100%);
-	background: -ms-linear-gradient(to top, #222 0%, #45484d 100%);
-	background: linear-gradient(to top, #222 0%, #45484d 100%);
+	background: -webkit-linear-gradient(top, #222 0%, #45484d 100%);
+	background: -moz-linear-gradient(top, #222 0%, #45484d 100%);
+	background: -o-linear-gradient(top, #222 0%, #45484d 100%);
+	background: -ms-linear-gradient(top, #222 0%, #45484d 100%);
+	background: linear-gradient(top, #222 0%, #45484d 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#45484d',GradientType=0 );
 }
 
@@ -121,11 +77,11 @@ float:right;
 	height: 16px;
 	background: #8A2BA9;
 
-	background: -webkit-linear-gradient(to top, #8A2BE2 0%, #8A2BA9 100%);
-	background: -moz-linear-gradient(to top, #8A2BE2 0%, #8A2BA9 100%);
-	background: -o-linear-gradient(to top, #8A2BE2 0%, #8A2BA9 100%);
-	background: -ms-linear-gradient(to top, #8A2BE2 0%, #8A2BA9 100%);
-	background: linear-gradient(to top, #8A2BE2 0%, #8A2BA9 100%);
+	background: -webkit-linear-gradient(top, #8A2BE2 0%, #8A2BA9 100%);
+	background: -moz-linear-gradient(top, #8A2BE2 0%, #8A2BA9 100%);
+	background: -o-linear-gradient(top, #8A2BE2 0%, #8A2BA9 100%);
+	background: -ms-linear-gradient(top, #8A2BE2 0%, #8A2BA9 100%);
+	background: linear-gradient(top, #8A2BE2 0%, #8A2BA9 100%);
 
 	-webkit-border-radius: 50px;
 	-moz-border-radius: 50px;
@@ -137,13 +93,6 @@ float:right;
 	-moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
 	box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
 }
-
-/*.roundedOne label:hover::after {
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-	filter: alpha(opacity=30);
-	opacity: 0.3;
-}*/
-
 .roundedOne input[type=checkbox]:checked + label:after {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 	filter: alpha(opacity=100);
