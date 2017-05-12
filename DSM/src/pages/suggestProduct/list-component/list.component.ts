@@ -9,6 +9,7 @@ import { ModalcommentPage } from "./modalcomment/modalcomment";
     templateUrl:"./list.component.html"
 })
 export class listComponent{
+    role:String="admin";
     @Input() productDetail:Product;
    commentsChanged= new EventEmitter<number>();
 
@@ -40,5 +41,8 @@ openCommentBox(){
        this.productDetail.commentsNumber=data;
 });
 
+}
+deleteItem(){
+    console.log("deleted");
 }
 }

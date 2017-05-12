@@ -21,6 +21,7 @@ import { FacebookListComponent } from "../pages/admin/facebook-page/facebook-lis
 import { ModalcommentPage } from "../pages/suggestProduct/list-component/modalcomment/modalcomment";
 import { ParallaxHeader } from "../components/parallax-header/parallax-header";
 import { FacebookService } from "../pages/admin/facebook-page/facebook.service";
+import {OneSignal} from "@ionic-native/onesignal"
 @NgModule({
   declarations: [
     MyApp,
@@ -65,7 +66,7 @@ import { FacebookService } from "../pages/admin/facebook-page/facebook.service";
     FacebookPostPage,
     ModalcommentPage
   ],
-  providers: [ FacebookService,   ListService,{provide: ErrorHandler,
+  providers: [ FacebookService, OneSignal,  ListService,{provide: ErrorHandler,
     
      useClass: IonicErrorHandler}]
 })
