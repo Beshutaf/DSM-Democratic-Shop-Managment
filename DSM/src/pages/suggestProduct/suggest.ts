@@ -7,10 +7,10 @@ import {ActionSheetController} from"ionic-angular"
 
 @Component({
   selector: 'page-suggest',
-  templateUrl: 'suggest.html'
+  templateUrl: 'suggest.html',
 })
 export class SuggestPage implements OnInit {
-  sort:Number=0;
+ sortBy:String;
 ngOnInit(){
   
       this.productDetails = this.listService.getProducts();
@@ -33,7 +33,7 @@ ngOnInit(){
       this.listService.initializeArray();
       this.listService.productChanged.subscribe((products:Product[])=>{
         this.productDetails=products;
-
+        
          
       },(err)=>{
     
@@ -53,18 +53,16 @@ ngOnInit(){
          text:'Likes',
          role:'sortByLikes',
          handler:()=>{
-            this.productDetails.sort((a,b)=>{
-              return a.Likes - b.Likes;
-            })
+           this.sortBy="-Likes";
+           console.log(this.sortBy);
          }
        },
        {
          text:'Comments',
          role:'sortByComments',
          handler:()=>{
-           this.productDetails.sort((a,b)=>{
-             return a.commentsNumber - b.commentsNumber;
-           })
+        this.sortBy="-commentsNumber";
+        console.log(this.sortBy);
          }
        }
        ,
@@ -72,7 +70,7 @@ ngOnInit(){
          text:'Date',
          role:'sortByDate',
          handler:()=>{
-            this.productDetails = this.listService.getProducts();
+           this.sortBy="";
          }
        }
        ]});
