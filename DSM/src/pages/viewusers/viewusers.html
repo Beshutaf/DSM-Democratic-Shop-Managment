@@ -20,14 +20,13 @@
 
  <ion-list>
     <ion-item *ngFor="let user of usersL;  let i=index" (click)="toggleGroup(i)" >
-    <span class="woot"><ion-icon class="icons" name="contact"></ion-icon>User Name:</span> {{ user.uname }} 
- <div>
-        <div *ngIf="isGroupShown(i)">  <span class="woot"> <ion-icon class="icons" name="at"></ion-icon> Email:</span>  {{ user.email }} </div>
-        <div *ngIf="isGroupShown(i)"> <span class="woot"><ion-icon class="icons" name="contact"></ion-icon> First Name:</span> {{ user.fname }} </div>
-       <div *ngIf="isGroupShown(i)"> <span class="woot"> <ion-icon class="icons" name="phone-portrait"></ion-icon>  Phone Num:</span> {{ user.phoneN }} </div>
-      <div *ngIf="isGroupShown(i)"> <span class="woot"> <ion-icon class="icons" name="settings"></ion-icon>  Authentication:</span>  {{ user.auth }} </div>   
-      <div *ngIf="isGroupShown(i)">  <span class="woot"><ion-icon class="icons" name="female"></ion-icon>   Gender:</span>{{ user.gender }} </div>
-</div>
+   <div class="warper">  <span class="woot"><ion-icon class="icons" name="contact"></ion-icon>User Name:</span> {{ user.uname }} </div>
+        <div *ngIf="isGroupShown(i)" class="warper">  <span class="woot"> <ion-icon class="icons" name="at"></ion-icon> Email:</span>  {{ user.email }} </div>
+        <div *ngIf="isGroupShown(i)" class="warper"> <span class="woot"><ion-icon class="icons" name="contact"></ion-icon> First Name:</span> {{ user.fname }} </div>
+       <div *ngIf="isGroupShown(i)" class="warper"> <span class="woot"> <ion-icon class="icons" name="phone-portrait"></ion-icon>  Phone Num:</span> {{ user.phoneN }} </div>
+      <div *ngIf="isGroupShown(i)" class="warper"> <span class="woot"> <ion-icon class="icons" name="settings"></ion-icon>  Authentication:</span>  {{ user.auth }} </div>   
+      <div *ngIf="isGroupShown(i)" class="warper">  <span class="woot"><ion-icon class="icons" name="female"></ion-icon>   Gender:</span>{{ user.gender }} </div>
+
     </ion-item>
   </ion-list>
 

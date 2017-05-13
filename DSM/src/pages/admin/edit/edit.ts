@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {  AlertController ,LoadingController } from 'ionic-angular';
-import { Http} from "@angular/http";
+import { Http,RequestOptions,Headers} from "@angular/http";
 import { User } from "../user.model";
 
 @Component({
@@ -13,11 +13,14 @@ export class EditPage {
   usersL : User[] = [];
   nuser :User;
   shownGroup = null;
+  
   constructor(public navCtrl: NavController,public http: Http, public navParams: NavParams,public loadingController :LoadingController,public alertCtrl: AlertController) {}
   ionViewDidLoad() {
     this.save();
     console.log('ionViewDidLoad EditPage');
   }
+  
+  
                   Alert(type){
              let alert = this.alertCtrl.create({
             title: 'You pressed',
@@ -47,7 +50,7 @@ return res.json();
 }).subscribe(data => {
          const temp =[];
 for(let user of data.user){
-  const useradding=new User(user.uname,user.password,user.email ,user.PhoneNo ,user.Gender ,user.authen,user.fName );
+  const useradding=new User(user.uname,user.password,user.email ,user.PhoneNo ,user.Gender ,user.authen,user.fName,user._id );
   temp.push(useradding);   
 }
 this.usersL = temp;
@@ -70,9 +73,45 @@ err => {
 isGroupShown(group) {
     return this.shownGroup === group;
 };
- trash(){
-   this.Alert("are u sure want to delete user? ");
- }
+ trash(pos){
+   let loader = this.loadingController.create({
+              content: "Deleting user"
+        });
+       loader.present();
+   let headers = new Headers();
+       headers.append('content-Type','application/json');
+
+       let body = {
+      id : this.usersL[pos].idd
+    };
+  let options = new RequestOptions({ headers: headers });
+
+  this.http
+        .post('https://obscure-reef-53169.herokuapp.com/users/test', body, options)
+        .map(res => res.json())
+       .subscribe(
+            data => {            
+            },
+            err => {
+                loader.dismiss();
+  let alert = this.alertCtrl.create({
+      title:   'מחיקת משתמש נכשלה',
+      subTitle: 
+ 
+        '     בדוק את החיבור לאינטרנט, ונסה שינת ',
+      buttons: ['חזרה']
+    });
+       alert.present();
+              console.log("ERROR!: ", err);
+            }
+        );
+        this.usersL.slice(pos,1);
+        loader.dismiss();
+        this.navCtrl.push(EditPage);
+  
+          
+
+   }
   sync(){
    this.Alert("Confirm user's changes");
  }
