@@ -3,7 +3,6 @@ import { NavController, NavParams } from 'ionic-angular';
 import {  AlertController ,LoadingController } from 'ionic-angular';
 import { Http,RequestOptions,Headers} from "@angular/http";
 import { User } from "../user.model";
-
 @Component({
   selector: 'page-edit',
   templateUrl: 'edit.html'
@@ -74,10 +73,10 @@ isGroupShown(group) {
     return this.shownGroup === group;
 };
  trash(pos){
-   let loader = this.loadingController.create({
-              content: "Deleting user"
+  let loader = this.loadingController.create({
+              content: "deleting user..."
         });
-       loader.present();
+        loader.present();
    let headers = new Headers();
        headers.append('content-Type','application/json');
 
@@ -93,7 +92,7 @@ isGroupShown(group) {
             data => {            
             },
             err => {
-                loader.dismiss();
+
   let alert = this.alertCtrl.create({
       title:   'מחיקת משתמש נכשלה',
       subTitle: 
@@ -106,11 +105,8 @@ isGroupShown(group) {
             }
         );
         this.usersL.slice(pos,1);
-        loader.dismiss();
-        this.navCtrl.push(EditPage);
-  
-          
-
+      loader.dismiss();
+     this.save();
    }
   sync(){
    this.Alert("Confirm user's changes");
@@ -118,4 +114,5 @@ isGroupShown(group) {
    resetP(){
    this.Alert("Are you sure want to reset user's password?");
  }
+
 }

@@ -21,8 +21,18 @@
 <input type="checkbox" class="regular-checkbox"
     [ngModel]="expression && expression[obj.name]">
 -->
+  
+    <ion-refresher (ionRefresh)="save();">
+    <ion-refresher-content 
+      pullingText="Pull to refresh"
+      pullingIcon="arrow-dropdown"
+      refreshingSpinner="circles"
+      refreshingText="..fetching">
 
+  </ion-refresher-content>
+   </ion-refresher>  
  <ion-list>
+ 
     <ion-item  *ngFor="let user of usersL;  let i=index">
     <div class="roundedOne">
 	<input  type="checkbox" id= "{{ user.uname }}" name="cb" />
@@ -55,7 +65,7 @@
     <span class="trash" (click)="sync()"> <ion-icon class="icons"  name="sync"></ion-icon></span>
    </div>
     </ion-item>
-
+  
   </ion-list>
-
+ 
 </ion-content>
