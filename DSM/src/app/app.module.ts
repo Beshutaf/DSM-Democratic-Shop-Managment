@@ -22,6 +22,7 @@ import { ModalcommentPage } from "../pages/suggestProduct/list-component/modalco
 import { ParallaxHeader } from "../components/parallax-header/parallax-header";
 import { FacebookService } from "../pages/admin/facebook-page/facebook.service";
 import {OneSignal} from "@ionic-native/onesignal"
+import { OrderByPipe } from "../pipes/sortopipe.pipe";
 @NgModule({
   declarations: [
     MyApp,
@@ -42,7 +43,8 @@ import {OneSignal} from "@ionic-native/onesignal"
     FacebookPostPage,
     FacebookListComponent,
     ModalcommentPage,
-    ParallaxHeader
+    ParallaxHeader,
+    OrderByPipe
   ],
   imports: [
     IonicModule.forRoot(MyApp),

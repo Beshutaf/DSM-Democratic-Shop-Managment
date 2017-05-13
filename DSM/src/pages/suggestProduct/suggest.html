@@ -24,7 +24,7 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
   <ion-list>
-    <app-list *ngFor = "let productDetail of productDetails.slice().reverse()" [productDetail]="productDetail"></app-list>
+    <app-list *ngFor = "let productDetail of productDetails.slice().reverse()|orderBy :sortBy" [productDetail]="productDetail"></app-list>
     
   </ion-list>
 </ion-content>
