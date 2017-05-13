@@ -11,6 +11,12 @@ import 'rxjs/Rx';
   templateUrl: 'login.html'
 })
 export class LoginPage {
+    splash = true;
+  
+   ionViewDidLoad() {
+    setTimeout(() => this.splash = false, 4000);
+  }
+
  login: FormGroup;
     submitAttempt: boolean = false;
     viewState='login';
