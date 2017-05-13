@@ -17,11 +17,10 @@
        <ion-icon name="people"></ion-icon>
        View Contacts
        </a>
-       <a class="list-item" padding ion-item href="https://docs.google.com/spreadsheets/d/1eb235mXFxlDW8cMuH_tWwX_75Lf8sju5qkhIS9ljChY/edit?usp=sharing">
-       <ion-icon name="calendar"></ion-icon>
-        View Schedule
-       </a>
-
+       <button class="list-item" padding ion-item  (click)="openHomePage()">
+      <ion-icon name="home"></ion-icon>
+       View Schedule
+      </button>
         <button class="list-item" padding ion-item  (click)="openSuggestedProduct()">
       <ion-icon name="clipboard"></ion-icon>
        Suggest a Product
