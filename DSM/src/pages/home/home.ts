@@ -9,7 +9,7 @@ import { ListPage } from '../list/list';
 import { AdminPage } from "../admin/admin-panel";
 import { SuggestPage } from "../suggestProduct/suggest";
 import { ViewusersPage} from "../viewusers/viewusers";
-
+import { InAppBrowser } from 'ionic-native';
 @Component({
   selector:"page-home",
   templateUrl: 'home.html'
@@ -36,7 +36,13 @@ export class HomePage {
        { title: 'Contacts', component: ViewusersPage }
     ];
   }
-
+ launch(url) {
+        this.platform.ready().then(() => {
+          
+             new InAppBrowser(url,'_system');
+           
+        });
+    }
   initializeApp() {
 
     this.platform.ready().then(() => {
@@ -51,11 +57,11 @@ export class HomePage {
     // close the menu when clicking a link from the menu
     this.menu.close();
     // navigate to the new page if it is not the current page
-    this.nav.setRoot(HelloIonicPage);
+    this.nav.push(HelloIonicPage);
   }
   openAdminPanel(){
     this.menu.close();
-    this.nav.setRoot(AdminPage);
+    this.nav.push(AdminPage);
   }
   openUrlPage(){
     this.menu.close();
@@ -63,7 +69,7 @@ export class HomePage {
   }
   openSuggestedProduct(){
        this.menu.close();
-    this.nav.setRoot(SuggestPage);
+    this.nav.push(SuggestPage);
 
   }
     openEditPage(){

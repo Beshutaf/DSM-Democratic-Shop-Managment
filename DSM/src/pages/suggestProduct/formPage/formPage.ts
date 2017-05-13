@@ -29,8 +29,8 @@ export class formPage {
            Camera.getPicture({
        encodingType: Camera.EncodingType.JPEG,
         destinationType: Camera.DestinationType.DATA_URL,
-        targetWidth: 1000,
-        targetHeight: 1000,
+        targetWidth: 400,
+        targetHeight: 400,
         correctOrientation:true
     }).then((imageData) => {
       // imageData is a base64 encoded string
@@ -47,8 +47,8 @@ export class formPage {
        sourceType:Camera.PictureSourceType.PHOTOLIBRARY,
        encodingType: Camera.EncodingType.JPEG,
         destinationType: Camera.DestinationType.DATA_URL,
-        targetWidth: 1000,
-        targetHeight: 1000,
+        targetWidth: 400,
+        targetHeight: 400,
         correctOrientation:true
     }).then((imageData) => {
       // imageData is a base64 encoded string
