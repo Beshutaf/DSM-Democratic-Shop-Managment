@@ -25,7 +25,7 @@ ngOnInit(){
 
 
   productDetails:Product[]=[]
-  constructor(public navCtrl: NavController,private listService:ListService,private actionSheetctrl:ActionSheetController) {
+  constructor(public navCtrl: NavController,private listService:ListService,private actionSheetctrl:ActionSheetController,) {
 
   }
  doRefresh(refresher) {

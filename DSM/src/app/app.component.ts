@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Platform, AlertController } from 'ionic-angular';
+import { Platform } from 'ionic-angular';
 import { Splashscreen } from 'ionic-native';
 import {OneSignal} from '@ionic-native/onesignal'
 
@@ -13,20 +13,14 @@ export class MyApp {
 
   rootPage = LoginPage;
 
-  constructor(public  alertCtrl: AlertController,platform: Platform,private oneSignal:OneSignal, private _platform: Platform) {
+  constructor(platform: Platform,private oneSignal:OneSignal, private _platform: Platform) {
     platform.ready().then(() => {
         if (platform.is('cordova')) {
       this.oneSignal.startInit("aee9826e-2e23-4762-8059-758f6f87a042","121968198945");
       this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.Notification);
       this.oneSignal.setSubscription(true);
-      let alert = this.alertCtrl.create({
-      title:' push notification registered ',
-      subTitle: 'registered push'
- 
-       ,
-      buttons: ['חזרה']
-    });
-       alert.present();
+     
+       
       this.oneSignal.handleNotificationReceived().subscribe(()=>{
         
       })
