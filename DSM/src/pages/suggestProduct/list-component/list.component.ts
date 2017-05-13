@@ -1,6 +1,6 @@
 import { Component, Input, EventEmitter } from "@angular/core"
 import { Product } from "../product.model";
-import { NavController, ModalController } from "ionic-angular";
+import { NavController, ModalController, AlertController } from "ionic-angular";
 import { ListDetailsComponent } from "./list-details-component/list.details.component";
 import { ListService } from "../list.service";
 import { ModalcommentPage } from "./modalcomment/modalcomment";
@@ -14,7 +14,7 @@ export class listComponent{
    commentsChanged= new EventEmitter<number>();
 
     Liked:Boolean=false;
-    constructor(public modalCtrl:ModalController,private navCtrl:NavController,private listService:ListService){}
+    constructor(public modalCtrl:ModalController,private navCtrl:NavController,private listService:ListService,public alertCtrl: AlertController){}
     productDetails(){
         this.navCtrl.push(ListDetailsComponent,{
             name:this.productDetail.name,
@@ -44,5 +44,76 @@ openCommentBox(){
 }
 deleteItem(){
     this.listService.deleteProduct(this.productDetail._id);
+
 }
+Approve(){
+    let prompt = this.alertCtrl.create({
+      title: 'Amount',
+      message: "Enter Amount Of Likes",
+      inputs: [
+        {
+          name: 'Amount',
+          placeholder: 'Amount',
+          type:"number"
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Save',
+          handler: data => {
+           data.amount
+          }
+        }
+      ]
+    });
+    prompt.present();
+  }
+  setStatus(){
+       let prompt = this.alertCtrl.create({
+      title: 'Status',
+      message: "Choose Status",
+      inputs: [
+        {
+          name: 'Status',
+          label:"ordered",
+          value:"o",
+          type:"radio"
+        },
+         {
+          name: 'Status',
+          label:"shipped",
+          value:"s",
+          type:"radio"
+        },
+         {
+          name: 'Status',
+          label:"dileverd",
+          value:"d",
+          type:"radio"
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Save',
+          handler: data => {
+           data.amount
+          }
+        }
+      ]
+    });
+    prompt.present();
+  }
+
 }

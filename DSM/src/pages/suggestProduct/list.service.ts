@@ -129,21 +129,40 @@ productChanged=new EventEmitter<Product[]>();
        loader.present();
       this.http.post("https://obscure-reef-53169.herokuapp.com/suggest/addProduct",obj)
       .subscribe((response)=>{
+          if(response.json().success===false)
+          {
+                 this.alerting();
+              loader.dismiss();
+          }
+          else{
+
+        
            Product._id=response.json().id;
            console.log(Product._id);
   this.socket.emit('add-product', JSON.stringify(Product));    
          
            loader.dismiss();
+          }
       }),(err)=>{
-          console.log("error");
+          this.alerting();
+          loader.dismiss();
       }
    
   }
   deleteProduct(id:String){
-      
+       let loader = this.loadingController.create({
+              content: "deleting item"
+        });
+       loader.present();
       this.http.post("https://obscure-reef-53169.herokuapp.com/suggest/deleteProduct",{id:id}).subscribe(()=>{
-          console.log("deleted")
+              this.productDetails.splice( this.productDetails.findIndex(x=>x._id===id),1);
+         this.productChanged.emit(this.productDetails);
+         loader.dismiss();
+      },(err)=>{
+         this.alerting();
+              loader.dismiss();
       })
+     
 
   }
 }
