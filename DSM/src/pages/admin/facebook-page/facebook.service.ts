@@ -4,7 +4,9 @@ import { FacebookModel } from "./facebook.model";
 
 @Injectable()
 export class FacebookService{
+    facebookPosted:{name,imageUrl,message,index}[]=[];
     facebooksChanged=new EventEmitter<FacebookModel[]>();
+    facebookPostedChanged=new EventEmitter<{name,imageUrl,message,index}[]>();
     homePageFacebook=new EventEmitter<FacebookModel[]>();
     facebooks:FacebookModel[]=[]
     constructor(private http:Http){}

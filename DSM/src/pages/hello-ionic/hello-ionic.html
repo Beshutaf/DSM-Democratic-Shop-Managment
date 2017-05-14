@@ -11,48 +11,28 @@
   <div class="header-image">
     </div>
   <div class="main-content">
-  <div id="facebook" padding>
-  <ion-list>
-       <ion-card *ngFor="let f of topFacebookPosts" >
-    <ion-item >
+  
+
+     
+    <ion-item class="facebookItem" *ngFor="let f of topFacebookPosts" >
       
 
-     <ion-thumbnail item-left >
+
+      <h2>
+          {{f.name}}
+         
+      </h2>
+      <p>
+            {{f.message}}
+      </p>
+           <ion-thumbnail item-right >
         <img src="{{f.imageUrl}}" width="200px" style="border-radius:200px;">
       </ion-thumbnail>
          
-       <ion-card-title id="card">
-          {{f.name}}
-         
-       </ion-card-title>
-       <ion-card-content id="title">
-            {{f.message}}
-       </ion-card-content>
        </ion-item>
-   </ion-card>
+  
 
-  </ion-list>
-  </div>
-  <div id="discourse" padding>
-    <h2><u><i>Discourse</i></u></h2>
-     <ion-card>
-  <ion-card-header>
-    Card Header
-  </ion-card-header>
-  <ion-card-content>
-   first
-  </ion-card-content>
-</ion-card>
- <ion-card>
-  <ion-card-header>
-    Card Header
-  </ion-card-header>
-  <ion-card-content>
-   first
-  </ion-card-content>
-</ion-card>
+ 
 
-    
-  </div>
   </div>
 </ion-content>

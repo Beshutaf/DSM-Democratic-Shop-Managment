@@ -8,10 +8,13 @@ import { FacebookModel } from "../admin/facebook-page/facebook.model";
   templateUrl: 'hello-ionic.html'
 })
 export class HelloIonicPage implements OnInit {
-  topFacebookPosts:FacebookModel[]=[];
+  topFacebookPosts:{name,imageUrl,message,index}[]=[];
 
   ngOnInit(){
-    this.topFacebookPosts=this.facebookService.getallPosts();
+    this.facebookService.facebookPostedChanged.subscribe((app)=>{
+        this.topFacebookPosts=app;
+    })
+    this.topFacebookPosts=this.facebookService.facebookPosted;
   }
   constructor(private facebookService:FacebookService) {
     
