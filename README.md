@@ -10,7 +10,7 @@ for more description visit : http://www.beshutaf.org/
 # Tools & Practices
 
 |Category|Status|
-|---|---|
+|---|---|--|
 | press the tag for redirection|
 | Version Control System| git & github |
 | Group Chat| [![Join the chat at https://gitter.im/jce-il/project-template](https://badges.gitter.im/jce-il/project-template.svg)](https://gitter.im/jce-il/DSM) |
