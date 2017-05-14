@@ -5,14 +5,26 @@
   </ion-navbar>
 </ion-header>
 <ion-content>
-   <ion-card  *ngFor="let f of facebook; let i = index" (click)="addFacebook(f.message,i)">
+  <ion-list>
+       <ion-card *ngFor="let f of facebook; let i = index" (click)="addFacebook(f.message,i)" >
+    <ion-item >
+      
+
+     <ion-thumbnail item-left >
+        <img src="{{f.imageUrl}}" width="200px" style="border-radius:200px;">
+      </ion-thumbnail>
+         
        <ion-card-title id="card">
-            קופאריטיב בשותף
+          {{f.name}}
+         
        </ion-card-title>
        <ion-card-content id="title">
             {{f.message}}
        </ion-card-content>
+       </ion-item>
    </ion-card>
+
+  </ion-list>
 </ion-content>
 <ion-footer>
     <button ion-button full (click)="facebookPost()">Post To HomePage</button>
