@@ -1,0 +1,17 @@
+  
+    <ion-item class="facebookItem"   (click)="setToggle()">
+      
+
+
+      <h2>
+          {{topFacebookPost.name}}
+         
+      </h2>
+      <p [ngClass]="{'toggle':toggle}">
+            {{topFacebookPost.message}}
+      </p>
+           <ion-thumbnail item-right >
+        <img src="{{topFacebookPost.imageUrl}}" width="200px" style="border-radius:200px;">
+      </ion-thumbnail>
+         
+       </ion-item>

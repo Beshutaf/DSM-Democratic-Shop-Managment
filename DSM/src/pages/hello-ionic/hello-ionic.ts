@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FacebookService } from "../admin/facebook-page/facebook.service";
-import { FacebookModel } from "../admin/facebook-page/facebook.model";
 
 
 @Component({

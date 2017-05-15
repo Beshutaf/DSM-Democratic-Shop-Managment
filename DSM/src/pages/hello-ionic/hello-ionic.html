@@ -14,23 +14,10 @@
   
 
      
-    <ion-item class="facebookItem" *ngFor="let f of topFacebookPosts" >
+ <facebook-home-item *ngFor="let f of topFacebookPosts" [topFacebookPost]="f"></facebook-home-item>
       
 
 
-      <h2>
-          {{f.name}}
-         
-      </h2>
-      <p>
-            {{f.message}}
-      </p>
-           <ion-thumbnail item-right >
-        <img src="{{f.imageUrl}}" width="200px" style="border-radius:200px;">
-      </ion-thumbnail>
-         
-       </ion-item>
-  
 
  
 

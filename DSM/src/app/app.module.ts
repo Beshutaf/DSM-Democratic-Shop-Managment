@@ -23,6 +23,7 @@ import { ParallaxHeader } from "../components/parallax-header/parallax-header";
 import { FacebookService } from "../pages/admin/facebook-page/facebook.service";
 import {OneSignal} from "@ionic-native/onesignal"
 import { OrderByPipe } from "../pipes/sortopipe.pipe";
+import { FacebookHomeItem } from "../pages/hello-ionic/facebook-home-item/facebook-home-item";
 @NgModule({
   declarations: [
     MyApp,
@@ -44,7 +45,8 @@ import { OrderByPipe } from "../pipes/sortopipe.pipe";
     FacebookListComponent,
     ModalcommentPage,
     ParallaxHeader,
-    OrderByPipe
+    OrderByPipe,
+    FacebookHomeItem
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -66,7 +68,8 @@ import { OrderByPipe } from "../pipes/sortopipe.pipe";
      SuggestPage,
     ListDetailsComponent,
     FacebookPostPage,
-    ModalcommentPage
+    ModalcommentPage,
+    FacebookHomeItem
   ],
   providers: [ FacebookService, OneSignal,  ListService,{provide: ErrorHandler,
     
