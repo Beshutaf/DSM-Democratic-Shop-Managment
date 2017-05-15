@@ -7,39 +7,79 @@
   </ion-header>
 
   <ion-content>
-    <ion-list>
-      <button class="list-item" padding ion-item  (click)="openHomePage()">
-      <ion-icon name="home"></ion-icon>
-       Home Page
+    <div id="list">
+  <hr>
+    <ion-list class="option">
+      <button class="list-item"    (click)="openHomePage()" >
+        <ion-icon name="home" class="icon-menu"></ion-icon>
+           <span class="tab">Home Page</span>
+          </button>
+         <hr class="tab-line">
+         </ion-list>
+      
+    <ion-list class="option">
+      <a class="list-item"   (click)="openEditPage()">
+       <ion-icon name="people" class="icon-menu"></ion-icon>
+       <span class="tab">View Contacts</span>
+       </a>
+       <hr class="tab-line">
+        </ion-list>
+        
+        <ion-list class="option">
+       <button class="list-item"    (click)="launch('https://docs.google.com/spreadsheets/d/1eb235mXFxlDW8cMuH_tWwX_75Lf8sju5qkhIS9ljChY/edit?usp=sharing')">
+      <ion-icon name="home" class="icon-menu"></ion-icon>
+      <span class="tab"> View Schedule</span>
+      </button>
+      <hr class="tab-line">
+      </ion-list>
+  <ion-list class="option">
+        <button class="list-item"    (click)="openSuggestedProduct()">
+      <ion-icon name="clipboard" class="icon-menu"></ion-icon>
+       <span class="tab"> Suggest a Product</span>
+      </button>
+      <hr class="tab-line">
+       </ion-list>
+    <ion-list class="option">
+       <button class="list-item"    (click)="launch('https://docs.google.com/spreadsheets/d/1Ijn9koM0hVsq7dlk4YScTeneWIuo5CwLi7dZdUXbjcY/pub?single=true&gid=2&output=html')">
+      <ion-icon name="home" class="icon-menu"></ion-icon>
+       <span class="tab">View Prices Table</span>
+      </button>
+      <hr class="tab-line">
+</ion-list>
+
+<ion-list class="option">
+      <button class="list-item"   (click)="launch('http://forum.beshutaf.org/')">
+      <ion-icon name="home" class="icon-menu"></ion-icon>
+       <span class="tab"> Discorse Forum</span>
+      </button>
+      <hr class="tab-line">
+       </ion-list>
+
+       <ion-list class="option">
+    <button class="list-item"   (click)="openAdminPanel()">
+      <ion-icon class="list-item" name="person" class="icon-menu"></ion-icon>
+           <span class="tab"> Admin's Panel</span>
+      </button>
+       <hr class="tab-line">
+</ion-list>
+
+     <ion-list class="option">
+    <button class="list-item"   (click)="setting()">
+      <ion-icon class="list-item" name="settings" class="icon-menu"></ion-icon>
+           <span class="tab"> setting</span>
+      </button>
+       <hr class="tab-line">
+</ion-list>
+
+     <ion-list class="option">
+    <button class="list-item"   (click)="SignOut()">
+      <ion-icon class="list-item" name="log-out" class="icon-menu"></ion-icon>
+           <span class="tab"> SignOut</span>
       </button>
       
-      <a class="list-item" padding ion-item  (click)="openEditPage()">
-       <ion-icon name="people"></ion-icon>
-       View Contacts
-       </a>
-       <button class="list-item" padding ion-item  (click)="launch('https://docs.google.com/spreadsheets/d/1eb235mXFxlDW8cMuH_tWwX_75Lf8sju5qkhIS9ljChY/edit?usp=sharing')">
-      <ion-icon name="home"></ion-icon>
-       View Schedule
-      </button>
-        <button class="list-item" padding ion-item  (click)="openSuggestedProduct()">
-      <ion-icon name="clipboard"></ion-icon>
-       Suggest a Product
-      </button>
-
-       <button class="list-item" padding ion-item  (click)="launch('https://docs.google.com/spreadsheets/d/1Ijn9koM0hVsq7dlk4YScTeneWIuo5CwLi7dZdUXbjcY/pub?single=true&gid=2&output=html')">
-      <ion-icon name="home"></ion-icon>
-       View Prices Table
-      </button>
-      <button class="list-item" padding ion-item  (click)="launch('http://forum.beshutaf.org/')">
-      <ion-icon name="home"></ion-icon>
-        Discorse Forum
-      </button>
-       
-    <button class="list-item" padding ion-item  (click)="openAdminPanel()">
-      <ion-icon class="list-item" name="person"></ion-icon>
-         Admin's Panel
-      </button>
-    </ion-list>
+</ion-list>
+  <hr>
+  </div>
   </ion-content>
 
 </ion-menu>

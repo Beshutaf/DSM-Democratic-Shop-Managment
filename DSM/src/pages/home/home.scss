@@ -1,6 +1,35 @@
 page-home {
   .list-item{
-    color: $theme-color-2;
+        color: #000000;
+        margin: 2px 0px;
+        background-color: white;
+
+        
   }
+ 
+  .icon-menu{
+    color: $theme-color-2;
+    font-weight: bold;
+    font-size:32px;
+  }
+  
+.tab { display:inline-block; 
+       margin-left: 20px;
+        }
+.tab-line{
+   margin-left:58px;
+}
+#list{
+margin: 17% 0px;
+}
+.option {
+margin :0px;
+}
+.option :hover{
+background-color:#00AA8D;
 
 }
+
+
+}
+ 

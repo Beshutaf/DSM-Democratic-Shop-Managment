@@ -10,6 +10,7 @@ import { AdminPage } from "../admin/admin-panel";
 import { SuggestPage } from "../suggestProduct/suggest";
 import { ViewusersPage} from "../viewusers/viewusers";
 import { InAppBrowser } from 'ionic-native';
+import { LoginPage } from "../login/login";
 @Component({
   selector:"page-home",
   templateUrl: 'home.html'
@@ -76,5 +77,12 @@ export class HomePage {
        this.menu.close();
     this.nav.push(ViewusersPage);
 
+  }
+  SignOut(){
+    this.menu.close();
+    this.nav.push(LoginPage);
+  }
+  setting(){
+    
   }
 }
