@@ -7,21 +7,22 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>edit</ion-title>
+   
+    <ion-title >User Edit   </ion-title>  
+
   </ion-navbar>
+      <div class="hlpBar">
+    <span class="Baricn"> 
+   search by<ion-icon class="icons" name="arrow-down"></ion-icon>
+   
 
-</ion-header>
-
-
-<ion-content padding>
-  <!--<ion-card>
-<button margin ion-button round (click)="save()" color="primary" id="login-button"> View </button>
- (change)="expression && expression[obj.name]=$event.target.checked ? true : undefined"
-</ion-card>
-<input type="checkbox" class="regular-checkbox"
-    [ngModel]="expression && expression[obj.name]">
--->
+      <input class="srchBar" type="text"/> <ion-icon  class="icons"  name="search"></ion-icon>     
+         <ion-icon  class="icons" name="trash">(0)</ion-icon>
+       </span>
   
+       </div>
+</ion-header>
+<ion-content padding>
 
  <ion-list>
   <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
