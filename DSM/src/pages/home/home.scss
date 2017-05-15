@@ -11,7 +11,6 @@ page-home {
     color: $theme-color-2;
     font-weight: bold;
     font-size:32px;
-    margin-left:8px;
   }
   
 .tab { display:inline-block; 
@@ -29,9 +28,15 @@ margin: 17% 0px;
 margin :0px;
 width:100%;
 }
+
 .clicked.parent:active > *{
   background:#00AA8D;
     color:white;
+}
+.option :hover{
+background:#00AA8D;
+font-size: 150%;
+
 }
 
 
