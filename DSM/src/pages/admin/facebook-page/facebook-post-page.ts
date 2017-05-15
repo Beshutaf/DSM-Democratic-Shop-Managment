@@ -45,7 +45,10 @@ closePage(){
            }
         }
  facebookPost(){
+    
     this.facebookService.facebookPosted=this.facebookpending.slice();
     this.facebookService.facebookPostedChanged.emit(this.facebookService.facebookPosted);
+     this.facebookService.addFacebook(this.facebookService.facebookPosted);
+     console.log(this.facebook)
 }
 }

@@ -10,6 +10,7 @@ export class HelloIonicPage implements OnInit {
   topFacebookPosts:{name,imageUrl,message,index}[]=[];
 
   ngOnInit(){
+    this.facebookService.getPosts();
     this.facebookService.facebookPostedChanged.subscribe((app)=>{
         this.topFacebookPosts=app;
     })
