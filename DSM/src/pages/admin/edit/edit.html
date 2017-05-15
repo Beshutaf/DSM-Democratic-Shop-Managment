@@ -22,50 +22,45 @@
     [ngModel]="expression && expression[obj.name]">
 -->
   
-    <ion-refresher (ionRefresh)="save();">
-    <ion-refresher-content 
-      pullingText="Pull to refresh"
-      pullingIcon="arrow-dropdown"
-      refreshingSpinner="circles"
-      refreshingText="..fetching">
 
-  </ion-refresher-content>
-   </ion-refresher>  
  <ion-list>
- 
+  <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+<form [formGroup]="slideOneForm" >
+
     <ion-item  *ngFor="let user of usersL;  let i=index">
+         
     <div class="roundedOne">
 	<input  type="checkbox" id= "{{ user.uname }}" name="cb" />
     <label for= "{{ user.uname }}"></label></div> <br><br>
  <div (click)=" toggleGroup(i)"><span class="name"><ion-icon class="icons" name="contact"></ion-icon> User Name:</span>
-   <input class="ioedit" type="text" placeholder=" {{ user.uname }} "/>
+   <input  class="ioedit" type="text" formControlName="name" value=" {{ user.uname }} "/>
 
   
 </div>  
       
        <div  *ngIf="isGroupShown(i)">  <span class="woot"> <ion-icon class="icons" name="at"></ion-icon> Email:</span> 
-    <input class="ioedit" type="text" placeholder="{{ user.email }} "/></div>
+    <input class="ioedit" type="text" formControlName="email" value="{{user.email}}"></div>
 
         <div *ngIf="isGroupShown(i)"> <span class="woot"><ion-icon class="icons" name="contact"></ion-icon> First Name:</span> 
-          <input class="ioedit" type="text" placeholder="{{ user.fname }}"/></div>
+          <input class="ioedit" type="text"  formControlName="fName" value="{{ user.fname }}"/></div>
 
-    <div *ngIf="isGroupShown(i)"> <span class="woot"><ion-icon class="icons" name="contact"></ion-icon>id:</span> 
-          <input class="ioedit" type="text" placeholder="{{ user.idd }}"/></div>
-
+  <!--<div *ngIf="isGroupShown(i)"> <span class="woot"><ion-icon class="icons" name="contact"></ion-icon>id:</span> 
+          <input class="ioedit" type="text" value="{{ user.idd }}"/></div>
+-->
 
        <div *ngIf="isGroupShown(i)"> <span class="woot"> <ion-icon class="icons" name="phone-portrait"></ion-icon>  Phone Num:</span> 
-         <input class="ioedit" type="text" placeholder="{{ user.phoneN }} "/></div>
+         <input class="ioedit" type="text" formControlName="number"  value="{{ user.phoneN }} "/></div>
       <div *ngIf="isGroupShown(i)"> <span class="woot"> <ion-icon class="icons" name="settings"></ion-icon>  Authentication:</span> 
-             <input class="ioedit" type="text" placeholder=" {{ user.auth }}"/></div>
+             <input class="ioedit" formControlName="authen" type="text" value=" {{ user.auth }}"/></div>
       <div *ngIf="isGroupShown(i)">  <span class="woot"><ion-icon class="icons" name="female"></ion-icon>   Gender:</span>
-         <input class="ioedit" type="text" placeholder="{{ user.gender }}"/> </div>
+         <input class="ioedit" type="text" formControlName="gen" value="{{ user.gender }}"/> </div>
  <div *ngIf="isGroupShown(i)">
     <span class="trash" (click)="trash(i)" > <ion-icon class="icons"  name="trash"></ion-icon></span>
     <button   class="edituserbtn" (click)="resetP()">אפס סיסמה</button>
-    <span class="trash" (click)="sync()"> <ion-icon class="icons"  name="sync"></ion-icon></span>
-   </div>
+    <span class="trash" (click)="sync(user)"> <ion-icon class="icons"  name="sync"></ion-icon></span></div>
+   
     </ion-item>
-  
+   </form>
   </ion-list>
  
 </ion-content>
