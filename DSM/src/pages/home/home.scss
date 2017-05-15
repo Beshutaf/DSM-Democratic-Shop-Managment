@@ -1,9 +1,11 @@
 page-home {
   .list-item{
-        color: #000000;
+        
         margin: 2px 0px;
         background-color: white;
-
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color:#999;
+        font-weight: bold;
         
   }
  
@@ -28,8 +30,11 @@ margin: 17% 0px;
 margin :0px;
 width:100%;
 }
-
-.clicked.parent:active > *{
+.clicked:active{
+    background:#00AA8D;
+    color:white;
+}
+.clicked:active > *>*{
   background:#00AA8D;
     color:white;
 }

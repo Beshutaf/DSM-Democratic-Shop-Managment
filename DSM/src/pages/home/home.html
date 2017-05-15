@@ -11,14 +11,14 @@
  <hr>
 
   
-    <ion-list class="option" (click)="openHomePage()" >
-      <button class="list-item"     >
+    <ion-list class="option clicked" (click)="openHomePage()" >
+      <button class="list-item clicked"     >
 
         <ion-icon name="home" class="icon-menu"></ion-icon>
            <span class="tab">Home Page</span>…      </button>
-      
-</ion-list>
-  <hr class="tab-line"> 
+          <hr class="tab-line"> 
+      </ion-list>
+  
 
    
         
@@ -30,8 +30,9 @@
        <ion-icon name="people" class="icon-menu"></ion-icon>
        <span class="tab">View Contacts</span>
        </button>
+          <hr class="tab-line">
     </ion-list>
-   <hr class="tab-line">
+
         
         <ion-list class="option clicked"  (click)="launch('https://docs.google.com/spreadsheets/d/1eb235mXFxlDW8cMuH_tWwX_75Lf8sju5qkhIS9ljChY/edit?usp=sharing')">
        <button  class="list-item clicked"    >
@@ -82,11 +83,13 @@
      <ion-list class="option clicked"(click)="SignOut()">
     <button class="list-item clicked"   >
       <ion-icon class="list-item clicked" name="log-out" class="icon-menu"></ion-icon>
-           <span class="tab clicked"> SignOut</span>
-      </button>
       
+           <p class="tab clicked"> SignOut</p>
+           
+      </button>
+      <hr >
 </ion-list>
-  <hr>
+
   </div>
   </ion-content>
 
