@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { Splashscreen } from 'ionic-native';
 import {OneSignal} from '@ionic-native/onesignal'
-
 import { LoginPage } from '../pages/login/login';
+import { HomePage } from '../pages/home/home';
 
 
 @Component({
@@ -11,8 +11,8 @@ import { LoginPage } from '../pages/login/login';
 })
 export class MyApp {
 
-  rootPage = LoginPage;
-
+  //rootPage = LoginPage;
+ rootPage = HomePage;
   constructor(platform: Platform,private oneSignal:OneSignal, private _platform: Platform) {
     platform.ready().then(() => {
         if (platform.is('cordova')) {
