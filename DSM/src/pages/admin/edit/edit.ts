@@ -18,12 +18,12 @@ export class EditPage {
   constructor(public  formBuilder:FormBuilder,public navCtrl: NavController,public http: Http, public navParams: NavParams,public loadingController :LoadingController,public alertCtrl: AlertController) {
 
          this.slideOneForm = formBuilder.group({
-        name: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-        fName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-        email: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-        gen: ['',Validators.required],
-         authen: ['',Validators.required],
-         number: ['',Validators.required]
+        name: [''],
+         fName: [''],
+         email: [''],
+         gen: [''],
+         authen: [''],
+         number: ['']
    
     });
 
@@ -118,28 +118,24 @@ isGroupShown(group) {
      //this.save();
    }
 
-
-
-
-
   sync(i){
 
 
  let headers = new Headers();
        headers.append('content-Type','application/json');
 
-if(this.slideOneForm.value.name!='')
- i.uname =  this.slideOneForm.value.name;
-if(this.slideOneForm.value.fName!='')
-i.fname=  this.slideOneForm.value.fName;
-if(this.slideOneForm.value.email!='')
-i.email =  this.slideOneForm.value.email;
-if(this.slideOneForm.value.number!='')
-i.phoneN=  this.slideOneForm.value.number;
-if(this.slideOneForm.value.gen!='')
-i.gender =  this.slideOneForm.value.gen;
-if(this.slideOneForm.value.authen!='')
-i.auth =  this.slideOneForm.value.authen;
+if(this.slideOneForm.value.name==='')
+   this.slideOneForm.value.name= i.uname;
+if(this.slideOneForm.value.fName==='')
+this.slideOneForm.value.fName = i.fname;
+if(this.slideOneForm.value.email==='')
+  this.slideOneForm.value.email = i.email ;
+if(this.slideOneForm.value.number==='')
+ this.slideOneForm.value.number =i.phoneN;
+if(this.slideOneForm.value.gen==='')
+ this.slideOneForm.value.gen=i.gender ;
+if(this.slideOneForm.value.authen==='')
+  this.slideOneForm.value.authen = i.auth ;
        let body = {
     id : i.idd,
     uname : this.slideOneForm.value.name,
