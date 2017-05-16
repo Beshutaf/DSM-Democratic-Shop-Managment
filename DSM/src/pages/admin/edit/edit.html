@@ -11,7 +11,7 @@
   </ion-navbar>
  <div  *ngIf="isSearchShown()" no-line class="srchM">
  <ion-item class="srchM"  >
-   <ion-label> search by</ion-label>    
+   <ion-label> <div class="chkbx"> search by</div></ion-label>    
    <ion-select >    
   <ion-option value="uname" selected="true">שם המשתמש</ion-option>
     <ion-option   value="gender" >מגדר</ion-option>
@@ -20,7 +20,7 @@
        <ion-option   value="email" >אימייל</ion-option>
   </ion-select>
     </ion-item>
-      <input class="srchBar" type="text" [(ngModel)]="srchStr"/> <ion-icon  id="hSrch" class="icons"  name="arrow-forward"></ion-icon>     
+      <input class="srchBar" type="text" [(ngModel)]="srchStr"/> <ion-icon (click)="toggleSearch()" id="hSrch" class="icons"  name="arrow-dropup-circle"></ion-icon>     
          </div>
 
 </ion-header>
