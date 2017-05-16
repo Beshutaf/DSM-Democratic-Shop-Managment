@@ -5,56 +5,47 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-   
     <ion-title >User Edit   </ion-title>  
-
   </ion-navbar>
       <div class="hlpBar">
     <span class="Baricn"> 
    search by <ion-icon class="icons" name="arrow-down"></ion-icon>
-   
-
       <input class="srchBar" type="text"/> <ion-icon  class="icons"  name="search"></ion-icon>     
          <ion-icon  class="icons" name="trash">(0)</ion-icon>
        </span>
-  
        </div>
 </ion-header>
 <ion-content padding>
-
  <ion-list>
   <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
 <form [formGroup]="slideOneForm" >
-
-    <ion-item  *ngFor="let user of usersL;  let i=index">
-         
+    <ion-item  class="usrlst" *ngFor="let user of usersL;  let i=index"> 
     <div class="roundedOne">
 	<input  type="checkbox" id= "{{ user.uname }}" name="cb" />
     <label for= "{{ user.uname }}"></label></div> <br><br>
- <div (click)=" toggleGroup(i)"><span class="name"><ion-icon name="person" class="icons"></ion-icon> User Name:</span>
+ <div (click)=" toggleGroup(i)"><span class="name"><ion-icon id="icn" name="person" class="icons"></ion-icon> User Name:</span>
    <input  class="ioedit" type="text" formControlName="name" value=" {{ user.uname }} "/></div>    
-       <div  *ngIf="isGroupShown(i)">  <span class="woot"> <ion-icon class="icons" name="at"></ion-icon> Email:</span> 
+       <div  *ngIf="isGroupShown(i)">  <span class="woot"> <ion-icon id="icn" class="icons" name="at"></ion-icon> Email:</span> 
     <input class="ioedit" type="text" formControlName="email" value="{{user.email}}"></div>
-        <div *ngIf="isGroupShown(i)"> <span class="woot"><ion-icon class="icons" name="contact"></ion-icon> First Name:</span> 
+        <div *ngIf="isGroupShown(i)"> <span class="woot"><ion-icon id="icn" class="icons" name="contact"></ion-icon> First Name:</span> 
           <input class="ioedit" type="text"  formControlName="fName" value="{{ user.fname }}"/></div>
-       <div *ngIf="isGroupShown(i)"> <span class="woot"> <ion-icon class="icons" name="phone-portrait"></ion-icon>  Phone Num:</span> 
+       <div *ngIf="isGroupShown(i)"> <span class="woot"> <ion-icon id="icn" class="icons" name="phone-portrait"></ion-icon>  Phone Num:</span> 
          <input class="ioedit" type="text" formControlName="number"  value="{{ user.phoneN }} "/></div>
      <ion-item no-lines class='test' *ngIf="isGroupShown(i)">
-      <ion-label> <span class='slct'><ion-icon class="icons" name="settings"></ion-icon>  Authentication:</span></ion-label> 
-        <ion-select  formControlName="authen" placeholder="{{ user.auth }}" >
-     <ion-option class="OP" value="R" >רגיל</ion-option>
-    <ion-option class="OP"  value="A">אדמין</ion-option>
-     <ion-option class="OP"  value="M">תורן</ion-option>
-      <ion-option class="OP"  value="S">ספק</ion-option>
+      <ion-label  > <span class='slct'><ion-icon class="icons" id="icn" name="settings"></ion-icon>  Authentication:</span></ion-label> 
+        <ion-select  [(ngModel)]="user.auth" formControlName="authen" placeholder="{{ user.auth }}"  > 
+     <ion-option value="R" >רגיל</ion-option> 
+    <ion-option  value="A">אדמין</ion-option>
+     <ion-option   value="M">מנהל</ion-option>
+      <ion-option  value="S">ספק</ion-option>
   </ion-select>
 </ion-item>               
   <ion-item  class='test' *ngIf="isGroupShown(i)">
-    <ion-label><span class='slct'><ion-icon class="icons" name="female">Gender:</ion-icon> </span> </ion-label>
-   <ion-select  formControlName="gen" placeholder="{{ user.gender }}"> 
-  <ion-option   value="f"  >נקבה</ion-option>
-    <ion-option   value="m">זכר</ion-option>
+    <ion-label><span class='slct'><ion-icon id="icn" class="icons" name="female"></ion-icon>  Gender:  </span> </ion-label>
+   <ion-select  [(ngModel)]="user.gender"  formControlName="gen" >      
+  <ion-option id= "{{ user.uname }}"  value="f" selected="false"> נקבה </ion-option>
+    <ion-option id= "{{ user.uname }}"  value="m" selected="false">זכר</ion-option>
   </ion-select>
          </ion-item>
 
