@@ -11,8 +11,8 @@ import { HomePage } from '../pages/home/home';
 })
 export class MyApp {
 
-  //rootPage = LoginPage;
- rootPage = HomePage;
+  rootPage = LoginPage;
+ //rootPage = HomePage;
   constructor(platform: Platform,private oneSignal:OneSignal, private _platform: Platform) {
     platform.ready().then(() => {
         if (platform.is('cordova')) {
