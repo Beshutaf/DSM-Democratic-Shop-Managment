@@ -42,7 +42,7 @@
        <div *ngIf="isGroupShown(i)"> <span class="woot"> <ion-icon class="icons" name="phone-portrait"></ion-icon>  Phone Num:</span> 
          <input class="ioedit" type="text" formControlName="number"  value="{{ user.phoneN }} "/></div>
      <ion-item *ngIf="isGroupShown(i)">
-      <ion-label class="slct"> <ion-icon class="icons" name="settings"></ion-icon>  Authentication:</ion-label> 
+      <ion-label> <span class='slct'><ion-icon class="icons" name="settings"></ion-icon>  Authentication:</span></ion-label> 
         <ion-select class="chose" formControlName="authen" placeholder="{{ user.auth }}" >
      <ion-option class="OP" value="R" >רגיל</ion-option>
     <ion-option class="OP"  value="A">אדמין</ion-option>
@@ -51,7 +51,8 @@
   </ion-select>
 </ion-item>               
   <ion-item   *ngIf="isGroupShown(i)">
-    <ion-label  class='slct'><ion-icon class="icons" name="female">Gender:</ion-icon> </ion-label> 
+ 
+    <ion-label>   <span class='slct'><ion-icon class="icons" name="female">Gender:</ion-icon> </span> </ion-label>
    <ion-select class="choose" formControlName="gen" placeholder="{{ user.gender }}"> 
   <ion-option  class="OP" value="f"  >נקבה</ion-option>
     <ion-option  class="OP" value="m">זכר</ion-option>
