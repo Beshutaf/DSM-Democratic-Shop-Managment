@@ -43,9 +43,7 @@ export class FacebookService{
     }
     addFacebook(facebook){
         
-        this.http.post("https://obscure-reef-53169.herokuapp.com/facebook/addFacebook",facebook).subscribe((response)=>{
-            
-        })
+      return  this.http.post("https://obscure-reef-53169.herokuapp.com/facebook/addFacebook",facebook);
     }
     getPosts(){
         this.http.get("https://obscure-reef-53169.herokuapp.com/facebook/getAll").subscribe((Response)=>{

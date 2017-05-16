@@ -11,12 +11,12 @@ export class FacebookListComponent{
     @Input() facebook:FacebookModel;
     markpost(){
      if(this.test===false){
-     this.active="markgreen";
+     this.active="markblue";
     }
     else
     this.active="black-white";
  if(this.test===false){
-     this.active="markgreen";
+     this.active="markblue";
     }
     else
     this.active="black-white";

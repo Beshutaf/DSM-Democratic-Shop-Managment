@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from "ionic-angular";
+import { NavController, LoadingController } from "ionic-angular";
 import { FacebookService } from "./facebook.service";
 import { FacebookModel } from "./facebook.model";
 
@@ -13,7 +13,7 @@ export class FacebookPostPage implements OnInit {
     facebookpending:{name,imageUrl,message,index}[]=[];
     
     facebook:FacebookModel[]=[];
-    constructor(private navController:NavController,private facebookService:FacebookService){}
+    constructor(private loader:LoadingController,private navController:NavController,private facebookService:FacebookService){}
 closePage(){
     this.navController.pop();
 }
@@ -49,7 +49,14 @@ closePage(){
     
     this.facebookService.facebookPosted=this.facebookpending.slice();
     this.facebookService.facebookPostedChanged.emit(this.facebookService.facebookPosted);
-     this.facebookService.addFacebook(this.facebookService.facebookPosted);
-     console.log(this.facebook)
+      let loader = this.loader.create({
+              content: "setting items"
+        });
+        loader.present();
+     this.facebookService.addFacebook(this.facebookService.facebookPosted).subscribe(()=>{
+        this.navController.popToRoot();
+        loader.dismiss();
+     });
+       
 }
 }
