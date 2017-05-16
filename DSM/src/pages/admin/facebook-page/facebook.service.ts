@@ -1,6 +1,7 @@
 import { Injectable, EventEmitter } from "@angular/core";
 import { Http } from "@angular/http";
 import { FacebookModel } from "./facebook.model";
+import { LoadingController } from "ionic-angular";
 
 @Injectable()
 export class FacebookService{
@@ -9,8 +10,12 @@ export class FacebookService{
     facebookPostedChanged=new EventEmitter<{name,imageUrl,message,index}[]>();
     homePageFacebook=new EventEmitter<FacebookModel[]>();
     facebooks:FacebookModel[]=[]
-    constructor(private http:Http){}
+    constructor(private loadingController:LoadingController,private http:Http){}
     getallPosts():FacebookModel[]{
+          let loader = this.loadingController.create({
+              content: "getting items"
+        });
+       loader.present();
         this.http.get("https://obscure-reef-53169.herokuapp.com/facebook/getAll").subscribe(()=>{
 
         })
@@ -28,9 +33,10 @@ export class FacebookService{
             console.log(data.json());
             this.facebooks.push(new FacebookModel(facebookpost.message,facebookpost.id,facebookpost.from.name,data.json().picture.data.url));
             this.facebooksChanged.emit(this.facebooks.slice());
+         
           })
         }
-            
+              loader.dismiss(); 
       
         })
         return this.facebooks;

@@ -15,6 +15,11 @@ export class FacebookListComponent{
     }
     else
     this.active="black-white";
+ if(this.test===false){
+     this.active="markgreen";
+    }
+    else
+    this.active="black-white";
      
      this.test=!this.test;
     }

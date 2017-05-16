@@ -1,3 +1,18 @@
-<ion-card (click)="markpost()" class="facebookCards" [ngClass]="active">
-   <p> {{facebook.message}}</p>
-</ion-card>
+     <ion-card>
+    <ion-item (click)="markpost()" [ngClass]="active">
+      
+     
+     <ion-thumbnail item-left >
+        <img src="{{facebook.imageUrl}}" width="200px" style="border-radius:200px;">
+      </ion-thumbnail>
+         
+       <ion-card-title id="card">
+          {{facebook.name}}
+         
+       </ion-card-title>
+       <ion-card-content id="title">
+            {{facebook.message}}
+       </ion-card-content>
+       
+       </ion-item>
+   </ion-card>
