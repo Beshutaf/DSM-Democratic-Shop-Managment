@@ -6,7 +6,8 @@
 </ion-header>
 <ion-content>
   <ion-list>
-       <ion-card *ngFor="let f of facebook; let i = index" (click)="addFacebook(f.name,f.imageUrl,f.message,i)" >
+    <app-facebook-list *ngFor="let f of facebook; let i = index" [facebook]="f" (click)="addFacebook(f.name,f.imageUrl,f.message,i)"></app-facebook-list>
+       <!--<ion-card *ngFor="let f of facebook; let i = index" (click)="addFacebook(f.name,f.imageUrl,f.message,i)" >
     <ion-item >
       
 
@@ -22,7 +23,7 @@
             {{f.message}}
        </ion-card-content>
        </ion-item>
-   </ion-card>
+   </ion-card>-->
 
   </ion-list>
 </ion-content>

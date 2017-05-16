@@ -27,6 +27,7 @@ closePage(){
         }
         addFacebook(name,imageUrl,message,index){
            let counter:number=0;
+           this.facebook[index].clicked=!this.facebook[index].clicked;
             for (let facebookMessage of this.facebookpending)
             {
                 if(facebookMessage.index===index){

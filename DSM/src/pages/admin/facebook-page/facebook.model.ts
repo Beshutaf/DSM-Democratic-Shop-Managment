@@ -3,6 +3,7 @@ public message:String;
 public id:String;
 public name:String;
 imageUrl:String;
+clicked:Boolean=false;
 constructor(message:String,id:String,name:String,imageUrl:String){
     this.message=message;
     this.id=id;
