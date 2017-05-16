@@ -9,12 +9,16 @@ import { User } from "../user.model";
   templateUrl: 'edit.html'
 })
 export class EditPage {
- x = "";
   usersL : User[] = [];
   nuser :User;
+  checked=[];
+  srchStr="";
   shownGroup = null;
+  shownSearch = null;
+  Search=false;
+  massDlt=false;
       slideOneForm: FormGroup;
-     
+     count =0;
   constructor(public  formBuilder:FormBuilder,public navCtrl: NavController,public http: Http, public navParams: NavParams,public loadingController :LoadingController,public alertCtrl: AlertController) {
 
          this.slideOneForm = formBuilder.group({
@@ -84,13 +88,24 @@ err => {
         this.shownGroup = group;
     }
 };
+  toggleSearch() {
+    if(this.Search===false)
+      this.Search=true;
+      else
+      this.Search=false;
+};
 isGroupShown(group) {
     return this.shownGroup === group;
 };
+isSearchShown() {
+    return  this.Search;
+};
  trash(pos){
+   
   let loader = this.loadingController.create({
               content: "deleting user..."
         });
+        if(this.massDlt==false)
         loader.present();
    let headers = new Headers();
        headers.append('content-Type','application/json');
@@ -113,7 +128,8 @@ isGroupShown(group) {
               console.log("ERROR!: ", err);
             }
         );
-        this.usersL.splice(pos,1);
+        if(this.massDlt==false)
+       this.usersL.splice(pos,1);
       loader.dismiss();
      //this.save();
    }
@@ -183,5 +199,56 @@ this.http
    resetP(){
    this.Alert("Are you sure want to reset user's password?");
  }
+
+ counter(i){
+   var k=0;
+  if(this.checked.length==1&&i==this.checked[k]){
+this.count=0;
+this.checked.pop();
+return this.count;
+
+  }
+
+   for(k=0;k<this.checked.length;k++){
+   if(i==this.checked[k]){
+
+      this.checked.splice(k,1);
+        this.count-=1;
+        return this.count;
+   }
+   }
+   this.checked.push(i);
+    this.count+=1;
+   return this.count;
+ }
+  dltList(){
+    if(this.checked===null)
+    return;
+    this.massDlt=true;
+    var k=0;
+         for(k;k<this.checked.length;k++)
+               this.trash(this.checked[k]);
+      for(k=0;k<this.checked.length;k++) {
+        this.usersL.splice(this.checked[k],1);
+        this.checked.splice(k,1);
+      }
+    this.massDlt=false;  
+  this.count=0;
+ this.save();
+  this.save();
+
+
+  }
+ startSearch(pos){ 
+   if(this.srchStr=='')
+       return true;
+   var str = this.srchStr;
+   var arr = this.usersL;
+             if(arr[pos].uname.toLowerCase().startsWith(str.toLowerCase()))
+               return true
+ 
+        return false;
+
+    }
 
 }

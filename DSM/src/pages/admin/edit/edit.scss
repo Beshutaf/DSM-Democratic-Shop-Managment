@@ -12,20 +12,23 @@ page-edit {
 			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	
 	}
+	.hedr{
+		position: absolute;
+	}
 	.icons{
 	margin-left:5px;
 }
-.hlpBar{
-	margin-left:10px;
-  color:black;
-	font-size:20px;
+.srchM{
+	background-color:white;
+	width:100%;
 }
-.Baricn{
 
-	float:right;
-}
 .srchBar{
-	width:35%;
+	width:70%;
+	height:35px;
+	font-size:18px;
+	margin-bottom:5px;
+	margin-left:20px;
 }
 	.name{
 		margin-top:5px;
@@ -34,6 +37,13 @@ page-edit {
 		color:	#8A2BE2;
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
+	}
+	#hSrch{
+		font-size:32px;
+		color:#3b5998;
+		font-weight: bold;
+		margin-left:25px;
+	
 	}
 /* ROUNDED ONE */
 
@@ -69,6 +79,10 @@ border:0px;
 
 	color:black;
 
+}
+.cont{
+	margin-top:5px;
+	position: relative;
 }
 .roundedOne {
 	width: 28px;
@@ -116,7 +130,13 @@ border:0px;
 	background: linear-gradient(top, #222 0%, #45484d 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#45484d',GradientType=0 );
 }
-
+#mTrash,#mSrch{
+	float:right;
+	margin-right:10px;
+}
+#mSrch:focus{
+	color:red;
+}
 .roundedOne label:after {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 	filter: alpha(opacity=0);

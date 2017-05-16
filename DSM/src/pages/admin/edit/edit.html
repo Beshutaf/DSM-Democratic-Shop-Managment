@@ -4,27 +4,40 @@
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<ion-header >
   <ion-navbar>
-    <ion-title >User Edit   </ion-title>  
+    <ion-title >User Edit     <ion-icon (click)="toggleSearch()" id="mSrch" class="icons"  name="search"></ion-icon>
+      <ion-icon id="mTrash" (click)="dltList()" class="icons" name="trash">({{count}})</ion-icon></ion-title>  
   </ion-navbar>
-      <div class="hlpBar">
-    <span class="Baricn"> 
-   search by <ion-icon class="icons" name="arrow-down"></ion-icon>
-      <input class="srchBar" type="text"/> <ion-icon  class="icons"  name="search"></ion-icon>     
-         <ion-icon  class="icons" name="trash">(0)</ion-icon>
-       </span>
-       </div>
+ <div  *ngIf="isSearchShown()" no-line class="srchM">
+ <ion-item class="srchM"  >
+   <ion-label> search by</ion-label>    
+   <ion-select >    
+  <ion-option value="uname" selected="true">שם המשתמש</ion-option>
+    <ion-option   value="gender" >מגדר</ion-option>
+     <ion-option   value="auth" >הרשאה</ion-option>
+      <ion-option   value="phoneN" >מספר טלפון</ion-option>
+       <ion-option   value="email" >אימייל</ion-option>
+  </ion-select>
+    </ion-item>
+      <input class="srchBar" type="text" [(ngModel)]="srchStr"/> <ion-icon  id="hSrch" class="icons"  name="arrow-forward"></ion-icon>     
+         </div>
+
 </ion-header>
-<ion-content padding>
+<ion-content padding class="cont">
  <ion-list>
   <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
 <form [formGroup]="slideOneForm" >
-    <ion-item  class="usrlst" *ngFor="let user of usersL;  let i=index"> 
-    <div class="roundedOne">
-	<input  type="checkbox" id= "{{ user.uname }}" name="cb" />
+  <!--  <div *ngFor="let user of usersL;let i=index" > *ngIf="startSearch(i)"      <ion-item class="usrlst" *ngFor"let j=index" > -->
+   
+   <div  *ngFor="let user of usersL;let i=index">
+    <ion-item class="usrlst" *ngIf="startSearch(i)" >  
+ 
+
+    <div  class="roundedOne"> 
+	<input  type="checkbox" id= "{{ user.uname }}" name="cb" (click)="counter(i)"  />
     <label for= "{{ user.uname }}"></label></div> <br><br>
- <div (click)=" toggleGroup(i)"><span class="name"><ion-icon id="icn" name="person" class="icons"></ion-icon> User Name:</span>
+ <div><span (click)=" toggleGroup(i)" class="name"><ion-icon id="icn" name="person" class="icons"></ion-icon> User Name:</span>
    <input  class="ioedit" type="text" formControlName="name" value=" {{ user.uname }} "/></div>    
        <div  *ngIf="isGroupShown(i)">  <span class="woot"> <ion-icon id="icn" class="icons" name="at"></ion-icon> Email:</span> 
     <input class="ioedit" type="text" formControlName="email" value="{{user.email}}"></div>
@@ -49,13 +62,19 @@
   </ion-select>
          </ion-item>
 
-  
+
  <div  *ngIf="isGroupShown(i)">
     <span class="trash" (click)="trash(i)" > <ion-icon class="icons"  name="trash"></ion-icon></span>
     <button   class="edituserbtn" (click)="resetP()">אפס סיסמה</button>
     <span class="trash" (click)="sync(user)"> <ion-icon class="icons"  name="sync"></ion-icon></span></div>
-   
+    
+
+
     </ion-item>
+ </div>
+
+  
+
    </form>
   </ion-list>
  
