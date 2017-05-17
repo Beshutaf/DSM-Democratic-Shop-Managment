@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar class="background">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Pending Products</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+        <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+    <ion-list>
+         <ng-container *ngFor = "let productDetail of productDetails.slice().reverse()" >
+    <pending-item  *ngIf="productDetail.Accepted===false" 
+      [productDetail]="productDetail"></pending-item>
+ 
+    </ng-container>
+
+    </ion-list>
+</ion-content>

@@ -1,0 +1,23 @@
+pending-item{
+.buttonDelete{
+	padding:25px;
+}
+.buttonDelete ion-icon{
+	font-size:32px;
+}
+
+		.feed-item
+		{
+			transition: opacity 2s;
+			@include basic-card-styles($white-d);
+
+			.item-title
+			{
+				margin: 0px;
+				margin-bottom: 12px;
+				padding: 0px;
+				letter-spacing: 1.1px;
+				color: $theme-color-2;
+			}
+		}
+}

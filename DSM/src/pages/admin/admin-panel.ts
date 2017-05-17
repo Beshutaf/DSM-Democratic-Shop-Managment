@@ -5,6 +5,7 @@ import { PushPage } from "./push-page/push-page";
 import { CreateUserPage } from "./create-user/create-user";
 import { FacebookPostPage } from "./facebook-page/facebook-post-page";
 import { EditPage } from "./edit/edit";
+import { PendingProductPage } from "./pendingproduct-page/pending-product";
 
 @Component({
   selector: 'page-admin',
@@ -14,6 +15,9 @@ export class AdminPage {
 
   constructor(private nav:Nav) {
 
+  }
+  pendingProductPage(){
+    this.nav.push(PendingProductPage);
   }
   sendPushPage(){
       this.nav.push(PushPage);
