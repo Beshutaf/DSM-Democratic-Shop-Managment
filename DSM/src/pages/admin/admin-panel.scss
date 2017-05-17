@@ -28,5 +28,18 @@ page-admin{
     .ttl{
         float:right;
     }
+    .clicked:active{
+    background:#2b84d3;
+    color:white;
+}
+.clicked:active > *>*{
+  background:#2b84d3;
+    color:white;
+}
+.clicked{
+  background:transparent;
+}
+
+
 
 }

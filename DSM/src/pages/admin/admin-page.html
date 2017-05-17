@@ -10,7 +10,7 @@
     <ion-row>
     <ion-col width-50>
         
-    <ion-card class="admin-item" (click)="sendPushPage()">
+    <ion-card class="admin-item clicked" (click)="sendPushPage()">
          <ion-icon class="bellicn" name="notifications"></ion-icon>
          <br>
         <b> שליחת הודעת התראה </b>
@@ -18,7 +18,7 @@
     
     </ion-col>
   <ion-col width-50>
-<ion-card  class="admin-item" (click)="newUser()">
+<ion-card  class="admin-item clicked" (click)="newUser()">
      <ion-icon class="addicn"  name="person-add"></ion-icon>
      <br>
         <b>הוספת משתמש חדש</b>
@@ -27,15 +27,15 @@
 </ion-row>
   <ion-row>
     <ion-col width-50>
-    <ion-card class="admin-item" (click)="pendingProductPage()">
-         <ion-icon class="icons" color="secondary" name="checkbox-outline"></ion-icon>
+    <ion-card class="admin-item clicked" (click)="pendingProductPage()">
+         <ion-icon class="icons" color="facebook" name="checkbox-outline"></ion-icon>
          <br>
         <b> מוצרים בהמתנה לאישור</b>
     </ion-card>
     
     </ion-col>
   <ion-col width-50>
-<ion-card (click)="editPostPage()" class="admin-item">
+<ion-card  (click)="editPostPage()" class="admin-item clicked">
      <ion-icon  class="icn"  name="construct"></ion-icon>
      <br>
         <b>עריכת משתמשים</b>
@@ -44,14 +44,14 @@
 </ion-row>
     <ion-row>
       <ion-col width-50>
-   <ion-card (click)="facebookPostPage()" class="admin-item">
+   <ion-card (click)="facebookPostPage()" class="admin-item clicked">
            <ion-icon color="facebook" class="icons" name="logo-facebook"></ion-icon>
            <br>
           <b> בחירת פוסטים  facebook מ</b>
     </ion-card>
         </ion-col>   
           <ion-col width-50>
-   <ion-card  class="admin-item" >
+   <ion-card  class="admin-item clicked" >
            <ion-icon class="icn" name="attach"></ion-icon>
            <br>
           <b>בחירת פוסטים  Discourse מ</b>
