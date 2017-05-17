@@ -9,6 +9,7 @@ import { ModalcommentPage } from "./modalcomment/modalcomment";
     templateUrl:"./list.component.html"
 })
 export class listComponent{
+  likedelay:boolean=false;
     role:String="admin";
     @Input() productDetail:Product;
    commentsChanged= new EventEmitter<number>();
@@ -24,7 +25,8 @@ export class listComponent{
         });
     }
     onLike(){
-       
+       if(this.likedelay===false){
+         this.likedelay=true;
        if (this.productDetail.liked ==true)
        {
         this.listService.DisLikeProduct(this.productDetail);
@@ -33,6 +35,10 @@ export class listComponent{
         this.listService.likeProduct(this.productDetail);
     }
     this.productDetail.liked=!this.productDetail.liked;
+    setTimeout(()=>{
+          this.likedelay=false;
+    },500)
+       }
 }
 openCommentBox(){
   let modal = this.modalCtrl.create(ModalcommentPage,{id:this.productDetail._id});
@@ -82,19 +88,19 @@ Approve(){
         {
           name: 'Status',
           label:"ordered",
-          value:"o",
+          value:"ordered",
           type:"radio"
         },
          {
           name: 'Status',
           label:"shipped",
-          value:"s",
+          value:"shipped",
           type:"radio"
         },
          {
           name: 'Status',
-          label:"dileverd",
-          value:"d",
+          label:"deliverd",
+          value:"deliverd",
           type:"radio"
         }
       ],
@@ -108,7 +114,13 @@ Approve(){
         {
           text: 'Save',
           handler: data => {
-           data.amount
+           if(data===undefined){
+
+           }
+           else{
+             this.productDetail.status=data;
+            this.listService.setStatus(this.productDetail._id,data);
+           }
           }
         }
       ]
