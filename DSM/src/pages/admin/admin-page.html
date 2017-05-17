@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Admin's Panel</ion-title>
+    <ion-title><span class="ttl">פאנל אדמינים</span></ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content>
@@ -11,50 +11,50 @@
     <ion-col width-50>
         
     <ion-card class="admin-item" (click)="sendPushPage()">
-         <ion-icon class="icons" name="notifications"></ion-icon>
+         <ion-icon class="bellicn" name="notifications"></ion-icon>
          <br>
-        <b>Send PushNotification</b>
+        <b> שליחת הודעת התראה </b>
     </ion-card>
     
     </ion-col>
   <ion-col width-50>
 <ion-card  class="admin-item" (click)="newUser()">
-     <ion-icon class="icons" name="person-add"></ion-icon>
+     <ion-icon class="addicn"  name="person-add"></ion-icon>
      <br>
-        <b>Create A User</b>
+        <b>הוספת משתמש חדש</b>
     </ion-card>
   </ion-col>
 </ion-row>
   <ion-row>
     <ion-col width-50>
     <ion-card class="admin-item" (click)="pendingProductPage()">
-         <ion-icon class="icons" name="refresh"></ion-icon>
+         <ion-icon class="icons" color="secondary" name="checkbox-outline"></ion-icon>
          <br>
-        <b> Pending Products</b>
+        <b> מוצרים בהמתנה לאישור</b>
     </ion-card>
     
     </ion-col>
   <ion-col width-50>
 <ion-card (click)="editPostPage()" class="admin-item">
-     <ion-icon  class="icons"  name="refresh"></ion-icon>
+     <ion-icon  class="icn"  name="construct"></ion-icon>
      <br>
-        <b>Edit Users Accounts</b>
+        <b>עריכת משתמשים</b>
     </ion-card>
   </ion-col>
 </ion-row>
     <ion-row>
       <ion-col width-50>
    <ion-card (click)="facebookPostPage()" class="admin-item">
-           <ion-icon class="icons" name="refresh"></ion-icon>
+           <ion-icon color="facebook" class="icons" name="logo-facebook"></ion-icon>
            <br>
-          <b>Set Facebook Posts</b>
+          <b> בחירת פוסטים  facebook מ</b>
     </ion-card>
         </ion-col>   
           <ion-col width-50>
    <ion-card  class="admin-item" >
-           <ion-icon class="icons" name="refresh"></ion-icon>
+           <ion-icon class="icn" name="attach"></ion-icon>
            <br>
-          <b>Set Discourse Posts</b>
+          <b>בחירת פוסטים  Discourse מ</b>
     </ion-card>
         </ion-col>  
     </ion-row>

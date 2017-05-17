@@ -5,6 +5,28 @@ page-admin{
     .admin-item{
        padding:30px;
        height:150px;
-        text-align: center
+
+        text-align: center;
+       color:	#303030;
+			font-size:16px;
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
+    .icn{
+        color:#8c9cb1;
+        font-size:52px;
+    }
+       .addicn{
+
+      	color: #2b84d3;
+        font-size:52px;
+    }
+    .bellicn{
+
+      color:  #ccac00;
+        font-size:52px;
+    }
+    .ttl{
+        float:right;
+    }
+
 }

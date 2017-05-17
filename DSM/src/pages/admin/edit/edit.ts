@@ -198,6 +198,8 @@ this.http
 
 
    resetP(){
+
+     
    this.Alert("Are you sure want to reset user's password?");
  }
 

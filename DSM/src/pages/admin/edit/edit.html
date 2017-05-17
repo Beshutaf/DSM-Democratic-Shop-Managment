@@ -6,16 +6,16 @@
 -->
 <ion-header >
   <ion-navbar>
-    <ion-title >User Edit     <ion-icon (click)="toggleSearch()" id="mSrch" class="icons"  name="search"></ion-icon>
-      <ion-icon id="mTrash" (click)="dltList()" class="icons" name="trash">({{count}})</ion-icon></ion-title>  
+    <ion-title >  <ion-icon (click)="toggleSearch()" id="mSrch" class="icons"  name="search"></ion-icon>
+      <ion-icon id="mTrash" (click)="dltList()" class="icons" name="trash">({{count}})</ion-icon><span class="ttl"> עריכת משתמש  </span></ion-title>  
   </ion-navbar>
  <div  *ngIf="isSearchShown()"  class="srchM">
  <ion-item no-line class="srchM"  >
-   <ion-label> <div class="chkbx">  <ion-icon  name="search"></ion-icon>
-   search by</div></ion-label>    
+     <ion-label> <div class="chkbx">  בחר סוג חיפוש והתחל להקליד
+  <ion-icon  name="search"></ion-icon></div></ion-label>      
    <ion-select  [(ngModel)]="chkVlue">    
      <div  class='optn' >
-  <ion-option  value="uname" selected="true">שם המשתמש</ion-option>
+  <ion-option  value="uname" selected="true">שם </ion-option>
     <ion-option   value="gender" >מגדר</ion-option>
      <ion-option   value="auth" >הרשאה</ion-option>>
        <ion-option   value="email" >אימייל</ion-option>
@@ -35,22 +35,24 @@
   <!-- <ion-item ng-repeat="user in usersL" *ngIf="startSearch(i)" class="usrlst">
   //<ion-item class="usrlst" *ngIf="startSearch(i)" >   <div *ngFor="let user of usersL;let i=index" > *ngIf="startSearch(i)"      <ion-item class="usrlst" *ngFor"let j=index" > -->
    
+   
    <div   *ngFor="let user of usersL;let i=index">
+
         <ion-item  class='usrlst'  *ngIf="startSearch(i)" >
 
     <div  class="roundedOne"> 
 	<input  type="checkbox" id= "{{ user.uname }}" name="cb" (click)="counter(i)"  />
     <label for= "{{ user.uname }}"></label></div> <br><br>
- <div><span (click)=" toggleGroup(i)" class="name"><ion-icon id="icn" name="person" class="icons"></ion-icon> User Name:</span>
+ <div><span (click)=" toggleGroup(i)" class="name"><ion-icon id="icn" name="person" class="icons"></ion-icon> שם משתמש</span>
    <input  class="ioedit" type="text" formControlName="name" value=" {{ user.uname }} "/></div>    
-       <div  *ngIf="isGroupShown(i)">  <span class="woot"> <ion-icon id="icn" class="icons" name="at"></ion-icon> Email:</span> 
+       <div  *ngIf="isGroupShown(i)">  <span class="woot"> <ion-icon id="icn" class="icons" name="at"></ion-icon> איימיל</span> 
     <input class="ioedit" type="text" formControlName="email" value="{{user.email}}"></div>
-        <div *ngIf="isGroupShown(i)"> <span class="woot"><ion-icon id="icn" class="icons" name="contact"></ion-icon> First Name:</span> 
+        <div *ngIf="isGroupShown(i)"> <span class="woot"><ion-icon id="icn" class="icons" name="contact"></ion-icon> שם</span> 
           <input class="ioedit" type="text"  formControlName="fName" value="{{ user.fname }}"/></div>
-       <div *ngIf="isGroupShown(i)"> <span class="woot"> <ion-icon id="icn" class="icons" name="phone-portrait"></ion-icon>  Phone Num:</span> 
+       <div *ngIf="isGroupShown(i)"> <span class="woot"> <ion-icon id="icn" class="icons" name="phone-portrait"></ion-icon> מס פלאון</span> 
          <input class="ioedit" type="text" formControlName="number"  value="{{ user.phoneN }} "/></div>
      <ion-item no-lines class='test' *ngIf="isGroupShown(i)">
-      <ion-label  > <span class='slct'><ion-icon class="icons" id="icn" name="settings"></ion-icon>  Authentication:</span></ion-label> 
+      <ion-label  > <span class='slct'><ion-icon class="icons" id="icn" name="settings"></ion-icon>  הרשאה</span></ion-label> 
         <ion-select  [(ngModel)]="user.auth" formControlName="authen" placeholder="{{ user.auth }}"  > 
      <ion-option value="R" >רגיל</ion-option> 
     <ion-option  value="A">אדמין</ion-option>
@@ -59,7 +61,7 @@
   </ion-select>
 </ion-item>               
   <ion-item  class='test' *ngIf="isGroupShown(i)">
-    <ion-label><span class='slct'><ion-icon id="icn" class="icons" name="female"></ion-icon>  Gender:  </span> </ion-label>
+    <ion-label><span class='slct'><ion-icon id="icn" class="icons" name="female"></ion-icon>  מגדר  </span> </ion-label>
    <ion-select  [(ngModel)]="user.gender"  formControlName="gen" >      
   <ion-option id= "{{ user.uname }}"  value="f" selected="false"> נקבה </ion-option>
     <ion-option id= "{{ user.uname }}"  value="m" selected="false">זכר</ion-option>
@@ -75,6 +77,7 @@
 
 
     </ion-item>
+
  </div>
 
   
