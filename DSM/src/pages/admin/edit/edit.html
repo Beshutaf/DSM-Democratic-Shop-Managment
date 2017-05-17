@@ -12,7 +12,7 @@
  <div  *ngIf="isSearchShown()" no-line class="srchM">
  <ion-item class="srchM"  >
    <ion-label> <div class="chkbx"> search by</div></ion-label>    
-   <ion-select >    
+   <ion-select  [(ngModel)]="chkVlue">    
   <ion-option value="uname" selected="true">שם המשתמש</ion-option>
     <ion-option   value="gender" >מגדר</ion-option>
      <ion-option   value="auth" >הרשאה</ion-option>
@@ -20,6 +20,8 @@
        <ion-option   value="email" >אימייל</ion-option>
   </ion-select>
     </ion-item>
+
+     <ion-icon (click)="helpBar()" id="hSrch" class="icons"  name="information-circle"></ion-icon> 
       <input class="srchBar" type="text" [(ngModel)]="srchStr"/> <ion-icon (click)="toggleSearch()" id="hSrch" class="icons"  name="arrow-dropup-circle"></ion-icon>     
          </div>
 
@@ -28,11 +30,11 @@
  <ion-list>
   <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
 <form [formGroup]="slideOneForm" >
-  <!--  <div *ngFor="let user of usersL;let i=index" > *ngIf="startSearch(i)"      <ion-item class="usrlst" *ngFor"let j=index" > -->
+  <!-- <ion-item ng-repeat="user in usersL" *ngIf="startSearch(i)" class="usrlst">
+  //<ion-item class="usrlst" *ngIf="startSearch(i)" >   <div *ngFor="let user of usersL;let i=index" > *ngIf="startSearch(i)"      <ion-item class="usrlst" *ngFor"let j=index" > -->
    
-   <div  *ngFor="let user of usersL;let i=index">
-    <ion-item class="usrlst" *ngIf="startSearch(i)" >  
- 
+   <div ng-controller="cntrl"   *ngFor="let user of usersL;let i=index;">
+        <ion-item ng-repeat="let j=index" class='usrlst'  *ngIf="startSearch(i)" >
 
     <div  class="roundedOne"> 
 	<input  type="checkbox" id= "{{ user.uname }}" name="cb" (click)="counter(i)"  />

@@ -17,6 +17,7 @@ export class EditPage {
   shownSearch = null;
   Search=false;
   massDlt=false;
+  chkVlue="uname";
       slideOneForm: FormGroup;
      count =0;
   constructor(public  formBuilder:FormBuilder,public navCtrl: NavController,public http: Http, public navParams: NavParams,public loadingController :LoadingController,public alertCtrl: AlertController) {
@@ -240,15 +241,64 @@ return this.count;
 
   }
  startSearch(pos){ 
+
+
    if(this.srchStr=='')
        return true;
    var str = this.srchStr;
    var arr = this.usersL;
+switch(this.chkVlue){
+  case  'uname':
              if(arr[pos].uname.toLowerCase().startsWith(str.toLowerCase()))
-               return true
- 
+               return true;
+               break;
+  case 'email' :
+        if(arr[pos].email.toLowerCase().startsWith(str.toLowerCase()))
+               return true;
+  case 'gender':
+
+  if(arr[pos].gender.toLowerCase().startsWith(str.toLowerCase()))
+               return true;
+                 case 'auth':
+
+  if(arr[pos].auth.toLowerCase().startsWith(str.toLowerCase()))
+               return true;
+
+
+ }
         return false;
-
+ 
     }
+    helpBar(){
+      var str="";
+      switch(this.chkVlue){
+                   case 'auth':
+                   str= "לרשימת אדמינים"+ " A "+ "הקלד" + "\n" +
+"\n" + "לרשימת ספקים"+ " S "+ "הקלד"+"\n" +
+"\n" + "לרשימת טורנים"+ " M "+ "הקלד"+"\n" +
+"\n" + "לרשימת ללא הרשאות"+ " R "+ "הקלד";
+          break;
+          case 'gender':
+          str= str= "לרשימת גברים"+ " M "+ "הקלד" + 
+"\n" + "לרשימת נשים"+ " S "+ "הקלד";
+break;
+case 'uname':
+    str="התחל בהקלדת השם הרשימה תתעדכן אוטומטית";
+break;
+case 'email':
+    str="התחל בהקלדת האיימיל הרשימה תתעדכן אוטומטית";
+break;
 
+      }
+
+                       let alert = this.alertCtrl.create({
+      title: "עזרה בחיפוש",
+      subTitle:
+        str,
+      buttons: ['חזרה']
+    });
+      alert.present();
+
+      }
+  
 }
