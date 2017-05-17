@@ -24,6 +24,9 @@ import { FacebookService } from "../pages/admin/facebook-page/facebook.service";
 import {OneSignal} from "@ionic-native/onesignal"
 import { OrderByPipe } from "../pipes/sortopipe.pipe";
 import { FacebookHomeItem } from "../pages/hello-ionic/facebook-home-item/facebook-home-item";
+import { PendingProductPage } from "../pages/admin/pendingproduct-page/pending-product";
+import { PendingProductItem } from "../pages/admin/pendingproduct-page/pending-item/pending-item.component";
+
 @NgModule({
   declarations: [
     MyApp,
@@ -46,7 +49,9 @@ import { FacebookHomeItem } from "../pages/hello-ionic/facebook-home-item/facebo
     ModalcommentPage,
     ParallaxHeader,
     OrderByPipe,
-    FacebookHomeItem
+    FacebookHomeItem,
+    PendingProductPage,
+    PendingProductItem
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -69,7 +74,9 @@ import { FacebookHomeItem } from "../pages/hello-ionic/facebook-home-item/facebo
     ListDetailsComponent,
     FacebookPostPage,
     ModalcommentPage,
-    FacebookHomeItem
+    FacebookHomeItem,
+    PendingProductPage,
+    PendingProductItem
   ],
   providers: [ FacebookService, OneSignal,  ListService,{provide: ErrorHandler,
     

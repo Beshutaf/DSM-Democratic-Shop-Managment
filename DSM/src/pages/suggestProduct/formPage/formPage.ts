@@ -76,7 +76,7 @@ export class formPage {
           });
   alert.present();
   }
-   this.listService.addProduct(new Product(form.value.name,form.value.description,this.base64Image,0,false));
+   this.listService.addProduct(new Product(form.value.name,form.value.description,this.base64Image,0,false,false));
  
    this.navCtrl.pop();
   }

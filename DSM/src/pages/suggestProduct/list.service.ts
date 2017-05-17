@@ -24,7 +24,7 @@ export class ListService {
           this.socket.on('product', (productAdd) => {
             console.log("entered");
            const product =JSON.parse(productAdd);
-               const productAddition = new Product(product.name,product.description,product.imageUrl,product.Likes,false);
+               const productAddition = new Product(product.name,product.description,product.imageUrl,product.Likes,false,false);
                productAddition._id=product._id;
                console.log(productAdd._id);
             this.productDetails.push(productAddition);
@@ -80,8 +80,9 @@ productChanged=new EventEmitter<Product[]>();
                     liked=true;
                 }
                 else
-                    liked=false
-                 const productadding=new Product(product.name,product.description,product.imageUrl,product.Likes,liked);
+                    liked=false;
+                 const productadding=new Product(product.name,product.description,product.imageUrl,product.Likes,liked,product.Accepted);
+                 productadding.numberOfLikes=product.AmountOfLikes;
                  productadding._id=product._id;
                  productadding.commentsNumber=product.comments.length;
                 
@@ -125,7 +126,7 @@ productChanged=new EventEmitter<Product[]>();
 
      
 
-      const obj = {name:Product.name,description:Product.description,imageUrl:Product.imageUrl,Likes:0}
+      const obj = {name:Product.name,description:Product.description,imageUrl:Product.imageUrl,Likes:0,Accepted:false}
        loader.present();
       this.http.post("https://obscure-reef-53169.herokuapp.com/suggest/addProduct",obj)
       .subscribe((response)=>{
@@ -164,5 +165,15 @@ productChanged=new EventEmitter<Product[]>();
       })
      
 
+  }
+  approve(id,amountoflikes){
+      let index=this.productDetails.findIndex(x=>x._id===id);
+      this.productDetails[index].Accepted=true;
+      this.productDetails[index].numberOfLikes=amountoflikes;
+       this.http.post("https://obscure-reef-53169.herokuapp.com/suggest/approve",{id,amountoflikes})
+       .subscribe((response)=>{
+        
+       });
+  this.productChanged.emit(this.productDetails);
   }
 }

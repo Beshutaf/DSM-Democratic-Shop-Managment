@@ -1,6 +1,6 @@
 
 <div  class="feed-item" (click)="productDetails()">
-        <ion-card>
+        <ion-card [ngClass]="{'reachedlikes':productDetail.Likes > productDetail.numberOfLikes}">
           
           <ion-item-sliding>
             <ion-item>  
@@ -38,7 +38,7 @@
         <ion-col no-padding width-30 text-left>
           <button class="action-button" (click)="onLike();$event.stopPropagation()" ion-button clear small icon-left>
             <ion-icon isActive="{{productDetail.liked}}"name='heart'></ion-icon>
-            {{productDetail.Likes}} Likes
+            {{productDetail.Likes}} / {{productDetail.numberOfLikes}} Likes  
           </button>
         </ion-col>
         
