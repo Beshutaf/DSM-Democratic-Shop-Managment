@@ -32,6 +32,16 @@ export class ListService {
         
          
     });
+    this.socket.on('status',(statusDetails)=>{
+       var details= JSON.parse(statusDetails);
+       console.log(details.status);
+        for(let p of this.productDetails){
+            if(p._id===details.id){
+                p.status=details.status;
+            }
+        }
+        this.productChanged.emit(this.productDetails.slice());
+    })
     this.socket.on('like',(Product)=>{
      
       for(let p of this.productDetails){
@@ -85,6 +95,7 @@ productChanged=new EventEmitter<Product[]>();
                  productadding.numberOfLikes=product.AmountOfLikes;
                  productadding._id=product._id;
                  productadding.commentsNumber=product.comments.length;
+                 productadding.status=product.status;
                 
               temp.push(productadding);       
             }
@@ -126,7 +137,7 @@ productChanged=new EventEmitter<Product[]>();
 
      
 
-      const obj = {name:Product.name,description:Product.description,imageUrl:Product.imageUrl,Likes:0,Accepted:false}
+      const obj = {name:Product.name,description:Product.description,imageUrl:Product.imageUrl,Likes:0,Accepted:false,status:Product.status}
        loader.present();
       this.http.post("https://obscure-reef-53169.herokuapp.com/suggest/addProduct",obj)
       .subscribe((response)=>{
@@ -141,7 +152,12 @@ productChanged=new EventEmitter<Product[]>();
            Product._id=response.json().id;
            console.log(Product._id);
   this.socket.emit('add-product', JSON.stringify(Product));    
-         
+           let alert = this.alertCtrl.create({
+            title: 'Product Was Added',
+            subTitle: 'Product was added to the pending list waiting for admin\'s approval',
+            buttons: ['Dismiss']
+          });
+          alert.present();
            loader.dismiss();
           }
       }),(err)=>{
@@ -174,6 +190,12 @@ productChanged=new EventEmitter<Product[]>();
        .subscribe((response)=>{
         
        });
-  this.productChanged.emit(this.productDetails);
-  }
+ 
+}
+setStatus(id,status){
+    this.http.post("https://obscure-reef-53169.herokuapp.com/suggest/setStatus",{id:id,status:status}).subscribe((response)=>{
+        console.log(status);
+         this.socket.emit('set-status', JSON.stringify({status:status,id:id}));    
+    })
+}
 }

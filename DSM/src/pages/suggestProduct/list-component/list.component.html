@@ -2,11 +2,9 @@
 <div  class="feed-item" (click)="productDetails()">
         <ion-card [ngClass]="{'reachedlikes':productDetail.Likes > productDetail.numberOfLikes}">
           
-          <ion-item-sliding>
-            <ion-item>  
-            <ion-thumbnail item-left>
-       <img src="{{productDetail.imageUrl}}">
-    </ion-thumbnail>
+          <ion-item-sliding >
+            <ion-item [ngClass]="{'reachedlikes':productDetail.Likes > productDetail.numberOfLikes}">  
+      
      <ion-card-content>
         <ion-card-title class="item-title">
           {{productDetail.name}}
@@ -15,15 +13,17 @@
           {{productDetail.description}}
         </p>
       </ion-card-content>
+            <ion-thumbnail item-right>
+       <img src="{{productDetail.imageUrl}}">
+    </ion-thumbnail>
             </ion-item>
-               <ion-item-options side="right" *ngIf="role==='admin'" > 
+            
+               <ion-item-options side="left" *ngIf="role==='admin'" > 
                      <button class="buttonDelete" ion-button color="secondary"  (click)="setStatus();$event.stopPropagation()">
     <ion-icon name="cube"></ion-icon>
         </button>
                 
-                 <button class="buttonDelete" ion-button   (click)="Approve();$event.stopPropagation()">
-      <ion-icon name="checkmark"></ion-icon>
-        </button>
+                
                 
         <button class="buttonDelete" ion-button color="danger"  (click)="deleteItem();$event.stopPropagation()">
       <ion-icon name="trash"></ion-icon></button>
