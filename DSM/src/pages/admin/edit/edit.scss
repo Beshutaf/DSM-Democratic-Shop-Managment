@@ -198,16 +198,19 @@ padding-right:50px;
   padding: 0px !important;
   background-color:transparent;
 }
+.usrlst{background-color: red;}
 
-	div .usrlst:nth-child(even){
+	.usrlst:nth-child(even){
 	background-color: #f1f1f1;
 	-webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
 	-moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
 	box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
 	}		
-	div .usrlst:nth-child(odd){
-		background-color: #f9f9f9;
-	
+.usrlst:nth-child(odd){
+		background-color: #f9f9f9 !important;
+		-webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+	box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
 	}
 		.scroll-content{
 		padding:0px !important;
