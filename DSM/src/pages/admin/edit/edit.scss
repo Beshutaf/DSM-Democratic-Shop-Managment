@@ -25,14 +25,19 @@ page-edit {
 .srchM{
 	background-color:white;
 	width:100%;
+	padding:0px !important;
 }
-
+.optn{
+	font-weight: bold;
+		color:#3b5998;
+				font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 .srchBar{
 	width:70%;
-	height:35px;
+	height:33px;
 	font-size:18px;
-	margin-bottom:5px;
 	margin-left:10px;
+	padding-top:15px;
 }
 	.name{
 		margin-top:5px;
@@ -47,7 +52,7 @@ page-edit {
 		color:#3b5998;
 		font-weight: bold;
 		margin-left:10px;
-		margin-top:5px;
+
 	
 	}
 /* ROUNDED ONE */
@@ -111,9 +116,7 @@ border:0px;
 	box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
 	position: relative;
 }
-.lst{
-	background-color:red;
-}
+
 
 .roundedOne label {
 	cursor: pointer;
@@ -195,9 +198,7 @@ padding-right:50px;
   padding: 0px !important;
   background-color:transparent;
 }
-.urlst{
-	 visibility: visible;
-}
+
 	div .usrlst:nth-child(even){
 	background-color: #f1f1f1;
 	-webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
@@ -219,6 +220,9 @@ padding-right:50px;
 		margin-right:10px;
 		width:20px;
 		color:	#8A2BE2;
+	}
+	.srchicn{
+ margin-top:5px;
 	}
 .ttt{background-color:red;}
 
