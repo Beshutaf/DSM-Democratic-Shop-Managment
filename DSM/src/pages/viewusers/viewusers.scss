@@ -7,7 +7,14 @@ page-viewusers {
 		font-size:19px;
 			
 	}
+	.srchicn{
+		color:white;
+		font-size:20px;
 
+	}
+.hdr{
+	margin-right:15px;
+}
 	.srchBar{
 	width:70%;
 	height:33px;
@@ -32,12 +39,12 @@ page-viewusers {
 }
 	.slct{float:left;}
 		.chkbx{
-		 margin-left:15px;
+		 margin-left:20px;
 		color:	#8A2BE2;
 			font-size:18px;
 			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 			float:right;
-			position:relative;
+
 	}
 		#hSrch{
 		font-size:32px;
@@ -49,6 +56,7 @@ page-viewusers {
 	}
 	.ttl{
 		float:right;
+		
 	}
 	.icons{
 		   margin-left:10px !important;

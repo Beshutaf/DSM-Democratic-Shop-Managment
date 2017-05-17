@@ -1,7 +1,7 @@
 
 <ion-header>
   <ion-navbar>
-    <ion-title class="ttl"> אנשי קשר  <ion-icon (click)="toggleSearch()" id="mSrch" class="icons"  name="search"></ion-icon></ion-title>
+    <ion-title class="ttl"> <span class="hdr">אנשי קשר</span>  <ion-icon (click)="toggleSearch()" id="srchicn"  name="search"></ion-icon></ion-title>
   </ion-navbar>
   <div  *ngIf="isSearchShown()"  class="srchM">
  <ion-item no-line class="srchM"  >
@@ -14,8 +14,8 @@
        <ion-option   value="email" >אימייל</ion-option>
        </div>
   </ion-select>
-   <ion-label> <div class="chkbx">  <ion-icon  name="search"></ion-icon>
-  חיפוש לפי</div></ion-label>    
+   <ion-label> <div class="chkbx">  בחר סוג חיפוש והתחל להקליד
+  <ion-icon  name="search"></ion-icon></div></ion-label>    
     </ion-item>
 
      <ion-icon (click)="helpBar()" id="hSrch" class="srchicn"  name="information-circle"></ion-icon> 
