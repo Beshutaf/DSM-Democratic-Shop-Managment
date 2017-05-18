@@ -3,7 +3,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { StatusBar, Splashscreen } from 'ionic-native';
-
+import {  AlertController ,LoadingController } from 'ionic-angular';
 import { HelloIonicPage } from '../hello-ionic/hello-ionic';
 import { ListPage } from '../list/list';
 import { AdminPage } from "../admin/admin-panel";
@@ -25,7 +25,8 @@ export class HomePage {
 
   constructor(
     public platform: Platform,
-    public menu: MenuController
+    public menu: MenuController,
+    public alertCtrl: AlertController
   ) {
     this.initializeApp();
 
@@ -84,5 +85,53 @@ export class HomePage {
   }
   setting(){
     
+      
+
+
+
   }
+  
+  presentPrompt() {
+  let alert = this.alertCtrl.create({
+    title: 'שינו סיסמה',
+    inputs: [
+      {
+        name: 'username',
+        placeholder: 'סיסמה ישנה',
+         type: 'password'
+      },
+      {
+        name: 'password',
+        placeholder: 'סיסמה חדשה',
+        type: 'password'
+      },
+        {
+        name: 'confirm',
+        placeholder:  'אישור סיסמה',
+        type: 'password'
+      }
+    ],
+    buttons: [
+      {
+        text: 'חזרה',
+        role: 'cancel',
+        handler: data => {
+          console.log('Cancel clicked');
+        }
+      },
+      {
+        text: 'שנה',
+        handler: data => {
+        //  if (User.isValid(data.username, data.password)) {
+            // logged in!
+        //  } else {
+            // invalid login
+           // return false;
+         // }
+        }
+      }
+    ]
+  });
+  alert.present();
+}
 }

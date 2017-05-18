@@ -197,10 +197,42 @@ this.http
   }
 
 
-   resetP(){
+   resetP(tmpusr){  
+  let loader = this.loadingController.create({
+              content: "deleting user..."
+        });
+        if(this.massDlt==false)
+        loader.present();
+   let headers = new Headers();
+       headers.append('content-Type','application/json');
 
-     
-   this.Alert("Are you sure want to reset user's password?");
+  let body = {
+    id : tmpusr.idd,
+    uname : tmpusr.uname,
+    fName : tmpusr.fname,
+    email : tmpusr.email,
+    PhoneNo: tmpusr.phoneN,
+    Gender: tmpusr.gender,
+    password : tmpusr.password,
+    authen:tmpusr.auth
+    };
+  let options = new RequestOptions({ headers: headers });
+  this.http
+        .post('https://obscure-reef-53169.herokuapp.com/users/rstPas', body, options)
+        .map(res => res.json())
+       .subscribe(
+            data => {            
+            },
+            err => {
+  this.Alert('בעת מחיקה נתקלנו בבעיה נסה שנית ');     
+              console.log("ERROR!: ", err);
+            }
+        );
+  
+    
+      loader.dismiss();
+
+
  }
 
  counter(i){

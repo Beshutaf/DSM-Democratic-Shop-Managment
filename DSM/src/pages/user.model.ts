@@ -1,4 +1,5 @@
 export class User{
+
     public email:string;
     public uname:string;
     public password:string;
@@ -11,12 +12,13 @@ export class User{
     constructor(uname,password,email,phoneN,gender,auth,fname){
       this.email=email;
         this.uname=uname;
+  
            this.fname=fname;   
         this.password=password;
         this.gender=gender;
            this.phoneN=phoneN;
            this.auth=auth;
-        //this._id=_id;
+
 
     }
 }

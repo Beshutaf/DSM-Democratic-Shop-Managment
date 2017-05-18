@@ -6,9 +6,10 @@ export class User{
     public gender:string;
     public auth:string;
  public fname:string;
+ public idd:string;
 
    
-    constructor(uname,password,email,phoneN,gender,auth,fname){
+    constructor(uname,password,email,phoneN,gender,auth,fname,id){
       this.email=email;
         this.uname=uname;
            this.fname=fname;   
@@ -16,7 +17,7 @@ export class User{
         this.gender=gender;
            this.phoneN=phoneN;
            this.auth=auth;
-        //this._id=_id;
+      this.idd=id;
 
     }
 }
