@@ -2,15 +2,16 @@ page-hello-ionic {
     .header-image {
     background-image: url("../assets/images/homepage.png");
     background-position: center;
-       
-     
-
     height: 30vh;
 }
  .icn{
-  margin-left:10px;
-  margin-bottom:5px;
+
   float:right;
+ }
+ .ttl{
+     padding-left:10px;
+     float:right;
+ margin-top:5px;
  }
 .main-content {
   

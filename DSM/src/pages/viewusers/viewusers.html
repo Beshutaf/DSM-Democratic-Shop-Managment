@@ -27,10 +27,10 @@
   <!--  <ion-item class="bkclr" *ngFor="let user of usersL;  let i=index" (click)="toggleGroup(i)" > -->
   <div  *ngFor="let user of usersL;let i=index">
     <ion-item  class='bkclr' *ngIf="startSearch(i)"  (click)="toggleGroup(i)" >
-       <div  class="warper">{{ user.uname }} <span class="woot"> <ion-icon class="icons" name="person"></ion-icon> שם משתמש</span>  <br /><br /></div>
-        <div *ngIf="isGroupShown(i)" class="warper"> {{ user.email }}  <span class="woot"> <ion-icon class="icons" name="at"></ion-icon>    אימייל</span><br /> <br /> </div>
-        <div *ngIf="isGroupShown(i)" class="warper"> {{ user.fname }}  <span class="woot"><ion-icon class="icons" name="contact"></ion-icon>  שם</span> <br /><br /></div>
-       <div *ngIf="isGroupShown(i)" class="warper">  {{ user.phoneN }}<span class="woot"><ion-icon class="icons" name="phone-portrait"></ion-icon> מס פלאפון</span><br /> <br /></div>
+       <span  class="warper"><button  class="val">{{ user.uname }}</button> <div class="woot"> <ion-icon class="icons" name="person"></ion-icon>שם</div><br /><br /></span>
+        <div *ngIf="isGroupShown(i)" class="warper"><button  class="val">{{ user.email }}</button>  <span class="woot"> <ion-icon class="icons" name="at"></ion-icon>    אימייל</span><br /> <br /> </div>
+        <div *ngIf="isGroupShown(i)" class="warper"><button  class="val"> {{ user.fname }} </button>  <span class="woot"><ion-icon class="icons" name="contact"></ion-icon>  שם</span> <br /><br /></div>
+       <div *ngIf="isGroupShown(i)" class="warper"><button  class="val">  {{ user.phoneN }} </button><span class="woot"><ion-icon class="icons" name="phone-portrait"></ion-icon>פלאפון </span><br /> <br /></div>
       <div *ngIf="isGroupShown(i)" class="warper">  {{ user.auth }} <span class="woot"> <ion-icon class="icons" name="settings"></ion-icon> הרשאה</span> <br /> <br /></div>   
       <div *ngIf="isGroupShown(i)" class="warper"> {{ user.gender }} <span class="woot"> <ion-icon class="icons" name="female"></ion-icon>  מגדר</span> <br /> </div>
     </ion-item>
