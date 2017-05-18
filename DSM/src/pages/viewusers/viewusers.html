@@ -25,8 +25,8 @@
 <ion-content padding>
  <ion-list>
   <!--  <ion-item class="bkclr" *ngFor="let user of usersL;  let i=index" (click)="toggleGroup(i)" > -->
-  <div  *ngFor="let user of usersL;let i=index">
-    <ion-item  class='bkclr' *ngIf="startSearch(i)"  (click)="toggleGroup(i)" >
+  <div class='loop' *ngFor="let user of usersL;let i=index">
+    <ion-item  class='bkclr' *ngIf="startSearch(i);let j=index"  (click)="toggleGroup(i)" >
        <span  class="warper"><button  class="val">{{ user.uname }}</button> <div class="woot"> <ion-icon class="icons" name="person"></ion-icon>שם</div><br /><br /></span>
         <div *ngIf="isGroupShown(i)" class="warper"><button  class="val">{{ user.email }}</button>  <span class="woot"> <ion-icon class="icons" name="at"></ion-icon>    אימייל</span><br /> <br /> </div>
         <div *ngIf="isGroupShown(i)" class="warper"><button  class="val"> {{ user.fname }} </button>  <span class="woot"><ion-icon class="icons" name="contact"></ion-icon>  שם</span> <br /><br /></div>
