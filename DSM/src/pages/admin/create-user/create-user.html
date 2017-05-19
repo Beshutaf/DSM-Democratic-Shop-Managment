@@ -7,23 +7,20 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>createUser</ion-title>
+    <ion-title><div class ="ttt"> <span>הוספת משתמש חדש  </span></div></ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content >
 
-<ion-content padding>
-
-
-			<div class ="ttt"> הוספת  <span> משתמש חדש </span></div>
+	 <!-- 	createUser				<div class ="ttt"> הוספת  <span> משתמש חדש </span></div>!-->
      
 
    <!--  <form formData='ngForm' (ngSubmit)="onSubmit('name.value')"> !-->
              <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
-<ion-list padding>
+<ion-list >
  <form [formGroup]="slideOneForm"  >
   <ion-item  class="qwe">
         <ion-label floating>שם משתמש</ion-label>
@@ -51,7 +48,7 @@
     <ion-input type="number" formControlName="number"></ion-input>
   </ion-item>
 
- <ion-item >
+ <ion-item class="slec" >
   <ion-label>מגדר</ion-label>
   <ion-select formControlName="gen">
     <ion-option float="left"  value="m" selected="true">נקבה</ion-option>
@@ -80,8 +77,4 @@
 </div>
 </form>
 </ion-list>
-
-
-</ion-content>
-
 </ion-content>

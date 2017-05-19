@@ -29,6 +29,8 @@
 
 </ion-header>
 <ion-content padding class="cont">
+    <ion-item  *ngIf="isSearchShown()"  class="paddingclass">
+</ion-item>
  <ion-list>
   <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
 <form [formGroup]="slideOneForm" >
@@ -41,7 +43,7 @@
         <ion-item  class='usrlst'  *ngIf="startSearch(i)" >
 
     <div  class="roundedOne"> 
-	<input  type="checkbox" id= "{{ user.uname }}" name="cb" (click)="counter(i)"  />
+	<input  type="checkbox" id= "{{ user.uname }}" name="cb" (click)="counter(i)"/>
     <label for= "{{ user.uname }}"></label></div> <br><br>
  <div><span (click)=" toggleGroup(i)" class="name"><ion-icon id="icn" name="person" class="icons"></ion-icon> שם משתמש</span>
    <input  class="ioedit" type="text" formControlName="name" value=" {{ user.uname }} "/></div>    
