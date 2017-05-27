@@ -10,15 +10,16 @@ import 'rxjs/Rx';
   selector: 'page-login',
   templateUrl: 'login.html'
 })
+
 export class LoginPage {
-    splash = true;
+    //splash = true;
   
    ionViewDidLoad() {
-    setTimeout(() => this.splash = false, 4000);
-
-          //  let alert = this.alertCtrl.create({
-   this.autologin();
-
+   
+this.autologin();
+ //  let alert = this.alertCtrl.create({
+  // this.autologin();
+ //setTimeout(() => this.splash = false, 4000);
 
             //    this.navCtrl.setRoot(HomePage);
   }
@@ -43,10 +44,11 @@ autologin(){
 
  let headers = new Headers();
        headers.append('content-Type','application/json');
+     headers.append('Cookies','loginCookie');
   let options = new RequestOptions({ headers: headers });
-
+ let body = {};
   this.http
-        .post('https://obscure-reef-53169.herokuapp.com/users/autologin', options)
+        .post('https://obscure-reef-53169.herokuapp.com/users/autologin',body, options)
         .map(res => res.json())
        .subscribe(
             data => {
@@ -63,7 +65,17 @@ autologin(){
 
 }
 
+test(){
+  this.http.get('https://obscure-reef-53169.herokuapp.com/users/cookie').map(res =>{
 
+return res.json();
+}).subscribe(data => {
+
+   console.log(data);   
+  });
+
+
+}
 
 
 save(){
@@ -75,6 +87,8 @@ save(){
  
       let headers = new Headers();
        headers.append('content-Type','application/json');
+      //  headers.append('Set-Cookie','logincookie');
+
            let body = {
       uname : this.slideOneForm.value.name,
       password : this.slideOneForm.value.password
