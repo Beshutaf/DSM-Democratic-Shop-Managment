@@ -61,13 +61,7 @@ autologin(){
         .map(res => res.json())
        .subscribe(
             data => {
-              console.log(data);                 
-    //  retrievedData=retrievedData.replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,"");
-  /*this.slideOneForm.value.name = this.slideOneForm.value.name.replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,"");
-   localStorage.setItem("UserN", JSON.stringify(this.slideOneForm.value.name));//date
-    localStorage.setItem("pass", JSON.stringify(this.slideOneForm.value.password));//date
-   localStorage.setItem("authType", JSON.stringify(this.slideOneForm.value.authen));//date*/
-    
+              console.log(data);                     
                 this.navCtrl.setRoot(HomePage);
  
             },
