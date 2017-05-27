@@ -15,6 +15,12 @@ export class LoginPage {
   
    ionViewDidLoad() {
     setTimeout(() => this.splash = false, 4000);
+
+          //  let alert = this.alertCtrl.create({
+   this.autologin();
+
+
+            //    this.navCtrl.setRoot(HomePage);
   }
 
  login: FormGroup;
@@ -32,6 +38,34 @@ export class LoginPage {
          password: ['',Validators.required],
     });
   }
+
+autologin(){
+
+ let headers = new Headers();
+       headers.append('content-Type','application/json');
+  let options = new RequestOptions({ headers: headers });
+
+  this.http
+        .post('https://obscure-reef-53169.herokuapp.com/users/autologin', options)
+        .map(res => res.json())
+       .subscribe(
+            data => {
+              console.log(data);                 
+    //  retrievedData=retrievedData.replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,"");
+   /*this.slideOneForm.value.name = this.slideOneForm.value.name.replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,"");
+   localStorage.setItem("UserN", JSON.stringify(this.slideOneForm.value.name));//date
+   localStorage.setItem("authType", JSON.stringify(this.slideOneForm.value.authen));//date*/
+    
+                this.navCtrl.setRoot(HomePage);
+ 
+            },
+            err => {});
+
+}
+
+
+
+
 save(){
  
     let loader = this.loadingCtrl.create({

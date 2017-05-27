@@ -36,12 +36,8 @@
 <form [formGroup]="slideOneForm" >
   <!-- <ion-item ng-repeat="user in usersL" *ngIf="startSearch(i)" class="usrlst">
   //<ion-item class="usrlst" *ngIf="startSearch(i)" >   <div *ngFor="let user of usersL;let i=index" > *ngIf="startSearch(i)"      <ion-item class="usrlst" *ngFor"let j=index" > -->
-   
-   
    <div class="loop"  *ngFor="let user of usersL;let i=index">
-
         <ion-item  class='usrlst'  *ngIf="startSearch(i)" >
-
     <div  class="roundedOne"> 
 	<input  type="checkbox" id= "{{ user.uname }}" name="cb" (click)="counter(i)"/>
     <label for= "{{ user.uname }}"></label></div> <br><br>
