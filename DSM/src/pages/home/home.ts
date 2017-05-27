@@ -80,7 +80,10 @@ export class HomePage {
 
   }
   SignOut(){
+   localStorage.clear();
     this.menu.close();
+
+
     this.nav.push(LoginPage);
   }
   setting(){

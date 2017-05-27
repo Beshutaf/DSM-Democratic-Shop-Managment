@@ -42,20 +42,30 @@ this.autologin();
 
 autologin(){
 
+
  let headers = new Headers();
+ //headers.append("Access-Control-Allow-Origin", "true")
+ // headers.setHeader("Access-Control-Allow-Origin", "*");
        headers.append('content-Type','application/json');
-     headers.append('Cookies','loginCookie');
+       //  headers.append('content-Length','200');
+
+       let body = {
+      uname : localStorage.getItem("UserN").replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,""),//this.slideOneForm.value.name,
+      password : localStorage.getItem("pass").replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,"")
+    };
+       // headers.append('Cookie', 'logincookie');
   let options = new RequestOptions({ headers: headers });
- let body = {};
+
   this.http
-        .post('https://obscure-reef-53169.herokuapp.com/users/autologin',body, options)
+        .post('https://obscure-reef-53169.herokuapp.com/users/autologin', body,options)
         .map(res => res.json())
        .subscribe(
             data => {
               console.log(data);                 
     //  retrievedData=retrievedData.replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,"");
-   /*this.slideOneForm.value.name = this.slideOneForm.value.name.replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,"");
+  /*this.slideOneForm.value.name = this.slideOneForm.value.name.replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,"");
    localStorage.setItem("UserN", JSON.stringify(this.slideOneForm.value.name));//date
+    localStorage.setItem("pass", JSON.stringify(this.slideOneForm.value.password));//date
    localStorage.setItem("authType", JSON.stringify(this.slideOneForm.value.authen));//date*/
     
                 this.navCtrl.setRoot(HomePage);
@@ -64,6 +74,8 @@ autologin(){
             err => {});
 
 }
+
+
 
 test(){
   this.http.get('https://obscure-reef-53169.herokuapp.com/users/cookie').map(res =>{
@@ -105,7 +117,7 @@ save(){
    this.slideOneForm.value.name = this.slideOneForm.value.name.replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,"");
    localStorage.setItem("UserN", JSON.stringify(this.slideOneForm.value.name));//date
    localStorage.setItem("authType", JSON.stringify(this.slideOneForm.value.authen));//date
-    
+   localStorage.setItem("pass", JSON.stringify(this.slideOneForm.value.password));//date
                 this.navCtrl.setRoot(HomePage);
   loader.dismiss();
             },
