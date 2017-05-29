@@ -41,7 +41,9 @@ autologin(){
 
  let loader = this.loadingCtrl.create({
               content: "...התחברות אוטומטית "
-                   });
+            
+  });
+
        loader.present();
 
        //-------------------------------------------------//
