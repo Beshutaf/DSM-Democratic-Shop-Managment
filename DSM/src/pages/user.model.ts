@@ -7,12 +7,10 @@ export class User{
     public gender:string;
     public auth:string;
  public fname:string;
-
    
     constructor(uname,password,email,phoneN,gender,auth,fname){
       this.email=email;
         this.uname=uname;
-  
            this.fname=fname;   
         this.password=password;
         this.gender=gender;

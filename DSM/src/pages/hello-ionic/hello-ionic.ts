@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FacebookService } from "../admin/facebook-page/facebook.service";
-import { LoadingController } from "ionic-angular";
+import { LoadingController} from "ionic-angular";
 
 
 @Component({
@@ -11,6 +11,7 @@ export class HelloIonicPage implements OnInit {
   topFacebookPosts:{name,imageUrl,message,index}[]=[];
 
   ngOnInit(){
+
     this.facebookService.getPosts();
        let loader = this.loader.create({
               content: "getting items"
@@ -22,7 +23,7 @@ export class HelloIonicPage implements OnInit {
     })
     this.topFacebookPosts=this.facebookService.facebookPosted;
   }
-  constructor(private loader:LoadingController,private facebookService:FacebookService) {
+  constructor( private loader:LoadingController,private facebookService:FacebookService) {
     
   }
 }

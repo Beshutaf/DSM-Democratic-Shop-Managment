@@ -28,7 +28,7 @@
   </ion-item>
   <ion-item class="pass">
  <ion-label floating>סיסמה</ion-label>
-    <ion-input type="password" formControlName="password"></ion-input>
+    <ion-input  disabled="true" formControlName="password" ></ion-input>
   </ion-item>
   <ion-item class="fName">
  <ion-label floating>שם</ion-label>
@@ -56,7 +56,7 @@
   </ion-select>
 </ion-item > 
 
-<ion-item class="slec">
+<ion-item *ngIf="checkAuth()" class="slec">
   <ion-label>סוג הרשאה</ion-label>
 
   <ion-select  formControlName="authen">

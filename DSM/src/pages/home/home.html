@@ -8,95 +8,88 @@
   </ion-header>
   <ion-content>
     <div id="list">
- <hr>
 
   
-    <ion-list class="option" (click)="openHomePage()" >
+  <ion-list padding class="mylist">
+    <hr>
+    <ion-item class="option" (click)="openHomePage()" >
       <button class="list-item clicked"     >
            <span class="tab">דף בית</span>
             <ion-icon name="home" class="icon-menu"></ion-icon>
            </button>
-           
-          <hr class="tab-line"> 
-      </ion-list>
-  
-
-   
-        
-    
-      
-
-    <ion-list class="option " (click)="openEditPage()">
+      </ion-item>
+    <ion-item class="option " (click)="openEditPage()">
       <button class="list-item clicked"   >
      
        <span class="tab">אנשי קשר</span>
          <ion-icon name="people" class="icon-menu"></ion-icon>
        </button>
-          <hr class="tab-line">
-    </ion-list>
+
+    </ion-item>
 
         
-        <ion-list class="option "  (click)="launch('https://docs.google.com/spreadsheets/d/1eb235mXFxlDW8cMuH_tWwX_75Lf8sju5qkhIS9ljChY/edit?usp=sharing')">
+        <ion-item class="option "  (click)="launch('https://docs.google.com/spreadsheets/d/1eb235mXFxlDW8cMuH_tWwX_75Lf8sju5qkhIS9ljChY/edit?usp=sharing')">
        <button  class="list-item clicked"    >
      <span class="tab"> סידור עבודה</span>
          <ion-icon name="paper" class="icon-menu"></ion-icon>
    
       </button>
-      <hr class="tab-line">
-      </ion-list>
-  <ion-list class="option" (click)="openSuggestedProduct()">
+
+      </ion-item>
+  <ion-item class="option" (click)="openSuggestedProduct()">
         <button class="list-item clicked"    >
       <span class="tab"> הצעת מוצר</span>
           <ion-icon name="clipboard" class="icon-menu"></ion-icon>
    
       </button>
-      <hr class="tab-line">
-       </ion-list>
-    <ion-list class="option " (click)="launch('https://docs.google.com/spreadsheets/d/1Ijn9koM0hVsq7dlk4YScTeneWIuo5CwLi7dZdUXbjcY/pub?single=true&gid=2&output=html')">
+
+       </ion-item>
+    <ion-item class="option " (click)="launch('https://docs.google.com/spreadsheets/d/1Ijn9koM0hVsq7dlk4YScTeneWIuo5CwLi7dZdUXbjcY/pub?single=true&gid=2&output=html')">
        <button class="list-item clicked"    >
       <span class="tab">טבלת מחירים</span>
         <ion-icon name="document" class="icon-menu"></ion-icon>
      
       </button>
-      <hr class="tab-line">
-</ion-list>
 
-<ion-list class="option " (click)="launch('http://forum.beshutaf.org/')">
+</ion-item>
+
+<ion-item class="option " (click)="launch('http://forum.beshutaf.org/')">
       <button class="list-item clicked"   >
       <span class="tab">פורום דיסקורס</span>
        <ion-icon name="link" class="icon-menu"></ion-icon>
       
       </button>
-      <hr class="tab-line">
-       </ion-list>
 
-       <ion-list class="option " (click)="openAdminPanel()">
+       </ion-item>
+
+       <ion-item *ngIf="AuthReglr()" class="option "  (click)="openAdminPanel()">
     <button class="list-item clicked"   >
          <span class="tab">פאנל אדמין</span>
           <ion-icon class="list-item" name="person" class="icon-menu"></ion-icon>
        
       </button>
-       <hr class="tab-line">
-</ion-list>
+  
+</ion-item>
 
-     <ion-list class="option "  (click)="presentPrompt()">
+     <ion-item class="option "  (click)="presentPrompt()">
     <button class="list-item clicked"  >
-          <p class="tab">שינוי סיסמה</p>
+          <span class="tab">שינוי סיסמה</span>
           <ion-icon class="list-item" name="settings" class="icon-menu"></ion-icon>
       </button>
-       <hr class="tab-line">
-</ion-list>
+    
+</ion-item>
 
-     <ion-list class="option"(click)="SignOut()">
+     <ion-item class="option"(click)="SignOut()">
     <button class="list-item clicked"   >
       
-           <p class="tab "> יציאה</p>
+           <span class="tab "> יציאה</span>
              <ion-icon class="list-item clicked" name="log-out" class="icon-menu"></ion-icon>
     
       </button>
-      <hr >
-</ion-list>
 
+      </ion-item>
+</ion-list>
+     
   </div>
   </ion-content>
 

@@ -1,21 +1,22 @@
 import { Component, ViewChild } from '@angular/core';
-
 import { Platform, MenuController, Nav } from 'ionic-angular';
-
 import { StatusBar, Splashscreen } from 'ionic-native';
-import {  AlertController ,LoadingController } from 'ionic-angular';
+import {  AlertController,LoadingController } from 'ionic-angular';
 import { HelloIonicPage } from '../hello-ionic/hello-ionic';
 import { ListPage } from '../list/list';
 import { AdminPage } from "../admin/admin-panel";
 import { SuggestPage } from "../suggestProduct/suggest";
 import { ViewusersPage} from "../viewusers/viewusers";
 import { InAppBrowser } from 'ionic-native';
+import { Http,RequestOptions,Headers} from "@angular/http";
 import { LoginPage } from "../login/login";
 @Component({
   selector:"page-home",
   templateUrl: 'home.html'
 })
 export class HomePage {
+
+ auth =  localStorage.getItem("authType").replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,"") || "R" ;
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
@@ -26,7 +27,11 @@ export class HomePage {
   constructor(
     public platform: Platform,
     public menu: MenuController,
-    public alertCtrl: AlertController
+    public alertCtrl: AlertController,
+    public loadingController:LoadingController ,
+    public http:Http
+    ,public RequestOptions:RequestOptions
+  
   ) {
     this.initializeApp();
 
@@ -48,6 +53,7 @@ export class HomePage {
   initializeApp() {
 
     this.platform.ready().then(() => {
+    
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
@@ -98,13 +104,13 @@ export class HomePage {
   let alert = this.alertCtrl.create({
     title: 'שינו סיסמה',
     inputs: [
-      {
-        name: 'username',
+     /* {
+        name: 'oldpas',
         placeholder: 'סיסמה ישנה',
          type: 'password'
-      },
+      },*/
       {
-        name: 'password',
+        name: 'newpass',
         placeholder: 'סיסמה חדשה',
         type: 'password'
       },
@@ -125,16 +131,84 @@ export class HomePage {
       {
         text: 'שנה',
         handler: data => {
-        //  if (User.isValid(data.username, data.password)) {
-            // logged in!
-        //  } else {
-            // invalid login
-           // return false;
-         // }
+          if(  data.newpass===data.confirm && data.newpass.length>3 ){
+             console.log("in reset "+ data.newpass);
+            this.resetP(data.newpass);
+       
+          }
+          else 
+           this.Alert("לצערנו הסימה לא עודכנה");
+
+          console.log(data);
         }
       }
     ]
   });
   alert.present();
 }
+AuthReglr(){
+
+var x =  JSON.parse(localStorage.getItem("myUser"));
+  if(this.auth.toString()==="R")
+     return false;
+     else 
+return true;
+}
+ Alert(type){
+             let alert = this.alertCtrl.create({
+            title: 'תקלה',
+            subTitle: type,
+            buttons: ['OK']
+          });
+  alert.present();
+        }
+
+resetP(pass){  
+
+
+var tmpusr =  JSON.parse(localStorage.getItem("myUser")) ;
+console.log("id "+
+ tmpusr.idd +"  una "+ tmpusr.uname+" fna  "+ tmpusr.fname+"   "+ tmpusr.auth
++" end of"
+  );
+if(tmpusr===""||tmpusr===null)
+   { this.Alert("נסה מאוחר יותר לעדכן ");
+      return;}
+  let loader = this.loadingController.create({
+              content: "מעדכן סיסמה"
+        });
+
+        loader.present();
+   let headers = new Headers();
+       headers.append('content-Type','application/json');
+
+  let body = {
+    id : tmpusr.idd,
+    uname : tmpusr.uname,
+    fName : tmpusr.fname,
+    email : tmpusr.email,
+    PhoneNo: tmpusr.phoneN,
+    Gender: tmpusr.gender,
+    password : pass,
+    authen:tmpusr.auth
+    };
+  let options = new RequestOptions({ headers: headers });
+  this.http
+        .post('https://obscure-reef-53169.herokuapp.com/users/rstPas', body, options)
+        .map(res => res.json())
+       .subscribe(
+            data => {   console.log("rested password "+ data)   
+              this.Alert('בזמן עדכון הסיסמה ');          
+            },
+            err => {
+  this.Alert('בזמן עדכון הסיסמה ');     
+              console.log("ERROR!: ", err);
+            }
+        );
+  
+    
+      loader.dismiss();
+
+
+ }
 }

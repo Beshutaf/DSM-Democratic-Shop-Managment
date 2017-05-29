@@ -12,7 +12,7 @@ import { PendingProductPage } from "./pendingproduct-page/pending-product";
   templateUrl: 'admin-page.html'
 })
 export class AdminPage {
-
+auth =  localStorage.getItem("authType").replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,"");
   constructor(private nav:Nav) {
 
   }
@@ -34,4 +34,23 @@ export class AdminPage {
     
  this.nav.push(EditPage);
   }
+AuthAdmin(){
+
+  if(this.auth==='A')
+     return true;
+     else
+     return false;
+}
+AuthSup(){
+    if(this.auth==="S" || this.auth==="A"  )
+     return true;
+     else 
+return false;
+}
+AuthMan(){
+  if(this.auth==="M" || this.auth==="A" )
+     return true;
+     else 
+return false;
+}
 }

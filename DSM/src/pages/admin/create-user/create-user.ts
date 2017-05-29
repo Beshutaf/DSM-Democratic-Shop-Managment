@@ -16,7 +16,7 @@ import 'rxjs/Rx';
   templateUrl: 'create-user.html'
 })
 export class CreateUserPage {
-
+    auth = localStorage.getItem("authType").replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,"");
     slideOneForm: FormGroup;
 
   constructor(public navCtrl: NavController,public http: Http,public  alertCtrl: AlertController,
@@ -26,9 +26,9 @@ export class CreateUserPage {
         fName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
         lName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
          email: ['',Validators.required],
-        password: ['',Validators.required],
+        password: ['1234',Validators.required],
         gen: ['',Validators.required],
-         authen: ['',Validators.required],
+         authen: ['R',Validators.required],
          number: ['',Validators.required]
    
     });
@@ -40,6 +40,7 @@ export class CreateUserPage {
 saveNewUser(){
    
  let headers = new Headers();
+
        headers.append('content-Type','application/json');
            let body = {
     uname : this.slideOneForm.value.name,
@@ -80,6 +81,14 @@ saveNewUser(){
 
             }
         );
+
+}
+checkAuth(){
+
+  if(this.auth==='A')
+     return true;
+     else
+     return false;
 
 }
 }

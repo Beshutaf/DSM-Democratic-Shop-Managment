@@ -162,7 +162,7 @@ if(this.slideOneForm.value.authen==='')
     Gender:this.slideOneForm.value.gen,   
     authen:this.slideOneForm.value.authen
   };
-  
+     localStorage.setItem("authType", JSON.stringify(this.slideOneForm.value.authen));//date
 let options = new RequestOptions({ headers: headers });
 
 
@@ -194,6 +194,7 @@ this.http
 
             }
         );
+
   }
 
 
@@ -213,7 +214,7 @@ this.http
     email : tmpusr.email,
     PhoneNo: tmpusr.phoneN,
     Gender: tmpusr.gender,
-    password : tmpusr.password,
+    password : "1234",
     authen:tmpusr.auth
     };
   let options = new RequestOptions({ headers: headers });
@@ -221,7 +222,7 @@ this.http
         .post('https://obscure-reef-53169.herokuapp.com/users/rstPas', body, options)
         .map(res => res.json())
        .subscribe(
-            data => {            
+            data => {         
             },
             err => {
   this.Alert('בעת מחיקה נתקלנו בבעיה נסה שנית ');     
