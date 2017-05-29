@@ -162,6 +162,14 @@ return true;
           });
   alert.present();
         }
+ Alert2(type){
+             let alert = this.alertCtrl.create({
+            title: 'הצלחה',
+          subTitle: type,
+            buttons: ['OK']
+          });
+  alert.present();
+        }
 
 resetP(pass){  
 
@@ -197,8 +205,9 @@ if(tmpusr===""||tmpusr===null)
         .post('https://obscure-reef-53169.herokuapp.com/users/rstPas', body, options)
         .map(res => res.json())
        .subscribe(
-            data => {   console.log("rested password "+ data)   
-              this.Alert('עודכן בהצלחה ');          
+            data => {   console.log("rested password" )   ;
+              this.Alert2('עודכן בהצלחה ');     
+              localStorage.setItem("pass",JSON.stringify(pass));//date    ;
             },
             err => {
   this.Alert('בזמן עדכון הסיסמה ');     
