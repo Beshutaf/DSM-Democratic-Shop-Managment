@@ -148,7 +148,7 @@ export class HomePage {
 }
 AuthReglr(){
 
-var x =  JSON.parse(localStorage.getItem("myUser"));
+
   if(this.auth.toString()==="R")
      return false;
      else 
@@ -198,7 +198,7 @@ if(tmpusr===""||tmpusr===null)
         .map(res => res.json())
        .subscribe(
             data => {   console.log("rested password "+ data)   
-              this.Alert('בזמן עדכון הסיסמה ');          
+              this.Alert('עודכן בהצלחה ');          
             },
             err => {
   this.Alert('בזמן עדכון הסיסמה ');     
