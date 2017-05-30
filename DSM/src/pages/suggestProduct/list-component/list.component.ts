@@ -10,7 +10,7 @@ import { ModalcommentPage } from "./modalcomment/modalcomment";
 })
 export class listComponent{
   likedelay:boolean=false;
-    role:String="admin";
+    role:String=localStorage.getItem("authType").replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,"");;
     @Input() productDetail:Product;
    commentsChanged= new EventEmitter<number>();
 
@@ -24,6 +24,13 @@ export class listComponent{
             imageUrl:this.productDetail.imageUrl
         });
     }
+ AuthSup(){
+
+    if(this.role==="S" || this.role==="A"  )
+     return true;
+     else 
+return false;
+}
     onLike(){
        if(this.likedelay===false){
          this.likedelay=true;
