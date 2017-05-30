@@ -22,9 +22,9 @@
              <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
 <ion-list >
  <form [formGroup]="slideOneForm"  >
-  <ion-item  class="qwe">
-        <ion-label floating>שם משתמש</ion-label>
-    <ion-input  type="text"  formControlName="name"></ion-input>
+   <ion-item class="email">
+ <ion-label floating>אימייל</ion-label>
+    <ion-input type="text" formControlName="email"></ion-input>
   </ion-item>
   <ion-item class="pass">
  <ion-label floating>סיסמה</ion-label>
@@ -36,13 +36,9 @@
   </ion-item>
     <ion-item class="lName">
  <ion-label floating>שם משפחה</ion-label>
-    <ion-input type="text" formControlName="fName"></ion-input>
+    <ion-input type="text" formControlName="lName"></ion-input>
   </ion-item>
 
-   <ion-item class="email">
- <ion-label floating>אימייל</ion-label>
-    <ion-input type="text" formControlName="email"></ion-input>
-  </ion-item>
    <ion-item class="PhoneNo">
  <ion-label floating>מספר טלפון</ion-label>
     <ion-input type="number" formControlName="number"></ion-input>

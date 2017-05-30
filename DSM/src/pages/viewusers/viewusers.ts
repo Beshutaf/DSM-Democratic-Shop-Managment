@@ -13,7 +13,7 @@ export class ViewusersPage {
   usersL : User[] = [];
   nuser :User;
   Search=false;
-  chkVlue="uname";
+  chkVlue="fname";
   srchStr="";
   constructor(public navCtrl: NavController,public http: Http, public navParams: NavParams,public loadingController :LoadingController,public alertCtrl: AlertController) {}
   ionViewDidLoad() {
@@ -40,7 +40,8 @@ return res.json();
 }).subscribe(data => {
          const temp =[];
 for(let user of data.user){
-  const useradding=new User(user.uname,user.password,user.email ,user.PhoneNo ,user.Gender ,user.authen,user.fName );
+
+  const useradding=new User(user.email,user.password ,user.PhoneNo ,user.Gender ,user.authen,user.fName,user.lName );
   temp.push(useradding);   
 }
 this.usersL = temp;
@@ -80,8 +81,8 @@ startSearch(pos){
    var str = this.srchStr;
    var arr = this.usersL;
 switch(this.chkVlue){
-  case  'uname':
-             if(arr[pos].uname.toLowerCase().startsWith(str.toLowerCase()))
+  case  'fname':
+             if(arr[pos].fname.toLowerCase().startsWith(str.toLowerCase()))
                return true;
                break;
   case 'email' :
@@ -115,7 +116,7 @@ switch(this.chkVlue){
            str=   "לרשימת גברים "+ " [M/ז] "+ "<br\>"+
   "לרשימת ספקים  "+" [F/נ]"+ "<br\>";
 break;
-case 'uname':
+case 'fname':
     str="התחל בהקלדת השם הרשימה תתעדכן אוטומטית";
 break;
 case 'email':

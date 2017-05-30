@@ -16,7 +16,7 @@ import { LoginPage } from "../login/login";
 })
 export class HomePage {
 
- auth =  localStorage.getItem("authType").replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,"") || "R" ;
+ 
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
@@ -94,21 +94,18 @@ export class HomePage {
   }
   setting(){
     
-      
-
-
-
+    
   }
   
   presentPrompt() {
   let alert = this.alertCtrl.create({
     title: 'שינו סיסמה',
     inputs: [
-     /* {
-        name: 'oldpas',
-        placeholder: 'סיסמה ישנה',
-         type: 'password'
-      },*/
+     {
+        name: 'email',
+        placeholder: 'איימיל',
+         type: 'text'
+      },
       {
         name: 'newpass',
         placeholder: 'סיסמה חדשה',
@@ -131,13 +128,17 @@ export class HomePage {
       {
         text: 'שנה',
         handler: data => {
-          if(  data.newpass===data.confirm && data.newpass.length>3 ){
-             console.log("in reset "+ data.newpass);
-            this.resetP(data.newpass);
-       
+       if( localStorage.getItem("myUser")!==null )
+         if(data.newpass===data.confirm && data.newpass.length>3 ){
+          var user =   JSON.parse( localStorage.getItem("myUser"));
+          if(data.email===user.email){
+              this.resetP(data.newpass);
+          }
+          else
+              this.Alert("הסימה לא עודכנה");
           }
           else 
-           this.Alert("לצערנו הסימה לא עודכנה");
+           this.Alert("הסימה לא עודכנה");
 
           console.log(data);
         }
@@ -147,9 +148,13 @@ export class HomePage {
   alert.present();
 }
 AuthReglr(){
+  var auth;
+  if( localStorage.getItem("authType")!==null)
+ auth =  localStorage.getItem("authType").replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,"") ;
+else
+auth="R";
 
-
-  if(this.auth.toString()==="R")
+  if(auth.toString()==="R")
      return false;
      else 
 return true;
@@ -175,10 +180,10 @@ resetP(pass){
 
 
 var tmpusr =  JSON.parse(localStorage.getItem("myUser")) ;
-console.log("id "+
+/*console.log("id "+
  tmpusr.idd +"  una "+ tmpusr.uname+" fna  "+ tmpusr.fname+"   "+ tmpusr.auth
 +" end of"
-  );
+  );*/
 if(tmpusr===""||tmpusr===null)
    { this.Alert("נסה מאוחר יותר לעדכן ");
       return;}
@@ -192,7 +197,7 @@ if(tmpusr===""||tmpusr===null)
 
   let body = {
     id : tmpusr.idd,
-    uname : tmpusr.uname,
+  //  uname : tmpusr.uname,
     fName : tmpusr.fname,
     email : tmpusr.email,
     PhoneNo: tmpusr.phoneN,

@@ -15,7 +15,7 @@
   <ion-icon  name="search"></ion-icon></div></ion-label>      
    <ion-select  [(ngModel)]="chkVlue">    
      <div  class='optn' >
-  <ion-option  value="uname" selected="true">שם </ion-option>
+  <ion-option  value="fname" selected="true">שם </ion-option>
     <ion-option   value="gender" >מגדר</ion-option>
      <ion-option   value="auth" >הרשאה</ion-option>>
        <ion-option   value="email" >אימייל</ion-option>
@@ -39,14 +39,17 @@
    <div class="loop"  *ngFor="let user of usersL;let i=index">
         <ion-item  class='usrlst'  *ngIf="startSearch(i)" >
     <div  class="roundedOne"> 
-	<input  type="checkbox" id= "{{ user.uname }}" name="cb" (click)="counter(i)"/>
-    <label for= "{{ user.uname }}"></label></div> <br><br>
- <div><span (click)=" toggleGroup(i)" class="name"><ion-icon id="icn" name="person" class="icons"></ion-icon> שם משתמש</span>
-   <input  class="ioedit" type="text" formControlName="name" value=" {{ user.uname }} "/></div>    
+	<input  type="checkbox" id= "{{ user.email }}" name="cb" (click)="counter(i)"/>
+    <label for= "{{ user.email }}"></label></div>
+
+ <div>  <span (click)=" toggleGroup(i)" class="name"><ion-icon id="icn" name="person" class="icons"></ion-icon> שם </span>
+   <input  class="ioedit" type="text" formControlName="fName" value=" {{ user.fname }} "/></div>    
+      <div *ngIf="isGroupShown(i)"> <span class="woot"><ion-icon id="icn" class="icons" name="contact"></ion-icon> משפחה</span> 
+          <input class="ioedit" type="text"  formControlName="lName" value="{{ user.lName }}"/></div>
        <div  *ngIf="isGroupShown(i)">  <span class="woot"> <ion-icon id="icn" class="icons" name="at"></ion-icon> איימיל</span> 
     <input class="ioedit" type="text" formControlName="email" value="{{user.email}}"></div>
-        <div *ngIf="isGroupShown(i)"> <span class="woot"><ion-icon id="icn" class="icons" name="contact"></ion-icon> שם</span> 
-          <input class="ioedit" type="text"  formControlName="fName" value="{{ user.fname }}"/></div>
+      <!-- <div *ngIf="isGroupShown(i)"> <span class="woot"><ion-icon id="icn" class="icons" name="contact"></ion-icon> שם</span> 
+          <input class="ioedit" type="text"  formControlName="lName" value="{{ user.lName }}"/></div>  -->
        <div *ngIf="isGroupShown(i)"> <span class="woot"> <ion-icon id="icn" class="icons" name="phone-portrait"></ion-icon> מס פלאון</span> 
          <input class="ioedit" type="text" formControlName="number"  value="{{ user.phoneN }} "/></div>
      <ion-item no-lines class='test' *ngIf="isGroupShown(i)">

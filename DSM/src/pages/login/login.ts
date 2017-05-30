@@ -15,7 +15,9 @@ export class LoginPage {
     attempts=0;
    splash = true;
    temp="";
+   
    ionViewDidLoad() {
+        
    setTimeout(() => this.splash = false, 4000)
    if(localStorage.getItem("UserN")!==null)
               this.autologin();
@@ -33,7 +35,7 @@ export class LoginPage {
     slideOneForm: FormGroup;
   constructor(   public menu: MenuController,public navCtrl: NavController,public http: Http,public loadingCtrl: LoadingController,public  alertCtrl: AlertController,public formBuilder:FormBuilder) {
     this.slideOneForm = formBuilder.group({
-        name: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+        name: ['',Validators.required],
          password: ['',Validators.required],
     });
   }
@@ -51,7 +53,7 @@ autologin(){
        headers.append('content-Type','application/json');
 
        let body = {
-      uname : localStorage.getItem("UserN").replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,""),//this.slideOneForm.value.name,
+      email: localStorage.getItem("UserN").replace(/[,\/#!$%\^&\*" ;:{}=\`~()]/g,""),//this.slideOneForm.value.name,
       password : localStorage.getItem("pass").replace(/[@.,\/#!$%\^&\*" ;:{}=\_`~()]/g,"")
     };
   let options = new RequestOptions({ headers: headers });
@@ -76,7 +78,7 @@ test(){
        headers.append('content-Type','application/json');
 
                 let body = {
-      uname : this.slideOneForm.value.name,
+      email : this.slideOneForm.value.name,
       password : this.slideOneForm.value.password
     };
        let options = new RequestOptions({ headers: headers });
@@ -97,7 +99,7 @@ save(){
       let headers = new Headers();
        headers.append('content-Type','application/json');
     let body = {
-      uname : this.slideOneForm.value.name,
+      email : this.slideOneForm.value.name,
       password : this.slideOneForm.value.password
     };   
     let options = new RequestOptions({ headers: headers });
@@ -106,10 +108,9 @@ save(){
         .map(res => res.json())
        .subscribe(
             data => { console.log(data);   
-                const useradding=new User(data.uname,data.password,data.email ,data.PhoneNo ,data.Gender 
-                ,data.authen,data.fName,data._id );
+                const useradding=new User(data.email,data.password,data.PhoneNo ,data.Gender 
+                ,data.authen,data.fName,data._id,data.lName);
      
-  localStorage.removeItem('authType');
   localStorage.setItem("UserN", JSON.stringify(this.slideOneForm.value.name));//date
   localStorage.setItem("authType", JSON.stringify(data.authen));//date
   localStorage.setItem("pass", JSON.stringify(this.slideOneForm.value.password));//date

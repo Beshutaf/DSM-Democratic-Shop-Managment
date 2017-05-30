@@ -17,14 +17,16 @@ export class EditPage {
   shownSearch = null;
   Search=false;
   massDlt=false;
-  chkVlue="uname";
+  chkVlue="fname";
       slideOneForm: FormGroup;
      count =0;
   constructor(public  formBuilder:FormBuilder,public navCtrl: NavController,public http: Http, public navParams: NavParams,public loadingController :LoadingController,public alertCtrl: AlertController) {
 
          this.slideOneForm = formBuilder.group({
-        name: [''],
+      //  name: [''],
+
          fName: [''],
+         lName: [''],
          email: [''],
          gen: [''],
          authen: [''],
@@ -68,8 +70,10 @@ return res.json();
 }).subscribe(data => {
          const temp =[];
 for(let user of data.user){
-  const useradding=new User(user.uname,user.password,user.email ,user.PhoneNo
-                                              ,user.Gender ,user.authen,user.fName,user._id );
+  const useradding=new User(user.email ,user.password,user.PhoneNo
+                                              ,user.Gender ,user.authen,user.fName,user._id,user.lName );
+
+
   temp.push(useradding);   
 }
 this.usersL = temp;
@@ -141,8 +145,8 @@ isSearchShown() {
  let headers = new Headers();
        headers.append('content-Type','application/json');
 
-if(this.slideOneForm.value.name==='')
-   this.slideOneForm.value.name= i.uname;
+/*if(this.slideOneForm.value.name==='')
+   this.slideOneForm.value.name= i.uname;*/
 if(this.slideOneForm.value.fName==='')
 this.slideOneForm.value.fName = i.fname;
 if(this.slideOneForm.value.email==='')
@@ -153,16 +157,19 @@ if(this.slideOneForm.value.gen==='')
  this.slideOneForm.value.gen=i.gender ;
 if(this.slideOneForm.value.authen==='')
   this.slideOneForm.value.authen = i.auth ;
+  if(this.slideOneForm.value.lName==='')
+  this.slideOneForm.value.lName = i.lName ;
        let body = {
     id : i.idd,
-    uname : this.slideOneForm.value.name,
+   // uname : this.slideOneForm.value.name,
     fName : this.slideOneForm.value.fName,
+    lName : this.slideOneForm.value.lName,
     email : this.slideOneForm.value.email,
     PhoneNo:this.slideOneForm.value.number,
     Gender:this.slideOneForm.value.gen,   
     authen:this.slideOneForm.value.authen
   };
-     localStorage.setItem("authType", JSON.stringify(this.slideOneForm.value.authen));//date
+ localStorage.setItem("authType", JSON.stringify(this.slideOneForm.value.authen));//date
 let options = new RequestOptions({ headers: headers });
 
 
@@ -174,7 +181,7 @@ this.http
                 let alert = this.alertCtrl.create({
       title: "המשתמש עודכן בהצלחה",
       subTitle:
-        this.slideOneForm.value.name+"  המשתמש עודכן ",
+        this.slideOneForm.value.fName+"  המשתמש עודכן ",
       buttons: ['חזרה']
     });
       alert.present();
@@ -184,7 +191,7 @@ this.http
             
             err => {
   let alert = this.alertCtrl.create({
-      title: 'הרשמת משתמש נכשלה!  '+this.slideOneForm.value.name,
+      title: 'הרשמת משתמש נכשלה!  '+this.slideOneForm.value.fName,
       subTitle:
         'המשתמש המבוקש לא נוצר :יכול להיות כבר קיים בדוק את הנתונים',
       buttons: ['חזרה']
@@ -209,9 +216,10 @@ this.http
 
   let body = {
     id : tmpusr.idd,
-    uname : tmpusr.uname,
+  //  uname : tmpusr.uname,
     fName : tmpusr.fname,
     email : tmpusr.email,
+    lName : tmpusr.lName,
     PhoneNo: tmpusr.phoneN,
     Gender: tmpusr.gender,
     password : "1234",
@@ -283,8 +291,8 @@ return this.count;
    var str = this.srchStr;
    var arr = this.usersL;
 switch(this.chkVlue){
-  case  'uname':
-             if(arr[pos].uname.toLowerCase().startsWith(str.toLowerCase()))
+  case  'fname':
+             if(arr[pos].fname.toLowerCase().startsWith(str.toLowerCase()))
                return true;
                break;
   case 'email' :
@@ -309,16 +317,16 @@ switch(this.chkVlue){
       switch(this.chkVlue){
                    case 'auth':
   str= 
-  "לרשימת אדמינים  "+ " [A/א] "+ "<br\>"+
-  "לרשימת ספקים  "+" [S/ס]"+ "<br\>" +
- "לרשימת תורנים  "+" [M/מ] "+ "<br\>" +
- "לרשימת הרשאה רגילה  "+" [R/ר]" + "<br\>";
+  "לרשימת אדמינים  "+ " [A] "+ "<br\>"+
+  "לרשימת ספקים  "+" [S]"+ "<br\>" +
+ "לרשימת תורנים  "+" [M] "+ "<br\>" +
+ "לרשימת הרשאה רגילה  "+" [R]" + "<br\>";
           break;
           case 'gender':
-           str=   "לרשימת גברים "+ " [M/ז] "+ "<br\>"+
-  "לרשימת ספקים  "+" [F/נ]"+ "<br\>";
+           str=   "לרשימת גברים "+ " [M] "+ "<br\>"+
+  "לרשימת ספקים  "+" [F]"+ "<br\>";
 break;
-case 'uname':
+case 'fname':
     str="התחל בהקלדת השם הרשימה תתעדכן אוטומטית";
 break;
 case 'email':
