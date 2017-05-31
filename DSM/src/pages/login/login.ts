@@ -74,7 +74,6 @@ autologin(){
 test(){
 
     let headers = new Headers();
-   headers.append("Access-Control-Allow-Origin", "http://localhost:8100");
        headers.append('content-Type','application/json');
 
                 let body = {

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {  AlertController ,LoadingController } from 'ionic-angular';
 import { Http,RequestOptions,Headers} from "@angular/http";
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { User } from "../user.model";
 @Component({
   selector: 'page-edit',

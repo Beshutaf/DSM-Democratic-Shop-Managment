@@ -1,4 +1,4 @@
-<ion-menu side="right"  [content]="content" >
+<ion-menu  class ="main" side="right"  [content]="content" >
 
   <ion-header >
     <ion-toolbar> 
@@ -6,12 +6,13 @@
       
     </ion-toolbar>
   </ion-header>
-  <ion-content>
-    <div id="list">
+
 
   
-  <ion-list padding class="mylist">
-    <hr>
+  <ion-content class="warp">
+
+
+  
     <ion-item class="option" (click)="openHomePage()" >
       <button class="list-item clicked"     >
            <span class="tab">דף בית</span>
@@ -88,12 +89,8 @@
       </button>
 
       </ion-item>
-      <p></p>
-</ion-list>
-     
-  </div>
   </ion-content>
 
 </ion-menu>
 
-<ion-nav side="right" [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-nav class="main" side="right" [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

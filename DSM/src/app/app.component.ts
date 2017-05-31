@@ -3,7 +3,7 @@ import { Platform } from 'ionic-angular';
 import { Splashscreen } from 'ionic-native';
 import {OneSignal} from '@ionic-native/onesignal'
 import { LoginPage } from '../pages/login/login';
-import { HomePage } from '../pages/home/home';
+//import { HomePage } from '../pages/home/home';
 
 
 @Component({
