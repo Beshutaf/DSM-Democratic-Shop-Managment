@@ -1,5 +1,7 @@
 page-viewusers {
-
+.mainhdr{
+	background-color:#d3d3d3;
+}
 	.woot{
 	
 		color: #2b84d3;
@@ -9,11 +11,6 @@ page-viewusers {
 		width:30%;
 		padding-bottom:10px;
 		
-	}
-	.srchicn{
-		color:white;
-		font-size:20px;
-
 	}
 .hdr{
 	margin-right:15px;
@@ -25,11 +22,15 @@ page-viewusers {
 	margin-left:10px;
 	padding-top:15px;
 	margin-bottom:7px;
-	margin-top:7px;
+	
+	border-radius: 50px;
+	padding-bottom: 15px;
+	padding-left: 10px;
+
 }
 	.warper{
 	font-size:17px;
-	margin-top:5px;
+
 			  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 				color:	#303030;
 				background:transparent;
@@ -49,11 +50,13 @@ page-viewusers {
 	}
 	.srchM{
 	background-color:#f0f0f0;
-
 	padding:0px !important;
+	 border-radius: 25px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
 }
 .paddingclass{
-	height:16%;
+	height:17%;
 }
 	.slct{float:left;}
 		.chkbx{
@@ -62,14 +65,14 @@ page-viewusers {
 			font-size:18px;
 			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 			float:right;
-
+	
 	}
 		#hSrch{
 		font-size:32px;
 		color: #2b84d3;
 		font-weight: bold;
 		margin-left:10px;
-       background-color:#f9f9f9;
+       background-color:transparent;
 	
 	}
 	.ttl{
@@ -84,6 +87,7 @@ page-viewusers {
 				font-size:28px;
 				width:20px;
 					float:right;
+				background-color: transparent;
 	}
 		
 	
@@ -130,7 +134,10 @@ page-viewusers {
 	.bkclr:focus{
  background-color:#2b84d3;
 }
-
+.srchBar:focus{
+    
+	background-color:#B19CD9;
+}
 
 /*.val:active > *>*{
   background-color:#2b84d3;
