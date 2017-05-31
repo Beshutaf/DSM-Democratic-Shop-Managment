@@ -16,7 +16,7 @@
  
    <ion-item  class="comment"  *ngFor="let c of comment.slice().reverse()">
      <b>{{c.name}}</b>
-     <p id="textComment" >{{c.comment}}</p><p id="date">fri test test test</p></ion-item>
+     <p id="textComment" >{{c.comment}}</p><p id="date">{{c.date}}</p></ion-item>
 </ion-content>
 <ion-footer id="ionfooter">
  <form #f='ngForm' (ngSubmit)="createComment(f)" id="form" >
