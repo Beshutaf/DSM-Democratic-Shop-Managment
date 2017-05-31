@@ -75,10 +75,12 @@ export class formPage {
             buttons: ['Dismiss']
           });
   alert.present();
-  }
+}
+else{
    this.listService.addProduct(new Product(form.value.name,form.value.description,this.base64Image,0,false,false));
  
    this.navCtrl.pop();
+   }
   }
   cancelButton(){
     this.navCtrl.pop();
