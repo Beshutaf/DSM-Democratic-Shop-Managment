@@ -46,7 +46,8 @@ return(){
 }
 createComment(comment){
   console.log("hi");
-        var retrievedData = localStorage.getItem("UserN");
+        var retrievedData = JSON.parse(localStorage.getItem("myUser"));
+        retrievedData=retrievedData.fname;
       
        this.commentService.addComment(this._id,comment.value.comment,retrievedData.replace(/"/g,""))
        comment.reset();

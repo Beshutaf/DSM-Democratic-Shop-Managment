@@ -6,6 +6,6 @@ export class comments{
     constructor(name,comment){
         this.name=name;
         this.comment=comment;
-        this.date=new Date();
+        this.date=new Date().toISOString().substr(0, 19).replace('T', ' ');
     }
 }
