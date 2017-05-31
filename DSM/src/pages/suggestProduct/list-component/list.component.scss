@@ -1,6 +1,25 @@
+.status>div>div {
+	text-align: center!important;
+}
+.status>div>div>div>button>span>div{
+	text-align: right!important;
+	font-size:1.1em;
+	font-weight: bold;
+}
 app-list{
+
 .buttonDelete{
 	padding:25px;
+}
+
+.test1{
+	text-align: right;
+}
+.status{
+	text-size:1.2em;
+	font-family: Arial, Helvetica, sans-serif;
+	color:#c2c2c2;
+	font-weight: bold;
 }
 .activating{
 	color:red;
@@ -37,3 +56,4 @@ app-list{
 		}
 	
     }
+

@@ -1,9 +1,9 @@
 
 <div  class="feed-item" (click)="productDetails()">
-        <ion-card [ngClass]="{'reachedlikes':productDetail.Likes > productDetail.numberOfLikes}">
+        <ion-card [ngClass]="{'reachedlikes':productDetail.Likes >= productDetail.numberOfLikes}">
           
           <ion-item-sliding  >
-            <ion-item [ngClass]="{'reachedlikes':productDetail.Likes > productDetail.numberOfLikes}">  
+            <ion-item [ngClass]="{'reachedlikes':productDetail.Likes >= productDetail.numberOfLikes}">  
       
      <ion-card-content>
         <ion-card-title class="item-title">
@@ -53,7 +53,7 @@
          <ion-col no-padding width-33 text-center>
           <button class="action-button" ion-button clear small icon-left>
              <ion-icon name="cart"></ion-icon>
-          {{productDetail.status}}
+          <p class="status">{{productDetail.status}}</p>
           </button>
         </ion-col>
         

@@ -89,26 +89,29 @@ Approve(){
   }
   setStatus(){
        let prompt = this.alertCtrl.create({
-      title: 'Status',
-      message: "Choose Status",
+      title: 'סטטוס',
+     cssClass:"status",
       inputs: [
         {
           name: 'Status',
-          label:"ordered",
-          value:"ordered",
-          type:"radio"
+          label:"הוזמן",
+          value:"הוזמן",
+          type:"radio",
+           id:"test1"
         },
          {
           name: 'Status',
-          label:"shipped",
-          value:"shipped",
-          type:"radio"
+          label:"בדרך",
+          value:"בדרך",
+          type:"radio",
+          id:"test2"
         },
          {
           name: 'Status',
-          label:"deliverd",
-          value:"deliverd",
+          label:"הגיע",
+          value:"הגיע",
           type:"radio"
+          ,id:"test3"
         }
       ],
       buttons: [

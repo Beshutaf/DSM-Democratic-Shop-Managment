@@ -47,10 +47,12 @@ ngOnInit(){
   }
   actionController(){
     let actionSheet = this.actionSheetctrl.create({
-     title: 'Sort By',
+     title: 'מיין לפי',
+     cssClass:"buttons",
      buttons: [
        {
-         text:'Likes',
+         text:'מס ליקים',
+         cssClass:"buttons",
          role:'sortByLikes',
          handler:()=>{
            this.sortBy="-Likes";
@@ -58,8 +60,9 @@ ngOnInit(){
          }
        },
        {
-         text:'Comments',
+         text:'מס הערות',
          role:'sortByComments',
+         cssClass:"buttons",
          handler:()=>{
         this.sortBy="-commentsNumber";
         console.log(this.sortBy);
@@ -67,8 +70,9 @@ ngOnInit(){
        }
        ,
        {
-         text:'Date',
+         text:'תאריך',
          role:'sortByDate',
+         cssClass:"buttons",
          handler:()=>{
            this.sortBy="";
          }
