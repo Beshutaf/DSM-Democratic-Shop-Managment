@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
   
-    <ion-title>Add A Product
+    <ion-title>הוספת מוצר
     </ion-title>
 
   </ion-navbar>
@@ -10,17 +10,8 @@
    <form #f='ngForm' (ngSubmit)="createTask(f)">
      <ion-row>
       
-       <ion-col width-50>
-         <ion-item>
-            <ion-label color="primary" floating>Product Name</ion-label>
-            <ion-input [(ngModel)]="name" name="name"></ion-input>
-          </ion-item>
-          <ion-item>
-             <ion-label color="primary" floating>Product Price</ion-label>
-             <ion-input   [(ngModel)]="price" name="price" type="number"  ></ion-input>
-           </ion-item>
-       </ion-col>
-        <ion-col width-50>
+
+        <ion-col width-100>
          <ion-card (click)="takePicture()" id="image" padding margin>
            <img src="./assets/images/addImage.png" id="imageWidth" *ngIf="!base64Image">
            <img id="afterUploadImage"[src]="base64Image" *ngIf="base64Image" />
@@ -31,17 +22,23 @@
     
      </ion-row>
      <ion-row>
-       <ion-item margin >
-       <ion-label color="primary" floating>Product Description</ion-label>
+        <ion-item>
+            <ion-label color="primary" floating text-right>שם מוצר</ion-label>
+            <ion-input [(ngModel)]="name" name="name"></ion-input>
+          </ion-item>
+     </ion-row>
+     <ion-row>
+       <ion-item  >
+       <ion-label color="primary" floating text-right>תיאור מוצר</ion-label>
        <ion-textarea class="text"  [(ngModel)]="description" name="description"></ion-textarea>
        </ion-item>
      </ion-row>
      <ion-row width-100>
-        <button full margin  ion-button type="submit">Add Product</button>
+        <button full margin  ion-button type="submit">הוספת מוצר</button>
      </ion-row>
    
    </form>
      <ion-row>
-        <button full margin ion-button (click)="cancelButton()">Cancel</button>
+        <button full margin ion-button (click)="cancelButton()">חזרה</button>
      </ion-row>
 </ion-content>
