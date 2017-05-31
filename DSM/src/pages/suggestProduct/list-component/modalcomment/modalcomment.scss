@@ -51,16 +51,22 @@ page-modalcomment {
     }
     .comment b {
           color:#6ea0f6;
+          text-align: right;
+    }
+    #textName{
+        text-align: right!important;
+        font-size: 1.2em;
     }
     .comment p{
        white-space: normal;
+       text-align: right;
       margin-left:3px;
     }
     #textComment{
         color:#222;
     }
     #description p{
-        
+        text-align: right;
         width:90%;
         margin:3px auto;
     }
@@ -69,7 +75,7 @@ page-modalcomment {
         margin:auto;
     }
     #date{
-        text-align: right;
+        text-align: left;
         margin-right:3px;
         color:#aaa;
         font-weight: bold;
