@@ -43,7 +43,8 @@
  <ion-label floating>מספר טלפון</ion-label>
     <ion-input type="number" formControlName="number"></ion-input>
   </ion-item>
-
+   
+   
  <ion-item class="slec" >
   <ion-label>מגדר</ion-label>
   <ion-select formControlName="gen">
@@ -52,6 +53,7 @@
   </ion-select>
 </ion-item > 
 
+   
 <ion-item *ngIf="checkAuth()" class="slec">
   <ion-label>סוג הרשאה</ion-label>
 
@@ -63,8 +65,6 @@
   </ion-select>
 
 </ion-item>
-
-
 
 <div >
    <ion-item class="lgnbtn">
