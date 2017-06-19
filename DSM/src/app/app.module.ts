@@ -26,6 +26,7 @@ import { OrderByPipe } from "../pipes/sortopipe.pipe";
 import { FacebookHomeItem } from "../pages/hello-ionic/facebook-home-item/facebook-home-item";
 import { PendingProductPage } from "../pages/admin/pendingproduct-page/pending-product";
 import { PendingProductItem } from "../pages/admin/pendingproduct-page/pending-item/pending-item.component";
+import { CreateUsers } from "../pages/admin/create-users/create-users";
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { PendingProductItem } from "../pages/admin/pendingproduct-page/pending-i
     OrderByPipe,
     FacebookHomeItem,
     PendingProductPage,
-    PendingProductItem
+    PendingProductItem,
+    CreateUsers
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -76,7 +78,8 @@ import { PendingProductItem } from "../pages/admin/pendingproduct-page/pending-i
     ModalcommentPage,
     FacebookHomeItem,
     PendingProductPage,
-    PendingProductItem
+    PendingProductItem,
+    CreateUsers
   ],
   providers: [ FacebookService, OneSignal,  ListService,{provide: ErrorHandler,
     

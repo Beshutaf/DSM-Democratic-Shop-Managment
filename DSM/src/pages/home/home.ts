@@ -23,7 +23,8 @@ export class HomePage {
   rootPage: any = HelloIonicPage;
   pages: Array<{title: string, component: any}>;
   component:any;
-
+important:boolean=false;
+notImportant:boolean=false;
   constructor(
     public platform: Platform,
     public menu: MenuController,
@@ -42,6 +43,12 @@ export class HomePage {
       {title: 'Admin',component:AdminPage},
        { title: 'Contacts', component: ViewusersPage }
     ];
+  }
+  toggleImportant(){
+    this.important=!this.important;
+  }
+  toggleNotImportant(){
+    this.notImportant=!this.notImportant;
   }
  launch(url) {
         this.platform.ready().then(() => {

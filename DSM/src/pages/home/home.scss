@@ -23,7 +23,10 @@ page-home {
    font-size: 22px;
    margin-left:20px;
   }
-  
+  .important{
+    background:white !important;
+   
+  }
 .tab {  
   margin-bottom: 25px;
         }
@@ -45,14 +48,7 @@ padding-right :25px;
 
 height:65px;
 }
-.list-item:active{
-    background:#2b84d3;
-    color:white;
-}
-.list-item:active > *>*{
-  background:#2b84d3;
-    color:white;
-}
+
 
 	.option:nth-child(even){
       	background-color: #DED7D7;

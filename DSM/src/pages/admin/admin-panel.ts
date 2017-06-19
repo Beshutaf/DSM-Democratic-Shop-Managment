@@ -6,6 +6,7 @@ import { CreateUserPage } from "./create-user/create-user";
 import { FacebookPostPage } from "./facebook-page/facebook-post-page";
 import { EditPage } from "./edit/edit";
 import { PendingProductPage } from "./pendingproduct-page/pending-product";
+import { CreateUsers } from "./create-users/create-users";
 
 @Component({
   selector: 'page-admin',
@@ -52,5 +53,8 @@ AuthMan(){
      return true;
      else 
 return false;
+}
+newUsers(){
+  this.nav.push(CreateUsers)
 }
 }

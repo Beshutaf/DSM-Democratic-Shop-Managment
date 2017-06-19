@@ -50,6 +50,12 @@
           <b> בחירת פוסטים  facebook מ</b>
     </ion-card>
         </ion-col>   
-  
+    <ion-col  width-50>
+<ion-card  *ngIf="AuthMan()" class="admin-item clicked" (click)="newUsers()">
+     <ion-icon class="icons" color="facebook"  name="person-add"></ion-icon>
+     <br>
+        <b>הוספת משתמשים </b>
+    </ion-card>
+  </ion-col>
     </ion-row>
 </ion-content>

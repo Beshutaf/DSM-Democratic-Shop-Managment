@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar class="background">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  
+    <ion-title float="right">שליחת התראה</ion-title>
+  <ion-buttons end>
+<button ion-button icon-only (click)="alerting()">
+  <ion-icon name="information"></ion-icon>
+</button>
+</ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <form #f="ngForm" (submit)="createUsers(f)">
+  <ion-item id="textarea">
+   <ion-label floating>JSON</ion-label>
+   <ion-textarea padding [(ngModel)]="msg" name="msg"></ion-textarea>
+
+ </ion-item>
+  
+ 
+    <button type="submit" ion-button full margin-top> הוספת משתמשים  </button>  
+    </form> 
+    <hr>
+</ion-content>

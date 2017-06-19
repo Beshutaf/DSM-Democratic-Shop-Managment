@@ -13,31 +13,34 @@
 
 
   
-    <ion-item class="option" (click)="openHomePage()" >
-      <button class="list-item clicked"     >
-           <span class="tab">דף בית</span>
-            <ion-icon name="home" class="icon-menu"></ion-icon>
+   
+       <ion-item class="option important" (click)="toggleImportant()" >
+      <button class="list-item  clicked "     >
+        <ion-icon name="ios-arrow-back" *ngIf="!important" style="float:left"></ion-icon>
+         <ion-icon name="ios-arrow-down" *ngIf="important" style="float:left"></ion-icon>
+           <span class="tab important">קישורים חשובים</span>
+            
            </button>
       </ion-item>
-    <ion-item class="option " (click)="openEditPage()">
-      <button class="list-item clicked"   >
-     
-       <span class="tab">אנשי קשר</span>
-         <ion-icon name="people" class="icon-menu"></ion-icon>
-       </button>
+      <div *ngIf="important">
+            <ion-item class="option " (click)="openEditPage()">
+              <button class="list-item clicked"   >
+            
+              <span class="tab">אנשי קשר</span>
+                <ion-icon name="people" class="icon-menu"></ion-icon>
+              </button>
 
-    </ion-item>
-
-        
+            </ion-item>
+               
         <ion-item class="option "  (click)="launch('https://docs.google.com/spreadsheets/d/1eb235mXFxlDW8cMuH_tWwX_75Lf8sju5qkhIS9ljChY/edit?usp=sharing')">
-       <button  class="list-item clicked"    >
-     <span class="tab">לוח תורנות</span>
-         <ion-icon name="paper" class="icon-menu"></ion-icon>
-   
-      </button>
+            <button  class="list-item clicked"    >
+          <span class="tab">לוח תורנות</span>
+              <ion-icon name="paper" class="icon-menu"></ion-icon>
+        
+            </button>
 
       </ion-item>
-  <ion-item class="option" (click)="openSuggestedProduct()">
+       <ion-item class="option" (click)="openSuggestedProduct()">
         <button class="list-item clicked"    >
       <span class="tab"> הצעת מוצר</span>
           <ion-icon name="clipboard" class="icon-menu"></ion-icon>
@@ -45,58 +48,35 @@
       </button>
 
        </ion-item>
-    <ion-item class="option " (click)="launch('https://docs.google.com/spreadsheets/d/1Ijn9koM0hVsq7dlk4YScTeneWIuo5CwLi7dZdUXbjcY/edit#gid=2')">
-       <button class="list-item clicked"    >
-      <span class="tab">טבלת מחירים</span>
-        <ion-icon name="document" class="icon-menu"></ion-icon>
-     
-      </button>
-
-</ion-item>
        <ion-item class="option " (click)="launch('https://www.facebook.com/groups/beshutaf.members/')">
        <button class="list-item clicked"    >
       <span class="tab">קבוצת פיסבוק</span>
         <ion-icon name="document" class="icon-menu"></ion-icon>
-     
       </button>
-
-</ion-item>
-           <ion-item class="option " (click)="launch('https://www.facebook.com/pg/Beshutaf.Jeru/events/')">
-       <button class="list-item clicked"    >
-      <span class="tab">אירועי הקואופ</span>
-        <ion-icon name="document" class="icon-menu"></ion-icon>
-     
-      </button>
-
-</ion-item>
-               <ion-item class="option " (click)="launch('https://www.facebook.com/pg/Beshutaf.Jeru/events/')">
-       <button class="list-item clicked"    >
-      <span class="tab">אירועי הקואופ</span>
-        <ion-icon name="document" class="icon-menu"></ion-icon>
-     
-      </button>
-
-</ion-item>
-
-<ion-item class="option " (click)="launch('https://docs.google.com/spreadsheets/d/1LSDa6wO9Jle9vvhf5MR6KWX8JbOts1ItsmTlDFe6tvo/edit#gid=0')">
-      <button class="list-item clicked"   >
-      <span class="tab">מעקב חוסרים</span>
-       <ion-icon name="link" class="icon-menu"></ion-icon>
+      </ion-item>
       
-      </button>
-
-       </ion-item>
+<ion-item class="option " (click)="launch('http://forum.beshutaf.org/')">
+      <button class="list-item clicked"   >
+      <span class="tab">פורום דיסקורס</span>
+       <ion-icon name="link" class="icon-menu"></ion-icon>
     
-<ion-item class="option " (click)="launch('https://drive.google.com/drive/u/0/folders/0ByauHBCzM3zjTDUtLWZSaTc4Zzg')">
-      <button class="list-item clicked"   >
-      <span class="tab">הגנזך</span>
-       <ion-icon name="link" class="icon-menu"></ion-icon>
-      
       </button>
 
        </ion-item>
+        <ion-item class="option " (click)="launch('https://www.facebook.com/pg/Beshutaf.Jeru/events/')">
 
-       <ion-item *ngIf="AuthReglr()" class="option "  (click)="openAdminPanel()">
+       <button class="list-item clicked"    >
+
+      <span class="tab">אירועי הקואופ</span>
+
+        <ion-icon name="document" class="icon-menu"></ion-icon>
+
+     
+
+      </button>
+
+</ion-item>
+ <ion-item *ngIf="AuthReglr()" class="option "  (click)="openAdminPanel()">
     <button class="list-item clicked"   >
          <span class="tab">פאנל אדמין</span>
           <ion-icon class="list-item" name="person" class="icon-menu"></ion-icon>
@@ -104,6 +84,66 @@
       </button>
   
 </ion-item>
+    <ion-item class="option"(click)="SignOut()">
+    <button class="list-item clicked"   >
+      
+           <span class="tab "> יציאה</span>
+             <ion-icon class="list-item clicked" name="log-out" class="icon-menu"></ion-icon>
+    
+      </button>
+
+      </ion-item>
+    
+ 
+
+     
+ 
+   
+
+</div>
+    <ion-item class="option important" (click)="toggleNotImportant()" >
+      <button class="list-item clicked "     >
+        <ion-icon name="ios-arrow-back" *ngIf="!notImportant" style="float:left"></ion-icon>
+         <ion-icon name="ios-arrow-down" *ngIf="notImportant" style="float:left"></ion-icon>
+           <span class="tab important">קישורים נוספים</span>
+            
+           </button>
+      </ion-item>
+      <div *ngIf="notImportant">
+         <ion-item class="option " (click)="launch('https://docs.google.com/spreadsheets/d/1Ijn9koM0hVsq7dlk4YScTeneWIuo5CwLi7dZdUXbjcY/pub?single=true&gid=2&output=html')">
+       <button class="list-item clicked"    >
+      <span class="tab">טבלת מחירים</span>
+        <ion-icon name="document" class="icon-menu"></ion-icon>
+     
+      </button>
+
+</ion-item>
+  <ion-item class="option " (click)="launch('https://docs.google.com/spreadsheets/d/1LSDa6wO9Jle9vvhf5MR6KWX8JbOts1ItsmTlDFe6tvo/edit#gid=0')">
+
+      <button class="list-item clicked"   >
+
+      <span class="tab">מעקב חוסרים</span>
+
+       <ion-icon name="link" class="icon-menu"></ion-icon>
+
+      
+
+      </button>
+
+       </ion-item>
+       <ion-item class="option " (click)="launch('https://drive.google.com/drive/u/0/folders/0ByauHBCzM3zjTDUtLWZSaTc4Zzg')">
+
+      <button class="list-item clicked"   >
+
+      <span class="tab">הגנזך</span>
+
+       <ion-icon name="link" class="icon-menu"></ion-icon>
+
+      
+
+      </button>
+
+       </ion-item>
 
      <ion-item class="option "  (click)="presentPrompt()">
     <button class="list-item clicked"  >
@@ -113,15 +153,9 @@
     
 </ion-item>
 
-     <ion-item class="option"(click)="SignOut()">
-    <button class="list-item clicked"   >
-      
-           <span class="tab "> יציאה</span>
-             <ion-icon class="list-item clicked" name="log-out" class="icon-menu"></ion-icon>
+ 
+      </div>
     
-      </button>
-
-      </ion-item>
   </ion-content>
 
 </ion-menu>
