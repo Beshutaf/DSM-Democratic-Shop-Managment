@@ -51,9 +51,9 @@
           </button>
         </ion-col>
          <ion-col no-padding width-33 text-center>
-          <button class="action-button" ion-button clear small icon-left>
+          <button [ngClass]="{red:productDetail.status==='הוזמן',yellow:productDetail.status==='בדרך',green:productDetail.status==='הגיע'}"class="action-button" ion-button clear small icon-left>
              <ion-icon name="cart"></ion-icon>
-          <p class="status">{{productDetail.status}}</p>
+          <p class="status" [ngClass]="{red:productDetail.status==='הוזמן',yellow:productDetail.status==='בדרך',green:productDetail.status==='הגיע'}" >{{productDetail.status}}</p>
           </button>
         </ion-col>
         
