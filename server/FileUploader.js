@@ -477,39 +477,7 @@ export default function __identity(fileUploaderOptions, $rootScope, $http, $wind
 
             if(typeof(item._file.size) != 'number') {
                 throw new TypeError('The file specified is no longer valid');
-            }
-
-            xhr.upload.onprogress = (event) => {
-                var progress = Math.round(event.lengthComputable ? event.loaded * 100 / event.total : 0);
-                this._onProgressItem(item, progress);
-            };
-
-            xhr.onload = () => {
-                var headers = this._parseHeaders(xhr.getAllResponseHeaders());
-                var response = this._transformResponse(xhr.response, headers);
-                var gist = this._isSuccessCode(xhr.status) ? 'Success' : 'Error';
-                var method = '_on' + gist + 'Item';
-                this[method](item, response, xhr.status, headers);
-                this._onCompleteItem(item, response, xhr.status, headers);
-            };
-
-            xhr.onerror = () => {
-                var headers = this._parseHeaders(xhr.getAllResponseHeaders());
-                var response = this._transformResponse(xhr.response, headers);
-                this._onErrorItem(item, response, xhr.status, headers);
-                this._onCompleteItem(item, response, xhr.status, headers);
-            };
-
-            xhr.onabort = () => {
-                var headers = this._parseHeaders(xhr.getAllResponseHeaders());
-                var response = this._transformResponse(xhr.response, headers);
-                this._onCancelItem(item, response, xhr.status, headers);
-                this._onCompleteItem(item, response, xhr.status, headers);
-            };
-
-            xhr.open(item.method, item.url, true);
-
-            xhr.withCredentials = item.withCredentials;
+            
 
             forEach(item.headers, (value, name) => {
                 xhr.setRequestHeader(name, value);
