@@ -19,7 +19,7 @@ export class FacebookService{
         this.http.get("https://obscure-reef-53169.herokuapp.com/facebook/getAll").subscribe(()=>{
 
         })
-        this.http.get("https://graph.facebook.com/560493177341455/feed?fields=from,message&access_token=EAAbGbBZA7zocBAJetwTSJ1jWZANlnaOLOX2wuSE6qssQsSY3AIr7zoZChmZC0ZCTlvyvtLpYSIbJGo3ZABgZCWqIZC4usGjvZAF8tvFNgijqVCrZCpttev0pboUgULgnUZAx1PqDDuJ2EgrSOnZAovzbumBwZBDap6OLoGrbEOThW9pzD3wZDZD")
+        this.http.get("https://graph.facebook.com/560493177341455/feed?fields=from,message&access_token=EAACEdEose0cBANnyirEXfgeQXkExou8CE92rCVc2TmuIUeXvsGtmL1kWSwFBNjFXXlar4ZBiDctiiQfFMWDna90eqXBlb3QB9LcpKyQK8DVXQz8OYpXcswswhSpaWiMOv1eIvebQrxr9RmqQpRrZCtuuGKnsWnO0M8A3ZCbewZDZD")
         .subscribe((data1)=>{
             
             console.log(data1.json());
@@ -28,7 +28,7 @@ export class FacebookService{
             for(let facebookpost of array.data){
                 
                 
-                this.http.get("https://graph.facebook.com/"+facebookpost.from.id+"?fields=picture&access_token=EAAbGbBZA7zocBAJetwTSJ1jWZANlnaOLOX2wuSE6qssQsSY3AIr7zoZChmZC0ZCTlvyvtLpYSIbJGo3ZABgZCWqIZC4usGjvZAF8tvFNgijqVCrZCpttev0pboUgULgnUZAx1PqDDuJ2EgrSOnZAovzbumBwZBDap6OLoGrbEOThW9pzD3wZDZD")
+                this.http.get("https://graph.facebook.com/"+facebookpost.from.id+"?fields=picture&access_token=EAACEdEose0cBANnyirEXfgeQXkExou8CE92rCVc2TmuIUeXvsGtmL1kWSwFBNjFXXlar4ZBiDctiiQfFMWDna90eqXBlb3QB9LcpKyQK8DVXQz8OYpXcswswhSpaWiMOv1eIvebQrxr9RmqQpRrZCtuuGKnsWnO0M8A3ZCbewZDZD")
         .subscribe((data)=>{
             console.log(data.json());
             this.facebooks.push(new FacebookModel(facebookpost.message,facebookpost.id,facebookpost.from.name,data.json().picture.data.url));
