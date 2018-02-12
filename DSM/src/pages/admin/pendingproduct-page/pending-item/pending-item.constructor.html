@@ -2,7 +2,6 @@
 
         <ion-card>
           
-          <ion-item-sliding>
             <ion-item>  
             <ion-thumbnail item-left>
        <img src="{{productDetail.imageUrl}}">
@@ -14,22 +13,18 @@
         <p class="item-text">
           {{productDetail.description}}
         </p>
-      </ion-card-content>
-            </ion-item>
-               <ion-item-options side="right"  > 
-         
+        </ion-card-content>
                 
-                 <button class="buttonDelete" ion-button   (click)="Approve();$event.stopPropagation()">
+          <ion-thumbnail item-right>
+                 <button class="buttonDelete" ion-button item-right  (click)="Approve();$event.stopPropagation()">
       <ion-icon name="checkmark"></ion-icon>
         </button>
                 
-        <button class="buttonDelete" ion-button color="danger"  (click)="deleteItem();$event.stopPropagation()">
+        <button class="buttonDelete" ion-button item-right color="danger"  (click)="deleteItem();$event.stopPropagation()">
       <ion-icon name="trash"></ion-icon></button>
-       
-                 
-                 
-      </ion-item-options>
-          </ion-item-sliding>
+    </ion-thumbnail>
+
+      </ion-item>
      
   
     </ion-card>
