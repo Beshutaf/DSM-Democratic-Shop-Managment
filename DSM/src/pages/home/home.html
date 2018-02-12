@@ -12,25 +12,14 @@
   <ion-content class="warp">
 
 
-  
-   
-       <ion-item class="option important" (click)="toggleImportant()" >
-      <button class="list-item  clicked "     >
-        <ion-icon name="ios-arrow-back" *ngIf="!important" style="float:left"></ion-icon>
-         <ion-icon name="ios-arrow-down" *ngIf="important" style="float:left"></ion-icon>
-           <span class="tab important">קישורים חשובים</span>
-            
-           </button>
-      </ion-item>
-      <div *ngIf="important">
-            <ion-item class="option " (click)="openEditPage()">
-              <button class="list-item clicked"   >
-            
-              <span class="tab">אנשי קשר</span>
-                <ion-icon name="people" class="icon-menu"></ion-icon>
-              </button>
+        <ion-item class="option " (click)="openEditPage()">
+          <button class="list-item clicked"   >
+        
+          <span class="tab">אנשי קשר</span>
+            <ion-icon name="people" class="icon-menu"></ion-icon>
+          </button>
 
-            </ion-item>
+        </ion-item>
                
         <ion-item class="option "  (click)="launch('https://docs.google.com/spreadsheets/d/1eb235mXFxlDW8cMuH_tWwX_75Lf8sju5qkhIS9ljChY/edit?usp=sharing')">
             <button  class="list-item clicked"    >
@@ -94,13 +83,6 @@
 
       </ion-item>
     
- 
-
-     
- 
-   
-
-</div>
     <ion-item class="option important" (click)="toggleNotImportant()" >
       <button class="list-item clicked "     >
         <ion-icon name="ios-arrow-back" *ngIf="!notImportant" style="float:left"></ion-icon>
