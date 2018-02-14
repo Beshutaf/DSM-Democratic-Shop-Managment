@@ -3,7 +3,6 @@ import { Injectable, EventEmitter } from "@angular/core";
 import { Http } from "@angular/http";
 import { comments } from "./comments.model";
 import * as io from 'socket.io-client';
-import * as mongoose from 'mongoose';
 @Injectable()
 export class CommentsService {
        private socket;
