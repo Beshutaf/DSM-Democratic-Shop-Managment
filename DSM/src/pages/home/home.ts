@@ -10,6 +10,9 @@ import { ViewusersPage} from "../viewusers/viewusers";
 import { InAppBrowser } from 'ionic-native';
 import { Http,RequestOptions,Headers} from "@angular/http";
 import { LoginPage } from "../login/login";
+
+import { BASE_SERVER_URL } from '../../app/constants.ts';
+
 @Component({
   selector:"page-home",
   templateUrl: 'home.html'
@@ -214,7 +217,7 @@ if(tmpusr===""||tmpusr===null)
     };
   let options = new RequestOptions({ headers: headers });
   this.http
-        .post('https://obscure-reef-53169.herokuapp.com/users/rstPas', body, options)
+        .post(BASE_SERVER_URL + '/users/rstPas', body, options)
         .map(res => res.json())
        .subscribe(
             data => {   console.log("rested password" )   ;

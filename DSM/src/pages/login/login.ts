@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { HomePage } from '../home/home';
-import { NavController,LoadingController,MenuController  } from 'ionic-angular';
+import { NavController, LoadingController, MenuController  } from 'ionic-angular';
 import { User } from "../admin/user.model";
 import { AlertController } from 'ionic-angular';
-import {Http,Headers, RequestOptions} from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import 'rxjs/Rx';
+
+import { BASE_SERVER_URL } from '../../app/constants.ts';
+
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
@@ -58,7 +61,7 @@ autologin(){
     };
   let options = new RequestOptions({ headers: headers });
   this.http
-        .post('https://obscure-reef-53169.herokuapp.com/users/autologin', body,options)
+        .post(BASE_SERVER_URL + '/users/autologin', body,options)
         .map(res => res.json())
        .subscribe(
             data => {
@@ -83,7 +86,7 @@ test(){
        let options = new RequestOptions({ headers: headers });
         options.withCredentials = true;
     this.http
-        .post('https://obscure-reef-53169.herokuapp.com/users/cookie', body, options)
+        .post(BASE_SERVER_URL + '/users/cookie', body, options)
         .map(res => res.json())
        .subscribe(
             data => {
@@ -103,7 +106,7 @@ save(){
     };   
     let options = new RequestOptions({ headers: headers });
     this.http
-        .post('https://obscure-reef-53169.herokuapp.com/users/login', body, options)
+        .post(BASE_SERVER_URL + '/users/login', body, options)
         .map(res => res.json())
        .subscribe(
             data => { console.log(data);   

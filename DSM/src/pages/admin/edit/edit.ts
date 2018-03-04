@@ -4,6 +4,9 @@ import {  AlertController ,LoadingController } from 'ionic-angular';
 import { Http,RequestOptions,Headers} from "@angular/http";
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { User } from "../user.model";
+
+import { BASE_SERVER_URL } from '../../../app/constants.ts';
+
 @Component({
   selector: 'page-edit',
   templateUrl: 'edit.html'
@@ -64,7 +67,7 @@ export class EditPage {
               content: "getting Contacts"
         });
        loader.present();
-this.http.get('https://obscure-reef-53169.herokuapp.com/users').map(res =>{
+this.http.get(BASE_SERVER_URL + '/users').map(res =>{
 
 return res.json();
 }).subscribe(data => {
@@ -121,7 +124,7 @@ isSearchShown() {
   let options = new RequestOptions({ headers: headers });
 
   this.http
-        .post('https://obscure-reef-53169.herokuapp.com/users/delete', body, options)
+        .post(BASE_SERVER_URL + '/users/delete', body, options)
         .map(res => res.json())
        .subscribe(
             data => {            
@@ -174,7 +177,7 @@ let options = new RequestOptions({ headers: headers });
 
 
 this.http
-        .post('https://obscure-reef-53169.herokuapp.com/users/update', body, options)
+        .post(BASE_SERVER_URL + '/users/update', body, options)
         .map(res => res.json())
        .subscribe(
             data => {
@@ -227,7 +230,7 @@ this.http
     };
   let options = new RequestOptions({ headers: headers });
   this.http
-        .post('https://obscure-reef-53169.herokuapp.com/users/rstPas', body, options)
+        .post(BASE_SERVER_URL + '/users/rstPas', body, options)
         .map(res => res.json())
        .subscribe(
             data => {         

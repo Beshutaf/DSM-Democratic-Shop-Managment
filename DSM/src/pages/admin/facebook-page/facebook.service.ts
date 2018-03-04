@@ -3,6 +3,8 @@ import { Http } from "@angular/http";
 import { FacebookModel } from "./facebook.model";
 import { LoadingController } from "ionic-angular";
 
+import { BASE_SERVER_URL } from '../../../app/constants.ts';
+
 @Injectable()
 export class FacebookService{
     facebookPosted:{name,imageUrl,message,index}[]=[];
@@ -16,7 +18,7 @@ export class FacebookService{
               content: "getting items"
         });
        loader.present();
-        this.http.get("https://obscure-reef-53169.herokuapp.com/facebook/getAll").subscribe(()=>{
+        this.http.get(BASE_SERVER_URL + "/facebook/getAll").subscribe(()=>{
 
         })
         this.http.get("https://graph.facebook.com/560493177341455/feed?fields=from,message,permalink_url&access_token=EAACEdEose0cBANnyirEXfgeQXkExou8CE92rCVc2TmuIUeXvsGtmL1kWSwFBNjFXXlar4ZBiDctiiQfFMWDna90eqXBlb3QB9LcpKyQK8DVXQz8OYpXcswswhSpaWiMOv1eIvebQrxr9RmqQpRrZCtuuGKnsWnO0M8A3ZCbewZDZD")
@@ -43,10 +45,10 @@ export class FacebookService{
     }
     addFacebook(facebook){
         
-      return  this.http.post("https://obscure-reef-53169.herokuapp.com/facebook/addFacebook",facebook);
+      return  this.http.post(BASE_SERVER_URL + "/facebook/addFacebook",facebook);
     }
     getPosts(){
-        this.http.get("https://obscure-reef-53169.herokuapp.com/facebook/getAll").subscribe((Response)=>{
+        this.http.get(BASE_SERVER_URL + "/facebook/getAll").subscribe((Response)=>{
             var facebookPosts=Response.json();
             this.facebookPostedChanged.emit(facebookPosts);
         })

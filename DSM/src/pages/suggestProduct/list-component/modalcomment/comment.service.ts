@@ -3,6 +3,9 @@ import { Injectable, EventEmitter } from "@angular/core";
 import { Http } from "@angular/http";
 import { comments } from "./comments.model";
 import * as io from 'socket.io-client';
+
+import { BASE_SERVER_URL } from '../../../../app/constants.ts';
+
 @Injectable()
 export class CommentsService {
        private socket;
@@ -11,7 +14,7 @@ export class CommentsService {
       comment:comments[]=[];
      getComments(id:String){
          
-         this.http.get("https://obscure-reef-53169.herokuapp.com/suggest/getcomments?id="+id)
+         this.http.get(BASE_SERVER_URL + "/suggest/getcomments?id="+id)
          .subscribe((Response)=>{
              var temp:comments[]=[];
             for(let comment of Response.json()){
@@ -32,7 +35,7 @@ export class CommentsService {
          })
      }
     constructor(private http:Http){
-         this.socket = io("https://obscure-reef-53169.herokuapp.com");
+         this.socket = io(BASE_SERVER_URL);
          this.socket.on('comment',(comment)=>{
              console.log("commented");
             this.comment.push(new comments(comment.user,comment.comment));
@@ -42,7 +45,7 @@ export class CommentsService {
 
 
     addComment(_id:string,comment:String,user:String){
-        this.http.post("https://obscure-reef-53169.herokuapp.com/suggest/addcomment",{id:_id,comment:comment,user:user})
+        this.http.post(BASE_SERVER_URL + "/suggest/addcomment",{id:_id,comment:comment,user:user})
         .subscribe((response)=>{
             this.socket.emit('add-comment',{id:_id,comment:comment,user:user})
         })

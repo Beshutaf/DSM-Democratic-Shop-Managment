@@ -3,6 +3,9 @@ import { EventEmitter, Injectable } from "@angular/core";
 import { Http } from "@angular/http"
 import * as io from 'socket.io-client';
 import { LoadingController, AlertController } from "ionic-angular";
+
+import { BASE_SERVER_URL } from '../../app/constants.ts';
+
 @Injectable()
 export class ListService {
     i=1;
@@ -20,7 +23,7 @@ export class ListService {
     constructor(private http:Http,public loadingController: LoadingController
     ,private alertCtrl: AlertController){
       
-         this.socket = io("https://obscure-reef-53169.herokuapp.com");
+         this.socket = io(BASE_SERVER_URL);
           this.socket.on('product', (productAdd) => {
             console.log("entered");
            const product =JSON.parse(productAdd);
@@ -77,7 +80,7 @@ productChanged=new EventEmitter<Product[]>();
               content: "getting items"
         });
        loader.present();
-       this.http.get("https://obscure-reef-53169.herokuapp.com/suggest/getallproducts").subscribe((response)=>{
+       this.http.get(BASE_SERVER_URL + "/suggest/getallproducts").subscribe((response)=>{
            if(response.json().sucess===false){
                 this.alerting();
               loader.dismiss();
@@ -116,7 +119,7 @@ productChanged=new EventEmitter<Product[]>();
   }
   DisLikeProduct(Product:Product){
     Product.Likes--;
-     this.http.post("https://obscure-reef-53169.herokuapp.com/suggest/dislikeProduct",{_id:Product._id,user:localStorage.getItem("UserN").replace(/"/g,"")})
+     this.http.post(BASE_SERVER_URL + "/suggest/dislikeProduct",{_id:Product._id,user:localStorage.getItem("UserN").replace(/"/g,"")})
      .subscribe((response)=>{
           this.socket.emit('dislike-product', {likes:Product.Likes,id:Product._id});  
      })
@@ -124,7 +127,7 @@ productChanged=new EventEmitter<Product[]>();
   likeProduct(Product:Product){
     Product.Likes++;
    
-     this.http.post("https://obscure-reef-53169.herokuapp.com/suggest/likeProduct",{_id:Product._id,user:localStorage.getItem("UserN").replace(/"/g,"")})
+     this.http.post(BASE_SERVER_URL + "/suggest/likeProduct",{_id:Product._id,user:localStorage.getItem("UserN").replace(/"/g,"")})
      .subscribe((response)=>{
           this.socket.emit('like-product', {likes:Product.Likes,id:Product._id});  
      })
@@ -139,7 +142,7 @@ productChanged=new EventEmitter<Product[]>();
 
       const obj = {name:Product.name,description:Product.description,imageUrl:Product.imageUrl,Likes:0,Accepted:false,status:Product.status}
        loader.present();
-      this.http.post("https://obscure-reef-53169.herokuapp.com/suggest/addProduct",obj)
+      this.http.post(BASE_SERVER_URL + "/suggest/addProduct",obj)
       .subscribe((response)=>{
           if(response.json().success===false)
           {
@@ -171,7 +174,7 @@ productChanged=new EventEmitter<Product[]>();
               content: "deleting item"
         });
        loader.present();
-      this.http.post("https://obscure-reef-53169.herokuapp.com/suggest/deleteProduct",{id:id}).subscribe(()=>{
+      this.http.post(BASE_SERVER_URL + "/suggest/deleteProduct",{id:id}).subscribe(()=>{
               this.productDetails.splice( this.productDetails.findIndex(x=>x._id===id),1);
          this.productChanged.emit(this.productDetails);
          loader.dismiss();
@@ -186,14 +189,14 @@ productChanged=new EventEmitter<Product[]>();
       let index=this.productDetails.findIndex(x=>x._id===id);
       this.productDetails[index].Accepted=true;
       this.productDetails[index].numberOfLikes=amountoflikes;
-       this.http.post("https://obscure-reef-53169.herokuapp.com/suggest/approve",{id,amountoflikes})
+       this.http.post(BASE_SERVER_URL + "/suggest/approve",{id,amountoflikes})
        .subscribe((response)=>{
         
        });
  
 }
 setStatus(id,status){
-    this.http.post("https://obscure-reef-53169.herokuapp.com/suggest/setStatus",{id:id,status:status}).subscribe((response)=>{
+    this.http.post(BASE_SERVER_URL + "/suggest/setStatus",{id:id,status:status}).subscribe((response)=>{
         console.log(status);
          this.socket.emit('set-status', JSON.stringify({status:status,id:id}));    
     })

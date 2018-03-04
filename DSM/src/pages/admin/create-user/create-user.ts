@@ -5,6 +5,8 @@ import {Http,Headers, RequestOptions} from '@angular/http';
 import { AlertController } from 'ionic-angular';
 import 'rxjs/Rx';
 
+import { BASE_SERVER_URL } from 'constants'
+
 /*
   Generated class for the CreateUser page.
 
@@ -54,7 +56,7 @@ saveNewUser(){
     };
     let options = new RequestOptions({ headers: headers });
     this.http
-        .post('https://obscure-reef-53169.herokuapp.com/users', body, options)
+        .post(BASE_SERVER_URL + '/users', body, options)
         .map(res => res.json())
        .subscribe(
             data => {

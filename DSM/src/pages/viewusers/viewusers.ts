@@ -4,6 +4,8 @@ import {  AlertController ,LoadingController } from 'ionic-angular';
 import { Http} from "@angular/http";
 import { User } from "../user.model";
 
+import { BASE_SERVER_URL } from '../../app/constants.ts';
+
 @Component({
   selector: 'page-viewusers',
   templateUrl: 'viewusers.html'
@@ -34,7 +36,7 @@ export class ViewusersPage {
               content: "fetching users..."
         });
        loader.present();
-this.http.get('https://obscure-reef-53169.herokuapp.com/users').map(res =>{
+this.http.get(BASE_SERVER_URL + '/users').map(res =>{
 
 return res.json();
 }).subscribe(data => {

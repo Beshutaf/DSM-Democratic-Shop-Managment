@@ -3,6 +3,8 @@ import { NgForm } from "@angular/forms";
 import { Http } from "@angular/http";
 import { AlertController, LoadingController } from "ionic-angular";
 
+import { BASE_SERVER_URL } from '../../../app/constants.ts';
+
 @Component({
     selector:'app-users',
     templateUrl:'create-users.html'
@@ -32,7 +34,7 @@ export class CreateUsers{
            loader.present();
          console.log(user)
        this.http
-        .post('https://obscure-reef-53169.herokuapp.com/users', user)
+        .post(BASE_SERVER_URL + '/users', user)
         .map(res => res.json())
        .subscribe(data=>{loader.dismiss();},err=>{
            let alert = this.alertCtrl.create({
