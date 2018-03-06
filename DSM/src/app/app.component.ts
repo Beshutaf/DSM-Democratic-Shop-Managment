@@ -16,7 +16,7 @@ export class MyApp {
   constructor(platform: Platform,private oneSignal:OneSignal, private _platform: Platform) {
     platform.ready().then(() => {
         if (platform.is('cordova')) {
-      this.oneSignal.startInit("aee9826e-2e23-4762-8059-758f6f87a042","121968198945");
+      this.oneSignal.startInit("c3a913ba-a482-4e9b-ad85-e73f2c4e3397","376876073895");
       this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.Notification);
       this.oneSignal.setSubscription(true);
      
