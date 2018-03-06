@@ -10,7 +10,7 @@ import { FacebookModel } from "./facebook.model";
 })
 export class FacebookPostPage implements OnInit {
     adding:boolean=true;
-    facebookpending:{name,imageUrl,message,index}[]=[];
+    facebookpending:{name,imageUrl,url,message,index}[]=[];
     
     facebook:FacebookModel[]=[];
     constructor(private loader:LoadingController,private navController:NavController,private facebookService:FacebookService){}
@@ -25,7 +25,7 @@ closePage(){
                console.log(this.facebook);
            })
         }
-        addFacebook(name,imageUrl,message,index){
+        addFacebook(name,imageUrl,url,message,index){
            let counter:number=0;
            this.facebook[index].clicked=!this.facebook[index].clicked;
             for (let facebookMessage of this.facebookpending)
@@ -39,7 +39,7 @@ closePage(){
             }
             console.log(this.facebookpending);
             if(this.adding===true)
-           this.facebookpending.push({name:name,imageUrl:imageUrl,message:message,index:index});
+           this.facebookpending.push({name:name,imageUrl:imageUrl,url:url,message:message,index:index});
            else{
             this.facebookpending.splice(counter,1);
            this.adding=true;
