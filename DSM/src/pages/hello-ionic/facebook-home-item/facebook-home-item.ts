@@ -12,7 +12,7 @@ toggle:Boolean=false;
 
 setToggle(url:string){
     this.toggle=!this.toggle;
-    console.log(url);
+    
 	new InAppBrowser(url,'_system');
 }
 }
