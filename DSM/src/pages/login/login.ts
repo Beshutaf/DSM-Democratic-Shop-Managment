@@ -21,7 +21,7 @@ export class LoginPage {
    
    ionViewDidLoad() {
         
-   setTimeout(() => this.splash = false, 4000)
+   setTimeout(() => this.splash = false, 4000);
    if(localStorage.getItem("UserN")!==null)
               this.autologin();
   }
