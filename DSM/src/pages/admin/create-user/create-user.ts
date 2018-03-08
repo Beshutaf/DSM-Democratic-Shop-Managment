@@ -5,7 +5,9 @@ import {Http,Headers, RequestOptions} from '@angular/http';
 import { AlertController } from 'ionic-angular';
 import 'rxjs/Rx';
 
-import { BASE_SERVER_URL } from 'constants'
+import { BASE_SERVER_URL } from '../../../app/constants'
+
+
 
 /*
   Generated class for the CreateUser page.
