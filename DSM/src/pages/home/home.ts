@@ -17,8 +17,8 @@ import { BASE_SERVER_URL } from '../../app/constants.ts';
   selector:"page-home",
   templateUrl: 'home.html'
 })
-export class HomePage {
 
+export class HomePage {
  
   @ViewChild(Nav) nav: Nav;
 
@@ -77,20 +77,24 @@ notImportant:boolean=false;
     // navigate to the new page if it is not the current page
     
   }
+
   openAdminPanel(){
     this.menu.close();
     this.nav.push(AdminPage);
   }
+
   openUrlPage(){
     this.menu.close();
 
   }
+
   openSuggestedProduct(){
        this.menu.close();
     this.nav.push(SuggestPage);
 
   }
-    openEditPage(){
+
+  openEditPage(){
        this.menu.close();
     this.nav.push(ViewusersPage);
 
