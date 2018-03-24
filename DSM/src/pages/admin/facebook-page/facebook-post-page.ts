@@ -50,7 +50,7 @@ closePage(){
     this.facebookService.facebookPosted=this.facebookpending.slice();
     this.facebookService.facebookPostedChanged.emit(this.facebookService.facebookPosted);
       let loader = this.loader.create({
-              content: "setting items"
+              content: "...שומר פוסטים נבחרים"
         });
         loader.present();
      this.facebookService.addFacebook(this.facebookService.facebookPosted).subscribe(()=>{

@@ -1,9 +1,14 @@
 page-hello-ionic {
     .header-image {
-    background-image: url("../assets/images/logo.png");
-    background-position: center;
-    height: 30vh;
+        height: 30vh;
+        background-color: #CAB7A0
 }
+    .header-image img {
+            max-height: 100%;
+            max-width: 100%;
+            margin: auto;
+            display: block;
+    }
  .icn{
 
   float:right;

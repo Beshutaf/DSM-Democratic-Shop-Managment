@@ -11,6 +11,24 @@
   
   <ion-content class="warp">
 
+    <ion-item class="option "  (click)="launch('http://hey.pbme.co/HSefut')">
+            <button  class="list-item clicked"    >
+          <span class="tab">תשלום מניה שנתית</span>
+              <ion-icon name="card" class="icon-menu"></ion-icon>
+        
+            </button>
+
+      </ion-item>
+
+    <ion-item class="option "  (click)="launch('http://coopstart.beshutaf.org/')">
+            <button  class="list-item clicked"    >
+          <span class="tab">קמפיין הדסטרט</span>
+              <ion-icon name="cart" class="icon-menu"></ion-icon>
+        
+            </button>
+
+      </ion-item>
+
 
         <ion-item class="option " (click)="openEditPage()">
           <button class="list-item clicked"   >
@@ -117,16 +135,16 @@
       </button>
 
        </ion-item>
+ 
+      </div>
 
-     <ion-item class="option "  (click)="presentPrompt()">
+      <ion-item class="option "  (click)="presentPrompt()">
     <button class="list-item clicked"  >
           <span class="tab">שינוי סיסמה</span>
           <ion-icon class="list-item" name="settings" class="icon-menu"></ion-icon>
       </button>
     
 </ion-item>
- 
-      </div>
 
       <ion-item class="option"(click)="SignOut()">
     <button class="list-item clicked"   >

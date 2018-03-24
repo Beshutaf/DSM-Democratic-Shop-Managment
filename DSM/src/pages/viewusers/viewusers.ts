@@ -33,7 +33,7 @@ export class ViewusersPage {
 
   save(){
      let loader = this.loadingController.create({
-              content: "fetching users..."
+              content: "...טוען משתמשים"
         });
        loader.present();
 this.http.get(BASE_SERVER_URL + '/users').map(res =>{

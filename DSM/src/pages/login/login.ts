@@ -45,7 +45,7 @@ export class LoginPage {
 autologin(){
 
  let loader = this.loadingCtrl.create({
-              content: "...התחברות אוטומטית "
+              content: "...מתחבר"
             
   });
 
@@ -95,13 +95,13 @@ test(){
 }
 save(){
     let loader = this.loadingCtrl.create({
-              content: "...אנא המתן"
+              content: "...מתחבר"
         });
        loader.present();
       let headers = new Headers();
        headers.append('content-Type','application/json');
     let body = {
-      email : this.slideOneForm.value.name,
+      email : this.slideOneForm.value.name.trim().toLowerCase(),
       password : this.slideOneForm.value.password
     };   
     let options = new RequestOptions({ headers: headers });
@@ -113,9 +113,9 @@ save(){
                 const useradding=new User(data.email,data.password,data.PhoneNo ,data.Gender 
                 ,data.authen,data.fName,data._id,data.lName);
      
-  localStorage.setItem("UserN", JSON.stringify(this.slideOneForm.value.name));//date
+  localStorage.setItem("UserN", JSON.stringify(body.email));//date
   localStorage.setItem("authType", JSON.stringify(data.authen));//date
-  localStorage.setItem("pass", JSON.stringify(this.slideOneForm.value.password));//date
+  localStorage.setItem("pass", JSON.stringify(body.password));//date
  localStorage.setItem("myUser", JSON.stringify(useradding));//date
 
  console.log("Type Auth: " + localStorage.getItem("authType") + "my user: "+localStorage.getItem("myUser"));

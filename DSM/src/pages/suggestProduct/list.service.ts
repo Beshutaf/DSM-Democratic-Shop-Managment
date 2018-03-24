@@ -77,7 +77,7 @@ productChanged=new EventEmitter<Product[]>();
      
        
         let loader = this.loadingController.create({
-              content: "getting items"
+              content: "...טוען מוצרים"
         });
        loader.present();
        this.http.get(BASE_SERVER_URL + "/suggest/getallproducts").subscribe((response)=>{
@@ -135,7 +135,7 @@ productChanged=new EventEmitter<Product[]>();
   //adds products for the list and to the server
   addProduct(Product:Product){
         let loader = this.loadingController.create({
-        content: "adding item"
+        content: "...מוסיף מוצר"
     });  
 
      
@@ -171,7 +171,7 @@ productChanged=new EventEmitter<Product[]>();
   }
   deleteProduct(id:String){
        let loader = this.loadingController.create({
-              content: "deleting item"
+              content: "...מוחק מוצר"
         });
        loader.present();
       this.http.post(BASE_SERVER_URL + "/suggest/deleteProduct",{id:id}).subscribe(()=>{

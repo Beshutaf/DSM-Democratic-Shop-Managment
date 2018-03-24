@@ -64,7 +64,7 @@ export class EditPage {
 
   save(){
         let loader = this.loadingController.create({
-              content: "getting Contacts"
+              content: "...טוען אנשי קשר"
         });
        loader.present();
 this.http.get(BASE_SERVER_URL + '/users').map(res =>{
@@ -111,7 +111,7 @@ isSearchShown() {
  trash(pos){
    
   let loader = this.loadingController.create({
-              content: "deleting user..."
+              content: "...מוחק משתמש"
         });
         if(this.massDlt==false)
         loader.present();
@@ -210,7 +210,7 @@ this.http
 
    resetP(tmpusr){  
   let loader = this.loadingController.create({
-              content: "deleting user..."
+              content: "...מאפס ססמא"
         });
         if(this.massDlt==false)
         loader.present();

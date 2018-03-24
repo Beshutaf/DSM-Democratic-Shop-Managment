@@ -99,6 +99,7 @@ notImportant:boolean=false;
     this.nav.push(ViewusersPage);
 
   }
+  
   SignOut(){
    localStorage.clear();
     this.menu.close();
@@ -202,7 +203,7 @@ if(tmpusr===""||tmpusr===null)
    { this.Alert("נסה מאוחר יותר לעדכן ");
       return;}
   let loader = this.loadingController.create({
-              content: "מעדכן סיסמה"
+              content: "...מעדכן סיסמה"
         });
 
         loader.present();

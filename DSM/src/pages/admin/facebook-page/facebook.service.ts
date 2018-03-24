@@ -15,7 +15,7 @@ export class FacebookService{
     constructor(private loadingController:LoadingController,private http:Http){}
     getallPosts():FacebookModel[]{
           let loader = this.loadingController.create({
-              content: "getting items"
+              content: "...טוען פוסטים"
         });
        loader.present();
         this.http.get(BASE_SERVER_URL + "/facebook/getAll").subscribe(()=>{

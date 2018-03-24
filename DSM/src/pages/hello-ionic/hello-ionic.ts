@@ -14,7 +14,7 @@ export class HelloIonicPage implements OnInit {
 
     this.facebookService.getPosts();
        let loader = this.loader.create({
-              content: "getting items"
+              content: "...טוען פוסטים נבחרים"
         });
         loader.present();
     this.facebookService.facebookPostedChanged.subscribe((app)=>{

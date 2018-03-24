@@ -26,7 +26,7 @@ export class CreateUsers{
         return;
      }
      let loader = this.loadctrl.create({
-           content: "getting items"
+           content: "...יוצר משתמשים"
      })
    
      try{

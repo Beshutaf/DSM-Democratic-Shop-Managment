@@ -11,8 +11,10 @@ toggle:Boolean=false;
 
 
 setToggle(url:string){
+	if (this.toggle) {
+		new InAppBrowser(url,'_system');
+	}
+	
     this.toggle=!this.toggle;
-    
-	new InAppBrowser(url,'_system');
 }
 }
