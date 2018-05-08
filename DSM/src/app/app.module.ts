@@ -27,6 +27,7 @@ import { FacebookHomeItem } from "../pages/hello-ionic/facebook-home-item/facebo
 import { PendingProductPage } from "../pages/admin/pendingproduct-page/pending-product";
 import { PendingProductItem } from "../pages/admin/pendingproduct-page/pending-item/pending-item.component";
 import { CreateUsers } from "../pages/admin/create-users/create-users";
+import { Facebook } from '@ionic-native/facebook';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,7 @@ import { CreateUsers } from "../pages/admin/create-users/create-users";
     PendingProductItem,
     CreateUsers
   ],
-  providers: [ FacebookService, OneSignal,  ListService,{provide: ErrorHandler,
+  providers: [ Facebook, FacebookService, OneSignal,  ListService,{provide: ErrorHandler,
     
      useClass: IonicErrorHandler}]
 })

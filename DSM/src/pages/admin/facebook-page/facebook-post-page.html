@@ -7,24 +7,6 @@
 <ion-content>
   <ion-list>
     <app-facebook-list *ngFor="let f of facebook; let i = index" [facebook]="f" (click)="addFacebook(f.name,f.imageUrl,f.url,f.message,i)"></app-facebook-list>
-       <!--<ion-card *ngFor="let f of facebook; let i = index" (click)="addFacebook(f.name,f.imageUrl,f.url,f.message,i)" >
-    <ion-item >
-      
-
-     <ion-thumbnail item-left >
-        <img src="{{f.imageUrl}}" width="200px" style="border-radius:200px;">
-      </ion-thumbnail>
-         
-       <ion-card-title id="card">
-          {{f.name}}
-         
-       </ion-card-title>
-       <ion-card-content id="title">
-            {{f.message}}
-       </ion-card-content>
-       </ion-item>
-   </ion-card>-->
-
   </ion-list>
 </ion-content>
 <ion-footer>
